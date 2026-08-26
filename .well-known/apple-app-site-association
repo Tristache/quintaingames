@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "3SL5ZC838T.com.ramio",
+        "paths": ["/rejoindre*"]
+      },
+      {
+        "appID": "3SL5ZC838T.com.meldfall",
+        "paths": ["/meldfall*"]
+      }
+    ]
+  }
+}
