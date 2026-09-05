@@ -10,14 +10,14 @@ rami-chinois, 2026-08-26) :
 
 - `index.html` — page d'accueil du studio ;
 - `.well-known/assetlinks.json`, `.well-known/apple-app-site-association`
-  — copies à l'identique de tristache.github.io (mêmes apps, mêmes
-  empreintes) : les apps ne déclarent PAS ENCORE ce domaine, elles le
-  feront dans une build dédiée ;
-- `rejoindre.html`, `meldfall.html` — pages de repli des liens (mêmes
-  chemins que sur l'ancien domaine) ;
-- `meldfall/confidentialite.html`, `meldfall/suppression-compte.html`,
-  `meldfall/version.json` — pages Meldfall aux chemins définitifs ;
+  — Ramio SEUL (mêmes empreintes que tristache.github.io) : l'app
+  déclare ce domaine à partir de la build 68 ;
+- `rejoindre.html` — page de repli des liens (même chemin que sur
+  l'ancien domaine, copie à jour de tristache.github.io) ;
 - à venir : `ramio/` (politique, suppression, version.json).
+
+Règle (Tristan, 2026-09-05) : ce site ne mentionne QUE Ramio. Les autres
+projets du studio ne sont pas prêts et restent hors de ce domaine.
 
 Tant que des builds citent tristache.github.io, on AJOUTE ici, on ne
 retire rien là-bas.
