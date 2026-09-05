@@ -6,7 +6,9 @@
         "appID": "3SL5ZC838T.com.ramio",
         "paths": [
           "/rejoindre*",
-          "/ramio/rejoindre*"
+          "/ramio/rejoindre*",
+          "/join*",
+          "/ramio/join*"
         ]
       }
     ]
