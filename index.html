@@ -4,31 +4,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quintain Games</title>
-  <meta name="description" content="Quintain Games — studio indépendant : Ramio, le rami voleur en ligne.">
+  <meta name="description" id="meta-desc" content="Quintain Games — studio indépendant : Ramio, le rami voleur en ligne. Meldfall et Unhorsed en développement.">
   <style>
-    body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #10221C; color: #fff; }
-    main { max-width: 720px; margin: 0 auto; padding: 48px 20px; }
-    h1 { font-size: 2em; letter-spacing: 0.04em; margin: 0 0 6px; }
-    .tag { color: #8FA69B; margin: 0 0 36px; }
-    .jeu { background: #152A26; border-radius: 14px; padding: 20px 22px; margin: 14px 0; }
-    .jeu h2 { margin: 0 0 6px; font-size: 1.2em; }
-    .jeu p { margin: 0 0 10px; color: #cfe3da; }
-    a { color: #7BE3B7; }
-    footer { margin-top: 40px; color: #8FA69B; font-size: 0.9em; }
+    :root { --fond: #10221C; --carte: #152A26; --vert: #7BE3B7; --gris: #8FA69B; --texte: #cfe3da; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fond); color: #fff; }
+    main { max-width: 720px; margin: 0 auto; padding: 40px 20px 56px; }
+    header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    h1 { font-size: 2em; letter-spacing: 0.06em; margin: 0; }
+    .tag { color: var(--gris); margin: 6px 0 0; }
+    nav.langues { font-size: 0.85em; color: var(--gris); line-height: 1.9; }
+    nav.langues a { color: var(--gris); text-decoration: none; padding: 0 4px; }
+    nav.langues a:hover, nav.langues a:focus-visible { color: #fff; outline: none; }
+    nav.langues a[aria-current="true"] { color: var(--vert); font-weight: 700; }
+    .jeu { background: var(--carte); border-radius: 14px; padding: 20px 22px; margin: 14px 0; }
+    .jeu h2 { margin: 0 0 6px; font-size: 1.2em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .jeu p { margin: 0 0 10px; color: var(--texte); }
+    .jeu p:last-child { margin-bottom: 0; }
+    .dev { font-size: 0.7em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris); border: 1px solid rgba(143,166,155,0.5); border-radius: 999px; padding: 2px 9px; font-weight: 600; }
+    a { color: var(--vert); }
+    footer { margin-top: 40px; color: var(--gris); font-size: 0.9em; }
   </style>
 </head>
 <body>
   <main>
-    <h1>QUINTAIN GAMES</h1>
-    <p class="tag">Studio indépendant — jeux de cartes, faits en France.</p>
+    <header>
+      <div>
+        <h1>QUINTAIN GAMES</h1>
+        <p class="tag" data-t="tag">Studio indépendant — jeux de cartes, faits en France.</p>
+      </div>
+      <nav class="langues" id="langues" aria-label="Langues"></nav>
+    </header>
     <div class="jeu">
-      <h2>Ramio — Rami Voleur</h2>
-      <p>Le rami voleur en ligne : parties publiques, salons privés, défis quotidiens et 350 puzzles.</p>
-      <a href="/ramio/">Site de Ramio</a>
+      <h2>Ramio</h2>
+      <p data-t="ramio">Le rami voleur en ligne : parties publiques, salons privés, défi du jour et 350 casse-têtes. Bêta ouverte.</p>
+      <p><a href="/ramio/" id="lien-ramio" data-t="site">Site de Ramio</a></p>
+    </div>
+    <div class="jeu">
+      <h2>Meldfall <span class="dev" data-t="dev">en développement</span></h2>
+    </div>
+    <div class="jeu">
+      <h2>Unhorsed <span class="dev" data-t="dev">en développement</span></h2>
     </div>
     <footer>
-      Contact : <a href="mailto:contact@quintaingames.com">contact@quintaingames.com</a>
+      <span data-t="contact">Contact</span> : <a href="mailto:contact@quintaingames.com">contact@quintaingames.com</a>
     </footer>
   </main>
+  <script>
+    // Les onze langues de Ramio. La langue vient de ?lang=, sinon du
+    // navigateur ; le lien « Site de Ramio » mène à la page de la même
+    // langue sous /ramio/.
+    var T = {
+      fr: { nom: "Français", tag: "Studio indépendant — jeux de cartes, faits en France.", ramio: "Le rami voleur en ligne : parties publiques, salons privés, défi du jour et 350 casse-têtes. Bêta ouverte.", site: "Site de Ramio", dev: "en développement", contact: "Contact", page: "" },
+      en: { nom: "English", tag: "Independent studio — card games, made in France.", ramio: "Manipulation rummy online: public games, private rooms, a daily puzzle and 350 puzzles. Open beta.", site: "Ramio website", dev: "in development", contact: "Contact", page: "en" },
+      es: { nom: "Español", tag: "Estudio independiente — juegos de cartas, hechos en Francia.", ramio: "El rummy ladrón en línea: partidas públicas, salas privadas, desafío del día y 350 rompecabezas. Beta abierta.", site: "Sitio de Ramio", dev: "en desarrollo", contact: "Contacto", page: "es" },
+      de: { nom: "Deutsch", tag: "Unabhängiges Studio — Kartenspiele, gemacht in Frankreich.", ramio: "Räuber-Rommé online: öffentliche Partien, private Räume, Tagesrätsel und 350 Rätsel. Offene Beta.", site: "Ramio-Website", dev: "in Entwicklung", contact: "Kontakt", page: "de" },
+      it: { nom: "Italiano", tag: "Studio indipendente — giochi di carte, fatti in Francia.", ramio: "Il Machiavelli online: partite pubbliche, stanze private, sfida del giorno e 350 rompicapi. Beta aperta.", site: "Sito di Ramio", dev: "in sviluppo", contact: "Contatto", page: "it" },
+      pt: { nom: "Português", tag: "Estúdio independente — jogos de cartas, feitos na França.", ramio: "O mexe-mexe online: partidas públicas, salas privadas, desafio do dia e 350 quebra-cabeças. Beta aberto.", site: "Site do Ramio", dev: "em desenvolvimento", contact: "Contato", page: "pt" },
+      pl: { nom: "Polski", tag: "Niezależne studio — gry karciane, tworzone we Francji.", ramio: "Remik złodziej online: gry publiczne, prywatne pokoje, zagadka dnia i 350 łamigłówek. Otwarta beta.", site: "Strona Ramio", dev: "w przygotowaniu", contact: "Kontakt", page: "pl" },
+      tr: { nom: "Türkçe", tag: "Bağımsız stüdyo — Fransa'da yapılan kart oyunları.", ramio: "Çevrimiçi hırsız remi: açık oyunlar, özel odalar, günün bulmacası ve 350 bulmaca. Açık beta.", site: "Ramio sitesi", dev: "geliştiriliyor", contact: "İletişim", page: "tr" },
+      ro: { nom: "Română", tag: "Studio independent — jocuri de cărți, făcute în Franța.", ramio: "Remi hoț online: partide publice, camere private, provocarea zilei și 350 de puzzle-uri. Beta deschisă.", site: "Site-ul Ramio", dev: "în dezvoltare", contact: "Contact", page: "ro" },
+      hu: { nom: "Magyar", tag: "Független stúdió — kártyajátékok, Franciaországban készülnek.", ramio: "Tolvaj römi online: nyilvános játszmák, privát szobák, napi feladvány és 350 fejtörő. Nyílt béta.", site: "Ramio weboldala", dev: "fejlesztés alatt", contact: "Kapcsolat", page: "hu" },
+      ar: { nom: "العربية", tag: "استوديو مستقل — ألعاب ورق، صُنعت في فرنسا.", ramio: "رمي اللص عبر الإنترنت: مباريات عامة، غرف خاصة، تحدي اليوم و350 أحجية. نسخة تجريبية مفتوحة.", site: "موقع Ramio", dev: "قيد التطوير", contact: "تواصل", page: "ar" }
+    };
+    var ordre = ["fr", "en", "es", "de", "it", "pt", "pl", "tr", "ro", "hu", "ar"];
+    var params = new URLSearchParams(location.search);
+    var lang = params.get("lang") || (navigator.language || "fr").slice(0, 2).toLowerCase();
+    if (!T[lang]) lang = "en";
+    var t = T[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-t]").forEach(function (el) {
+      var v = t[el.getAttribute("data-t")];
+      if (v) el.textContent = v;
+    });
+    document.getElementById("meta-desc").setAttribute("content", "Quintain Games — " + t.tag + " " + t.ramio);
+    document.getElementById("lien-ramio").href = "/ramio/" + t.page;
+    var nav = document.getElementById("langues");
+    ordre.forEach(function (code, i) {
+      var a = document.createElement("a");
+      a.href = "?lang=" + code;
+      a.textContent = T[code].nom;
+      a.lang = code;
+      if (code === lang) a.setAttribute("aria-current", "true");
+      nav.appendChild(a);
+      if (i < ordre.length - 1) nav.appendChild(document.createTextNode(" · "));
+    });
+  </script>
 </body>
 </html>
