@@ -5,12 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quintain Games</title>
   <meta name="description" id="meta-desc" content="Quintain Games — studio indépendant : Ramio, le rami voleur en ligne. Meldfall et Unhorsed en développement.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quintain Games">
+  <meta property="og:description" content="Studio indépendant — jeux de cartes, faits en France.">
+  <meta property="og:url" content="https://quintaingames.com/">
+  <meta property="og:image" content="https://quintaingames.com/assets/quintain-1024.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary">
   <style>
     :root { --fond: #10221C; --carte: #152A26; --vert: #7BE3B7; --gris: #8FA69B; --texte: #cfe3da; }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fond); color: #fff; }
     main { max-width: 720px; margin: 0 auto; padding: 40px 20px 56px; }
-    header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .marque { display: flex; align-items: center; gap: 18px; }
+    .embleme { width: 72px; height: 72px; flex: none; color: #F3F1EA; }
+    .embleme circle { stroke: #F2A03D; }
     h1 { font-size: 2em; letter-spacing: 0.06em; margin: 0; }
     .tag { color: var(--gris); margin: 6px 0 0; }
     nav.langues { font-size: 0.85em; color: var(--gris); line-height: 1.9; }
@@ -29,9 +42,20 @@
 <body>
   <main>
     <header>
-      <div>
-        <h1>QUINTAIN GAMES</h1>
-        <p class="tag" data-t="tag">Studio indépendant — jeux de cartes, faits en France.</p>
+      <div class="marque">
+        <svg class="embleme" viewBox="96 120 832 832" role="img" aria-label="Emblème Quintain Games">
+          <g fill="none" stroke="currentColor" stroke-width="36" stroke-linecap="butt" stroke-linejoin="round">
+            <path d="M472 330 V854 M552 330 V854"/>
+            <path d="M340 250 H692 M340 330 H692"/>
+            <path d="M132 138 H330 A18 18 0 0 1 348 156 V323 C348 374 296 418 231 442 C166 418 114 374 114 323 V156 A18 18 0 0 1 132 138 Z"/>
+            <circle cx="793" cy="290" r="117"/>
+            <path d="M372 854 H652 A18 18 0 0 1 670 872 V916 A18 18 0 0 1 652 934 H372 A18 18 0 0 1 354 916 V872 A18 18 0 0 1 372 854 Z"/>
+          </g>
+        </svg>
+        <div>
+          <h1>QUINTAIN GAMES</h1>
+          <p class="tag" data-t="tag">Studio indépendant — jeux de cartes, faits en France.</p>
+        </div>
       </div>
       <nav class="langues" id="langues" aria-label="Langues"></nav>
     </header>

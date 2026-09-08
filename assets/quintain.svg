@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Quintain Games">
+  <title>Quintaine, version B (en T) avec socle — Quintain Games</title>
+  <!--
+    Version B figee (bras au sommet du poteau) + SOCLE, variante retenue :
+    « trait seul » (arbitrage Tristan 2026-08-30).
+    Largeur du socle = largeur du TRAIT HORIZONTAL du bras, hors ecu et hors
+    disque : le trait est trace de x=340 a x=692 (352 hors tout) ; le socle
+    reprend ces 352, recentres sur l'axe du fut (512) car ses extremites,
+    elles, sont a nu -> 336..688.
+    Meme vocabulaire : trait 36, barres 116 hors tout, epaules en r=18
+    (rayon exterieur 36) comme celles de l'ecu.
+    Le SOCLE PASSE DEVANT, comme le bras : sa ligne haute est continue et
+    les deux montants du poteau y butent (V854).
+    Le pied du poteau (arrondi a y=952) est remplace par le socle : la
+    silhouette garde exactement la meme emprise 96..928 / 120..952.
+    Double lecture : un T par le haut, un I a empattements par l'ensemble.
+    Couleur pilotee par currentColor (noir par defaut).
+  -->
+  <g fill="none" stroke="currentColor" stroke-width="36" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M472 330 V854 M552 330 V854"/>
+    <path d="M340 250 H692 M340 330 H692"/>
+    <path d="M132 138 H330 A18 18 0 0 1 348 156 V323 C348 374 296 418 231 442 C166 418 114 374 114 323 V156 A18 18 0 0 1 132 138 Z"/>
+    <circle cx="793" cy="290" r="117"/>
+    <path d="M372 854 H652 A18 18 0 0 1 670 872 V916 A18 18 0 0 1 652 934 H372 A18 18 0 0 1 354 916 V872 A18 18 0 0 1 372 854 Z"/>
+  </g>
+</svg>
