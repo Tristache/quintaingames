@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Plan du site quintaingames.com. Les pages de langue sont produites par
+     tools/mirror-quintaingames.py (dépôt rami-chinois-site) ; les pages
+     d'atterrissage par variante locale sont statiques et vivent à part.
+     Les pages d'aperçu /ramio/puzzle/ sont en noindex : pas listées. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://quintaingames.com/</loc></url>
+  <url><loc>https://quintaingames.com/ramio/</loc></url>
+  <url><loc>https://quintaingames.com/ramio/en.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/es.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/de.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/it.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/pt.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/pl.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/tr.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/ro.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/hu.html</loc></url>
+  <url><loc>https://quintaingames.com/ramio/ar.html</loc></url>
+  <url>
+    <loc>https://quintaingames.com/ramio/raeuber-romme/</loc>
+    <lastmod>2026-09-12</lastmod>
+  </url>
+  <url>
+    <loc>https://quintaingames.com/ramio/mexe-mexe/</loc>
+    <lastmod>2026-09-12</lastmod>
+  </url>
+</urlset>
