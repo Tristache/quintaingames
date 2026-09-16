@@ -6,6 +6,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://quintaingames.com/</loc></url>
   <url><loc>https://quintaingames.com/ramio/</loc></url>
+  <url>
+    <loc>https://quintaingames.com/ramio/presse/</loc>
+    <lastmod>2026-09-16</lastmod>
+  </url>
   <url><loc>https://quintaingames.com/ramio/en.html</loc></url>
   <url><loc>https://quintaingames.com/ramio/es.html</loc></url>
   <url><loc>https://quintaingames.com/ramio/de.html</loc></url>
