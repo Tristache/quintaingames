@@ -259,7 +259,12 @@
     var tiles = [
       ['Appareils', t.devices, t.devices_android + ' Android · ' + t.devices_ios + ' iPhone'],
       ['Personnes engagées', v2 ? t.engaged : '—', v2 ? pct(t.engaged, t.devices) + ' des appareils · robots exclus' : 'migration 76'],
-      ['Installs 24 h', t.installs_24h, v2 ? t.engaged_24h + ' engagées' : 'premières ouvertures'],
+      // Migration 88 : la tuile affiche les HUMAINS (installs moins les
+      // robots des stores) ; le brut et les robots passent en sous-titre.
+      t.installs_24h_humains != null
+        ? ['Installs 24 h (sans robots)', t.installs_24h_humains,
+           t.installs_24h + ' brutes · ' + t.robots_24h + ' robots · ' + t.engaged_24h + ' joueurs']
+        : ['Installs 24 h', t.installs_24h, v2 ? t.engaged_24h + ' engagées' : 'premières ouvertures'],
       ['Actifs aujourd\'hui', t.active_today, t.active_7d + ' sur 7 jours'],
       ['Session médiane 7 j', v2 ? fmtDur(t.session_median_s_7d) : '—', v2 ? 'p90 ' + fmtDur(t.session_p90_s_7d) + ' · ' + t.sessions_7d + ' sessions' : 'migration 76'],
       ['En ligne', t.online_now, 'profils vus < 5 min'],
@@ -290,9 +295,16 @@
     html += chartCard('Site : visites et clics store', 'pages fr + en', byDay(d.site_by_day, ['visits', 'clicks'], 30),
                       [{ key: 'visits', label: 'visites', color: S1 }, { key: 'clicks', label: 'clics store', color: S3 }]);
 
+    // Défi web : « Lancé » et « Résolu » comptent les parties dans le
+    // navigateur, « Vers l'app » les clics sur « Installer l'app » de
+    // l'écran de victoire (migration 87). Un canal de défi n'a aucune
+    // visite de site : on entre droit sur la page du défi.
     html += tableCard('Site : d\'où viennent les visiteurs', '14 derniers jours, par canal ?src=',
-      [{ t: 'Canal' }, { t: 'Page' }, { t: 'Visites', n: 1 }, { t: 'Play', n: 1 }, { t: 'TestFlight', n: 1 }],
-      d.site_by_src.map(function (r) { return [r.src, r.lang, r.visits, r.play, r.testflight]; }));
+      [{ t: 'Canal' }, { t: 'Page' }, { t: 'Visites', n: 1 }, { t: 'Play', n: 1 }, { t: 'TestFlight', n: 1 },
+       { t: 'Défi lancé', n: 1 }, { t: 'Résolu', n: 1 }, { t: 'Vers l\'app', n: 1 }],
+      d.site_by_src.map(function (r) {
+        return [r.src, r.lang, r.visits, r.play, r.testflight, r.debut || 0, r.reussi || 0, r.app || 0];
+      }));
 
     var steps = [['vu_connexion', 'Écran de connexion vu'], ['invite_essai', 'Essai invité'], ['compte_cree', 'Compte créé'],
                  ['onboarding_kit', 'Kit d\'accueil choisi'], ['premier_defi', 'Premier défi'], ['premiere_ligne', 'Première ligne en ligne'],
@@ -308,12 +320,27 @@
     html += tableCard('Rétention par semaine d\'arrivée', 'D1 = revenu le lendemain · S1 = revenu dans les 7 jours',
       [{ t: 'Semaine du' }, { t: 'Nouveaux', n: 1 }, { t: 'D1', n: 1 }, { t: 'S1', n: 1 }],
       d.retention.map(function (r) { return [fmtDay(r.week), r.n, pct(r.d1, r.n_d1), pct(r.w1, r.n_w1)]; }));
+    // Migration 89 : la même chose sur les HUMAINS (invité, compte ou jeu)
+    // et les JOUEURS (au moins un événement de jeu) ; D1/S1 = a REJOUÉ.
+    if (d.retention_joueurs) {
+      html += tableCard('Rétention des joueurs par semaine d\'arrivée', 'humains = invité, compte ou jeu · joueurs = au moins une partie ou un défi · D1/S1 = ont rejoué le lendemain / dans les 7 jours',
+        [{ t: 'Semaine du' }, { t: 'Humains', n: 1 }, { t: 'Joueurs', n: 1 }, { t: 'D1 joueurs', n: 1 }, { t: 'S1 joueurs', n: 1 }],
+        d.retention_joueurs.map(function (r) {
+          return [fmtDay(r.week), r.humains, r.joueurs,
+                  pct(r.d1, r.n_d1) + ' (' + r.d1 + '/' + r.n_d1 + ')',
+                  pct(r.w1, r.n_w1) + ' (' + r.w1 + '/' + r.n_w1 + ')'];
+        }));
+    }
 
     var modes = Object.keys(d.games_by_mode_30d).map(function (m) { return [m, d.games_by_mode_30d[m]]; }).sort(function (a, b) { return b[1] - a[1]; });
     html += tableCard('Parties par mode (30 jours)', 'parties distinctes', [{ t: 'Mode' }, { t: 'Parties', n: 1 }], modes);
 
     html += tableCard('Dernières installations', 'heure de Paris', [{ t: 'Quand' }, { t: 'Plateforme' }, { t: 'Build', n: 1 }, { t: 'Engagé' }],
-      d.recent_installs.map(function (r) { return [fmtDateTime(r.at), r.platform, r.build, r.engaged == null ? '' : (r.engaged ? 'oui' : 'non')]; }));
+      d.recent_installs.map(function (r) {
+        // Migration 88 : robot du store signalé dans la colonne « engagée ».
+        var e = r.robot ? 'robot' : (r.engaged == null ? '' : (r.engaged ? 'oui' : 'non'));
+        return [fmtDateTime(r.at), r.platform + (r.country ? ' ' + r.country : ''), r.build, e];
+      }));
     html += tableCard('Dernières parties en ligne', 'heure de Paris', [{ t: 'Fin' }, { t: 'Mode' }, { t: 'Joueurs', n: 1 }, { t: 'Minutes', n: 1 }, { t: 'Motif' }],
       d.recent_games.map(function (r) { return [fmtDateTime(r.at), r.mode, r.players, r.minutes, r.reason || '']; }));
     html += tableCard('Dernières visites du site', 'heure de Paris', [{ t: 'Quand' }, { t: 'Type' }, { t: 'Canal' }, { t: 'Page' }, { t: 'Origine' }],
@@ -321,7 +348,8 @@
 
     if (v2) {
       html += chartCard('Personnes engagées par jour d\'arrivée', 'appareils ayant joué, sans les robots Play',
-        byDay(d.installs_by_day, ['engaged'], 30), [{ key: 'engaged', label: 'engagées', color: S3 }]);
+        byDay(d.installs_by_day, ['humans', 'engaged'], 30),
+        [{ key: 'humans', label: 'sans robots', color: S2 }, { key: 'engaged', label: 'joueurs', color: S3 }]);
       html += chartCard('Durée médiane de session', 'secondes, par jour', byDay(d.session_by_day, ['median_s'], 30),
         [{ key: 'median_s', label: 'médiane (s)', color: S1 }]);
 
