@@ -5,6 +5,8 @@
      Les pages d'aperçu /ramio/puzzle/ sont en noindex : pas listées. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://quintaingames.com/</loc></url>
+  <url><loc>https://quintaingames.com/mentions-legales</loc><lastmod>2026-09-16</lastmod></url>
+  <url><loc>https://quintaingames.com/confidentialite</loc><lastmod>2026-09-16</lastmod></url>
   <url><loc>https://quintaingames.com/ramio/</loc></url>
   <url>
     <loc>https://quintaingames.com/ramio/presse/</loc>
