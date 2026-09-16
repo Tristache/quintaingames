@@ -4,39 +4,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quintain Games</title>
-  <meta name="description" id="meta-desc" content="Quintain Games — studio indépendant : Ramio, le rami voleur en ligne. Meldfall et Unhorsed en développement.">
+  <meta name="description" id="meta-desc" content="Quintain Games, studio de jeux indépendant à Angers : Ramio, le rami voleur en application. Meldfall et Unhorsed en développement.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&display=swap">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Quintain Games">
-  <meta property="og:description" content="Studio indépendant — jeux de cartes, faits en France.">
+  <meta property="og:description" content="Ramio, le rami voleur en application. Studio de jeux indépendant.">
   <meta property="og:url" content="https://quintaingames.com/">
   <meta property="og:image" content="https://quintaingames.com/assets/quintain-1024.png">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
   <style>
-    :root { --fond: #10221C; --carte: #152A26; --vert: #7BE3B7; --gris: #8FA69B; --texte: #cfe3da; }
+    :root { --fond: #0F1D31; --fond2: #12253C; --carte: #182F4B; --ligne: #2A4262; --ivoire: #F3F1EA; --texte: #C9D2DF; --gris: #8FA0B6; --laiton: #F2A03D; --sable: #E7C79A; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fond); color: #fff; }
-    main { max-width: 720px; margin: 0 auto; padding: 40px 20px 56px; }
-    header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-    .marque { display: flex; align-items: center; gap: 18px; }
-    .embleme { width: 72px; height: 72px; flex: none; color: #F3F1EA; }
-    .embleme circle { stroke: #F2A03D; }
-    h1 { font-size: 2em; letter-spacing: 0.06em; margin: 0; }
-    .tag { color: var(--gris); margin: 6px 0 0; }
-    nav.langues { font-size: 0.85em; color: var(--gris); line-height: 1.9; }
-    nav.langues a { color: var(--gris); text-decoration: none; padding: 0 4px; }
-    nav.langues a:hover, nav.langues a:focus-visible { color: #fff; outline: none; }
-    nav.langues a[aria-current="true"] { color: var(--vert); font-weight: 700; }
-    .jeu { background: var(--carte); border-radius: 14px; padding: 20px 22px; margin: 14px 0; }
-    .jeu h2 { margin: 0 0 6px; font-size: 1.2em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .jeu p { margin: 0 0 10px; color: var(--texte); }
-    .jeu p:last-child { margin-bottom: 0; }
-    .dev { font-size: 0.7em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris); border: 1px solid rgba(143,166,155,0.5); border-radius: 999px; padding: 2px 9px; font-weight: 600; }
-    a { color: var(--vert); }
-    footer { margin-top: 40px; color: var(--gris); font-size: 0.9em; }
+    body { margin: 0; background: var(--fond); color: var(--ivoire); font-family: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; font-size: 17px; line-height: 1.5; }
+    main { max-width: 960px; margin: 0 auto; padding: 28px 20px 56px; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, "Times New Roman", serif; font-weight: 600; margin: 0; text-wrap: balance; }
+    h1 { font-size: 1.6em; letter-spacing: .08em; }
+    h2 { font-size: 1.35em; color: var(--sable); margin-bottom: 14px; }
+    p { margin: 0 0 10px; max-width: 62ch; }
+    a { color: var(--laiton); }
+    a:focus-visible, select:focus-visible { outline: 2px solid var(--laiton); outline-offset: 2px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
+    .marque { display: flex; align-items: center; gap: 16px; }
+    .embleme { width: 56px; height: 56px; color: var(--ivoire); flex: none; }
+    .embleme circle { stroke: var(--laiton); }
+    .tag { color: var(--gris); font-size: .95em; margin: 2px 0 0; }
+    select.langue { font: inherit; font-size: .85em; color: var(--ivoire); background: var(--fond2); border: 1px solid var(--ligne); border-radius: 999px; padding: 6px 12px; }
+    .vitrine { border-radius: 18px; overflow: hidden; background: var(--carte); border: 1px solid var(--ligne); }
+    .vitrine .visuel { position: relative; aspect-ratio: 2160 / 700; max-width: 100%; background: #6b3f21 url("/ramio/assets/ramio-bandeau.jpg") center / cover no-repeat; }
+    .vitrine .visuel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,29,49,0) 40%, rgba(24,47,75,.92) 100%); }
+    .vitrine .icone { position: absolute; inset-inline-start: 22px; bottom: -26px; width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 8px 22px rgba(0,0,0,.4); z-index: 1; border: 2px solid var(--carte); }
+    .vitrine .corps { padding: 40px 22px 22px; }
+    .vitrine h2 { font-size: 2em; color: var(--ivoire); margin: 0 0 2px; }
+    .sous { color: var(--sable); font-family: "Fraunces", Georgia, serif; font-size: 1.15em; margin-bottom: 10px; }
+    .boutons { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 14px; }
+    .bouton { display: inline-flex; align-items: center; padding: 11px 18px; border-radius: 10px; background: var(--laiton); color: #08111f; font-weight: 600; text-decoration: none; }
+    .bouton.second { background: transparent; color: var(--ivoire); border: 1.5px solid var(--gris); }
+    .reperes { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--gris); font-size: .92em; }
+    .reperes b { color: var(--ivoire); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .section { margin-top: 40px; }
+    .grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .jeu { background: var(--fond2); border: 1px solid var(--ligne); border-radius: 14px; padding: 18px 20px; }
+    .jeu h3 { font-size: 1.2em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .dev { font-family: "Source Sans 3", sans-serif; font-size: .68em; letter-spacing: .12em; text-transform: uppercase; color: var(--gris); border: 1px solid var(--ligne); border-radius: 999px; padding: 2px 9px; font-weight: 600; }
+    .studio { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
+    .studio p { color: var(--texte); }
+    .liens { display: grid; gap: 8px; font-size: .95em; }
+    .liens a { display: flex; justify-content: space-between; gap: 10px; padding: 10px 14px; border: 1px solid var(--ligne); border-radius: 10px; color: var(--ivoire); text-decoration: none; }
+    .liens a span:last-child { color: var(--gris); }
+    footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--ligne); color: var(--gris); font-size: .9em; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    footer a { color: var(--gris); }
+    [hidden] { display: none !important; }
+    @media (max-width: 640px) {
+      .studio { grid-template-columns: 1fr; }
+      .vitrine .corps { padding-top: 34px; }
+      .vitrine .icone { width: 64px; height: 64px; border-radius: 16px; bottom: -20px; inset-inline-start: 16px; }
+      .vitrine .visuel { background-image: url("/ramio/assets/ramio-bandeau-mobile.jpg"); aspect-ratio: 16 / 9; }
+    }
   </style>
 </head>
 <body>
@@ -54,42 +83,75 @@
         </svg>
         <div>
           <h1>QUINTAIN GAMES</h1>
-          <p class="tag" data-t="tag">Studio indépendant — jeux de cartes, faits en France.</p>
+          <p class="tag" data-t="tag">Studio de jeux indépendant, à Angers.</p>
         </div>
       </div>
-      <nav class="langues" id="langues" aria-label="Langues"></nav>
+      <select class="langue" id="langues" aria-label="Langue"></select>
     </header>
-    <div class="jeu">
-      <h2>Ramio</h2>
-      <p data-t="ramio">Le rami voleur en ligne : parties publiques, salons privés, défi du jour et 350 casse-têtes. Bêta ouverte.</p>
-      <p><a href="/ramio/" id="lien-ramio" data-t="site">Site de Ramio</a></p>
-    </div>
-    <div class="jeu">
-      <h2>Meldfall <span class="dev" data-t="dev">en développement</span></h2>
-    </div>
-    <div class="jeu">
-      <h2>Unhorsed <span class="dev" data-t="dev">en développement</span></h2>
-    </div>
+
+    <section class="vitrine" aria-label="Ramio">
+      <div class="visuel"><img class="icone" src="/assets/ramio-icone-512.png" alt=""></div>
+      <div class="corps">
+        <h2>Ramio</h2>
+        <p class="sous" data-t="sous">Le rami voleur, en ligne, en famille ou entre amis.</p>
+        <p data-t="pitch">Le jeu de cartes auquel beaucoup ont joué sans en connaître le nom : on démonte et on recompose toute la table pour poser ses cartes. Onze langues, gratuit. Sortie le 8 octobre 2026.</p>
+        <div class="boutons">
+          <a class="bouton" href="https://play.google.com/store/apps/details?id=com.ramio" data-t="android">Android · Google Play</a>
+          <a class="bouton" href="https://testflight.apple.com/join/X8tt9MQw" data-t="iphone">iPhone · TestFlight</a>
+          <a class="bouton second" href="/ramio/defi/?defi=1dbcleh&amp;couleurs=4&amp;src=accueil" data-t="essayer">Essayer dans le navigateur</a>
+        </div>
+        <div class="reperes">
+          <span><b>670</b> <span data-t="defis">casse-têtes</span></span>
+          <span><b>11</b> <span data-t="langues">langues</span></span>
+          <span><b>2-4</b> <span data-t="joueurs">joueurs en ligne</span></span>
+          <span data-t="horsligne">Hors ligne contre l'ordinateur</span>
+          <span><a href="/ramio/" id="lien-ramio" data-t="site">Tout sur Ramio</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-t="prepa">En préparation</h2>
+      <div class="grille">
+        <div class="jeu"><h3>Meldfall <span class="dev" data-t="dev">en développement</span></h3></div>
+        <div class="jeu"><h3>Unhorsed <span class="dev" data-t="dev">en développement</span></h3></div>
+      </div>
+    </section>
+
+    <section class="section studio">
+      <div>
+        <h2 data-t="studio">Le studio</h2>
+        <p data-t="studio1">Quintain Games est un petit studio de taille familiale, à Angers. On fabrique des jeux que l'on aime et auxquels on aimerait jouer.</p>
+        <p data-t="studio2">La quintaine de l'emblème est la cible d'entraînement des chevaliers : on y revient, on s'y frotte, on progresse.</p>
+      </div>
+      <div class="liens">
+        <a href="/ramio/presse/" id="lien-presse"><span data-t="presse">Espace presse</span><span data-t="presse2">kit, visuels, chiffres</span></a>
+        <a href="mailto:contact@quintaingames.com"><span data-t="ecrire">Nous écrire</span><span>contact@quintaingames.com</span></a>
+      </div>
+    </section>
+
     <footer>
-      <span data-t="contact">Contact</span> : <a href="mailto:contact@quintaingames.com">contact@quintaingames.com</a> · <a href="/ramio/mentions-legales" data-t="legal">Mentions légales</a>
+      <span data-t="pied">Quintain Games · Angers, France</span>
+      <span><a href="/ramio/mentions-legales" id="lien-legal" data-t="legal">Mentions légales</a> · <a href="/ramio/politique-confidentialite" id="lien-conf" data-t="conf">Confidentialité</a></span>
     </footer>
   </main>
   <script>
-    // Les onze langues de Ramio. La langue vient de ?lang=, sinon du
-    // navigateur ; le lien « Site de Ramio » mène à la page de la même
-    // langue sous /ramio/.
+    // Onze langues (celles de Ramio). Langue : ?lang=, sinon le navigateur.
+    // RÈGLE (Tristan 2026-09-16) : Angers n'est nommée QUE dans la version
+    // française ; les autres langues disent « France ». L'espace presse
+    // n'existe qu'en français : son lien n'est montré qu'en fr.
     var T = {
-      fr: { nom: "Français", tag: "Studio indépendant — jeux de cartes, faits en France.", ramio: "Le rami voleur en ligne : parties publiques, salons privés, défi du jour et 350 casse-têtes. Bêta ouverte.", site: "Site de Ramio", dev: "en développement", contact: "Contact", legal: "Mentions légales", page: "" },
-      en: { nom: "English", tag: "Independent studio — card games, made in France.", ramio: "Manipulation rummy online: public games, private rooms, a daily puzzle and 350 puzzles. Open beta.", site: "Ramio website", dev: "in development", contact: "Contact", legal: "Legal notice", page: "en" },
-      es: { nom: "Español", tag: "Estudio independiente — juegos de cartas, hechos en Francia.", ramio: "El rummy ladrón en línea: partidas públicas, salas privadas, desafío del día y 350 rompecabezas. Beta abierta.", site: "Sitio de Ramio", dev: "en desarrollo", contact: "Contacto", legal: "Aviso legal", page: "es" },
-      de: { nom: "Deutsch", tag: "Unabhängiges Studio — Kartenspiele, gemacht in Frankreich.", ramio: "Räuber-Rommé online: öffentliche Partien, private Räume, Tagesrätsel und 350 Rätsel. Offene Beta.", site: "Ramio-Website", dev: "in Entwicklung", contact: "Kontakt", legal: "Impressum", page: "de" },
-      it: { nom: "Italiano", tag: "Studio indipendente — giochi di carte, fatti in Francia.", ramio: "Il Machiavelli online: partite pubbliche, stanze private, sfida del giorno e 350 rompicapi. Beta aperta.", site: "Sito di Ramio", dev: "in sviluppo", contact: "Contatto", legal: "Note legali", page: "it" },
-      pt: { nom: "Português", tag: "Estúdio independente — jogos de cartas, feitos na França.", ramio: "O mexe-mexe online: partidas públicas, salas privadas, desafio do dia e 350 quebra-cabeças. Beta aberto.", site: "Site do Ramio", dev: "em desenvolvimento", contact: "Contato", legal: "Aviso legal", page: "pt" },
-      pl: { nom: "Polski", tag: "Niezależne studio — gry karciane, tworzone we Francji.", ramio: "Remik złodziej online: gry publiczne, prywatne pokoje, zagadka dnia i 350 łamigłówek. Otwarta beta.", site: "Strona Ramio", dev: "w przygotowaniu", contact: "Kontakt", legal: "Nota prawna", page: "pl" },
-      tr: { nom: "Türkçe", tag: "Bağımsız stüdyo — Fransa'da yapılan kart oyunları.", ramio: "Çevrimiçi hırsız remi: açık oyunlar, özel odalar, günün bulmacası ve 350 bulmaca. Açık beta.", site: "Ramio sitesi", dev: "geliştiriliyor", contact: "İletişim", legal: "Yasal bildirim", page: "tr" },
-      ro: { nom: "Română", tag: "Studio independent — jocuri de cărți, făcute în Franța.", ramio: "Remi hoț online: partide publice, camere private, provocarea zilei și 350 de puzzle-uri. Beta deschisă.", site: "Site-ul Ramio", dev: "în dezvoltare", contact: "Contact", legal: "Mențiuni legale", page: "ro" },
-      hu: { nom: "Magyar", tag: "Független stúdió — kártyajátékok, Franciaországban készülnek.", ramio: "Tolvaj römi online: nyilvános játszmák, privát szobák, napi feladvány és 350 fejtörő. Nyílt béta.", site: "Ramio weboldala", dev: "fejlesztés alatt", contact: "Kapcsolat", legal: "Jogi nyilatkozat", page: "hu" },
-      ar: { nom: "العربية", tag: "استوديو مستقل — ألعاب ورق، صُنعت في فرنسا.", ramio: "رمي اللص عبر الإنترنت: مباريات عامة، غرف خاصة، تحدي اليوم و350 أحجية. نسخة تجريبية مفتوحة.", site: "موقع Ramio", dev: "قيد التطوير", contact: "تواصل", legal: "الإشعار القانوني", page: "ar" }
+      fr: { nom: "Français", page: "", tag: "Studio de jeux indépendant, à Angers.", sous: "Le rami voleur, en ligne, en famille ou entre amis.", pitch: "Le jeu de cartes auquel beaucoup ont joué sans en connaître le nom : on démonte et on recompose toute la table pour poser ses cartes. Onze langues, gratuit. Sortie le 8 octobre 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Essayer dans le navigateur", defis: "casse-têtes", langues: "langues", joueurs: "joueurs en ligne", horsligne: "Hors ligne contre l'ordinateur", site: "Tout sur Ramio", prepa: "En préparation", dev: "en développement", studio: "Le studio", studio1: "Quintain Games est un petit studio de taille familiale, à Angers. On fabrique des jeux que l'on aime et auxquels on aimerait jouer.", studio2: "La quintaine de l'emblème est la cible d'entraînement des chevaliers : on y revient, on s'y frotte, on progresse.", presse: "Espace presse", presse2: "kit, visuels, chiffres", ecrire: "Nous écrire", pied: "Quintain Games · Angers, France", legal: "Mentions légales", conf: "Confidentialité", legalPage: "mentions-legales", confPage: "politique-confidentialite" },
+      en: { nom: "English", page: "en", tag: "Independent game studio, made in France.", sous: "Manipulation rummy, online, with family or friends.", pitch: "The card game many have played without knowing its name: you take apart and rebuild the whole table to lay down your cards. Eleven languages, free. Release on 8 October 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Try it in your browser", defis: "puzzles", langues: "languages", joueurs: "players online", horsligne: "Offline against the computer", site: "All about Ramio", prepa: "In the works", dev: "in development", studio: "The studio", studio1: "Quintain Games is a small, family-sized studio in France. We make games we love and would want to play ourselves.", studio2: "The quintain in the emblem is the knights' training target: you come back to it, you take it on, you get better.", presse: "Press", presse2: "kit, visuals, figures", ecrire: "Write to us", pied: "Quintain Games · France", legal: "Legal notice", conf: "Privacy", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      es: { nom: "Español", page: "es", tag: "Estudio de juegos independiente, hecho en Francia.", sous: "El rummy ladrón, en línea, en familia o entre amigos.", pitch: "El juego de cartas al que muchos han jugado sin saber su nombre: se desmonta y se recompone toda la mesa para bajar las cartas. Once idiomas, gratis. Lanzamiento el 8 de octubre de 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Probar en el navegador", defis: "rompecabezas", langues: "idiomas", joueurs: "jugadores en línea", horsligne: "Sin conexión contra el ordenador", site: "Todo sobre Ramio", prepa: "En preparación", dev: "en desarrollo", studio: "El estudio", studio1: "Quintain Games es un pequeño estudio de tamaño familiar, en Francia. Hacemos juegos que nos gustan y a los que nos gustaría jugar.", studio2: "La quintana del emblema es el blanco de entrenamiento de los caballeros: se vuelve a ella, se la enfrenta, se progresa.", presse: "Prensa", presse2: "kit, visuales, cifras", ecrire: "Escríbenos", pied: "Quintain Games · Francia", legal: "Aviso legal", conf: "Privacidad", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      de: { nom: "Deutsch", page: "de", tag: "Unabhängiges Spielestudio, gemacht in Frankreich.", sous: "Räuber-Rommé, online, mit Familie oder Freunden.", pitch: "Das Kartenspiel, das viele gespielt haben, ohne seinen Namen zu kennen: Man baut den ganzen Tisch um, um seine Karten abzulegen. Elf Sprachen, kostenlos. Erscheint am 8. Oktober 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Im Browser ausprobieren", defis: "Rätsel", langues: "Sprachen", joueurs: "Spieler online", horsligne: "Offline gegen den Computer", site: "Alles über Ramio", prepa: "In Arbeit", dev: "in Entwicklung", studio: "Das Studio", studio1: "Quintain Games ist ein kleines Studio in Familiengröße, in Frankreich. Wir machen Spiele, die wir mögen und selbst gern spielen würden.", studio2: "Die Quintaine im Emblem ist das Übungsziel der Ritter: Man kehrt zu ihr zurück, stellt sich ihr, wird besser.", presse: "Presse", presse2: "Kit, Bilder, Zahlen", ecrire: "Schreib uns", pied: "Quintain Games · Frankreich", legal: "Impressum", conf: "Datenschutz", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      it: { nom: "Italiano", page: "it", tag: "Studio di giochi indipendente, fatto in Francia.", sous: "Il Machiavelli, online, in famiglia o tra amici.", pitch: "Il gioco di carte a cui molti hanno giocato senza conoscerne il nome: si smonta e si ricompone tutto il tavolo per calare le proprie carte. Undici lingue, gratis. Uscita l'8 ottobre 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Prova nel browser", defis: "rompicapi", langues: "lingue", joueurs: "giocatori online", horsligne: "Offline contro il computer", site: "Tutto su Ramio", prepa: "In preparazione", dev: "in sviluppo", studio: "Lo studio", studio1: "Quintain Games è un piccolo studio a misura di famiglia, in Francia. Facciamo giochi che amiamo e a cui vorremmo giocare noi stessi.", studio2: "La quintana dell'emblema è il bersaglio d'allenamento dei cavalieri: ci si torna, ci si misura, si migliora.", presse: "Stampa", presse2: "kit, immagini, cifre", ecrire: "Scrivici", pied: "Quintain Games · Francia", legal: "Note legali", conf: "Privacy", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      pt: { nom: "Português", page: "pt", tag: "Estúdio de jogos independente, feito na França.", sous: "O mexe-mexe, online, em família ou entre amigos.", pitch: "O jogo de cartas que muitos jogaram sem saber o nome: desmonta-se e recompõe-se toda a mesa para baixar as cartas. Onze idiomas, grátis. Lançamento em 8 de outubro de 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Experimentar no navegador", defis: "quebra-cabeças", langues: "idiomas", joueurs: "jogadores online", horsligne: "Offline contra o computador", site: "Tudo sobre o Ramio", prepa: "Em preparação", dev: "em desenvolvimento", studio: "O estúdio", studio1: "A Quintain Games é um pequeno estúdio de tamanho familiar, na França. Fazemos jogos de que gostamos e que gostaríamos de jogar.", studio2: "A quintana do emblema é o alvo de treino dos cavaleiros: volta-se a ela, enfrenta-se, progride-se.", presse: "Imprensa", presse2: "kit, imagens, números", ecrire: "Escreva para nós", pied: "Quintain Games · França", legal: "Aviso legal", conf: "Privacidade", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      pl: { nom: "Polski", page: "pl", tag: "Niezależne studio gier, tworzone we Francji.", sous: "Remik złodziej, online, z rodziną lub przyjaciółmi.", pitch: "Gra karciana, w którą wielu grało, nie znając jej nazwy: rozkłada się i układa na nowo cały stół, by wyłożyć swoje karty. Jedenaście języków, za darmo. Premiera 8 października 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Wypróbuj w przeglądarce", defis: "łamigłówek", langues: "języków", joueurs: "graczy online", horsligne: "Offline przeciwko komputerowi", site: "Wszystko o Ramio", prepa: "W przygotowaniu", dev: "w przygotowaniu", studio: "Studio", studio1: "Quintain Games to małe, rodzinne studio we Francji. Robimy gry, które lubimy i w które sami chcielibyśmy grać.", studio2: "Kwintana z emblematu to cel treningowy rycerzy: wraca się do niej, mierzy z nią, robi postępy.", presse: "Prasa", presse2: "zestaw, grafiki, liczby", ecrire: "Napisz do nas", pied: "Quintain Games · Francja", legal: "Nota prawna", conf: "Prywatność", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      tr: { nom: "Türkçe", page: "tr", tag: "Bağımsız oyun stüdyosu, Fransa'da yapıldı.", sous: "Hırsız remi, çevrimiçi, aileyle veya arkadaşlarla.", pitch: "Birçok kişinin adını bilmeden oynadığı kart oyunu: kartlarınızı yere indirmek için tüm masayı bozup yeniden kurarsınız. On bir dil, ücretsiz. Çıkış 8 Ekim 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Tarayıcıda dene", defis: "bulmaca", langues: "dil", joueurs: "çevrimiçi oyuncu", horsligne: "Bilgisayara karşı çevrimdışı", site: "Ramio hakkında her şey", prepa: "Hazırlanıyor", dev: "geliştiriliyor", studio: "Stüdyo", studio1: "Quintain Games, Fransa'da aile büyüklüğünde küçük bir stüdyo. Sevdiğimiz ve kendimizin de oynamak isteyeceği oyunlar yapıyoruz.", studio2: "Amblemdeki kentin, şövalyelerin antrenman hedefidir: ona dönülür, onunla boy ölçüşülür, ilerlenir.", presse: "Basın", presse2: "kit, görseller, rakamlar", ecrire: "Bize yazın", pied: "Quintain Games · Fransa", legal: "Yasal bildirim", conf: "Gizlilik", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      ro: { nom: "Română", page: "ro", tag: "Studio de jocuri independent, făcut în Franța.", sous: "Remi hoț, online, în familie sau între prieteni.", pitch: "Jocul de cărți pe care mulți l-au jucat fără să-i știe numele: desfaci și recompui toată masa ca să-ți așezi cărțile. Unsprezece limbi, gratuit. Lansare pe 8 octombrie 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Încearcă în browser", defis: "puzzle-uri", langues: "limbi", joueurs: "jucători online", horsligne: "Offline împotriva calculatorului", site: "Totul despre Ramio", prepa: "În pregătire", dev: "în dezvoltare", studio: "Studioul", studio1: "Quintain Games este un mic studio de mărimea unei familii, în Franța. Facem jocuri care ne plac și la care ne-ar plăcea să jucăm.", studio2: "Quintana din emblemă este ținta de antrenament a cavalerilor: te întorci la ea, te măsori cu ea, progresezi.", presse: "Presă", presse2: "kit, imagini, cifre", ecrire: "Scrie-ne", pied: "Quintain Games · Franța", legal: "Mențiuni legale", conf: "Confidențialitate", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      hu: { nom: "Magyar", page: "hu", tag: "Független játékstúdió, Franciaországban készül.", sous: "Tolvaj römi, online, családdal vagy barátokkal.", pitch: "A kártyajáték, amelyet sokan játszottak anélkül, hogy tudták volna a nevét: az egész asztalt szétszeded és újrarakod, hogy lerakd a lapjaidat. Tizenegy nyelv, ingyenes. Megjelenés: 2026. október 8.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "Kipróbálom a böngészőben", defis: "fejtörő", langues: "nyelv", joueurs: "játékos online", horsligne: "Offline a gép ellen", site: "Minden a Ramióról", prepa: "Készülőben", dev: "fejlesztés alatt", studio: "A stúdió", studio1: "A Quintain Games egy kis, családi méretű stúdió Franciaországban. Olyan játékokat készítünk, amelyeket szeretünk, és amelyekkel magunk is szívesen játszanánk.", studio2: "Az embléma kvintánja a lovagok gyakorlócélpontja: visszatérsz hozzá, megmérkőzöl vele, fejlődsz.", presse: "Sajtó", presse2: "csomag, képek, számok", ecrire: "Írj nekünk", pied: "Quintain Games · Franciaország", legal: "Jogi nyilatkozat", conf: "Adatvédelem", legalPage: "mentions-legales", confPage: "privacy-policy" },
+      ar: { nom: "العربية", page: "ar", tag: "استوديو ألعاب مستقل، صُنع في فرنسا.", sous: "رمي اللص، عبر الإنترنت، مع العائلة أو الأصدقاء.", pitch: "لعبة الورق التي لعبها كثيرون دون معرفة اسمها: تفكّك الطاولة كلها وتعيد تركيبها لتنزل أوراقك. إحدى عشرة لغة، مجانًا. الإصدار في 8 أكتوبر 2026.", android: "Android · Google Play", iphone: "iPhone · TestFlight", essayer: "جرّبها في المتصفح", defis: "أحجية", langues: "لغة", joueurs: "لاعبون عبر الإنترنت", horsligne: "دون اتصال ضد الحاسوب", site: "كل شيء عن Ramio", prepa: "قيد التحضير", dev: "قيد التطوير", studio: "الاستوديو", studio1: "Quintain Games استوديو صغير بحجم عائلة، في فرنسا. نصنع ألعابًا نحبها ونودّ أن نلعبها نحن أيضًا.", studio2: "الكوينتين في الشعار هو هدف تدريب الفرسان: تعود إليه، تواجهه، تتقدم.", presse: "الصحافة", presse2: "ملف، صور، أرقام", ecrire: "راسلنا", pied: "Quintain Games · فرنسا", legal: "الإشعار القانوني", conf: "الخصوصية", legalPage: "mentions-legales", confPage: "privacy-policy" }
     };
     var ordre = ["fr", "en", "es", "de", "it", "pt", "pl", "tr", "ro", "hu", "ar"];
     var params = new URLSearchParams(location.search);
@@ -102,18 +164,19 @@
       var v = t[el.getAttribute("data-t")];
       if (v) el.textContent = v;
     });
-    document.getElementById("meta-desc").setAttribute("content", "Quintain Games — " + t.tag + " " + t.ramio);
+    document.getElementById("meta-desc").setAttribute("content", "Quintain Games — " + t.tag + " Ramio : " + t.sous);
     document.getElementById("lien-ramio").href = "/ramio/" + t.page;
-    var nav = document.getElementById("langues");
-    ordre.forEach(function (code, i) {
-      var a = document.createElement("a");
-      a.href = "?lang=" + code;
-      a.textContent = T[code].nom;
-      a.lang = code;
-      if (code === lang) a.setAttribute("aria-current", "true");
-      nav.appendChild(a);
-      if (i < ordre.length - 1) nav.appendChild(document.createTextNode(" · "));
+    document.getElementById("lien-legal").href = "/ramio/" + t.legalPage;
+    document.getElementById("lien-conf").href = "/ramio/" + t.confPage;
+    document.getElementById("lien-presse").hidden = lang !== "fr";
+    var sel = document.getElementById("langues");
+    ordre.forEach(function (code) {
+      var o = document.createElement("option");
+      o.value = code; o.textContent = T[code].nom; o.lang = code;
+      if (code === lang) o.selected = true;
+      sel.appendChild(o);
     });
+    sel.addEventListener("change", function () { location.search = "?lang=" + sel.value; });
   </script>
 </body>
 </html>
