@@ -7,7 +7,9 @@
   <meta name="description" id="meta-desc" content="Quintain Games, studio de jeux indépendant à Angers : Ramio, le rami voleur en application. Meldfall et Unhorsed en développement.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <meta name="theme-color" content="#F3F1EA">
+  <link rel="preload" href="/assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/studio.css">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Quintain Games">
   <meta property="og:description" content="Ramio, le rami voleur en application. Studio de jeux indépendant.">
@@ -16,60 +18,10 @@
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
-  <style>
-    :root { --fond: #0F1D31; --fond2: #12253C; --carte: #182F4B; --ligne: #2A4262; --ivoire: #F3F1EA; --texte: #C9D2DF; --gris: #8FA0B6; --laiton: #F2A03D; --sable: #E7C79A; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--fond); color: var(--ivoire); font-family: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; font-size: 17px; line-height: 1.5; }
-    main { max-width: 960px; margin: 0 auto; padding: 28px 20px 56px; }
-    h1, h2, h3 { font-family: "Fraunces", Georgia, "Times New Roman", serif; font-weight: 600; margin: 0; text-wrap: balance; }
-    h1 { font-size: 1.6em; letter-spacing: .08em; }
-    h2 { font-size: 1.35em; color: var(--sable); margin-bottom: 14px; }
-    p { margin: 0 0 10px; max-width: 62ch; }
-    a { color: var(--laiton); }
-    a:focus-visible, select:focus-visible { outline: 2px solid var(--laiton); outline-offset: 2px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
-    .marque { display: flex; align-items: center; gap: 16px; }
-    .embleme { width: 56px; height: 56px; color: var(--ivoire); flex: none; }
-    .embleme circle { stroke: var(--laiton); }
-    .tag { color: var(--gris); font-size: .95em; margin: 2px 0 0; }
-    select.langue { font: inherit; font-size: .85em; color: var(--ivoire); background: var(--fond2); border: 1px solid var(--ligne); border-radius: 999px; padding: 6px 12px; }
-    .vitrine { border-radius: 18px; overflow: hidden; background: var(--carte); border: 1px solid var(--ligne); }
-    .vitrine .visuel { position: relative; aspect-ratio: 2160 / 700; max-width: 100%; background: #6b3f21 url("/ramio/assets/ramio-bandeau.jpg") center / cover no-repeat; }
-    .vitrine .visuel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,29,49,0) 40%, rgba(24,47,75,.92) 100%); }
-    .vitrine .icone { position: absolute; inset-inline-start: 22px; bottom: -26px; width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 8px 22px rgba(0,0,0,.4); z-index: 1; border: 2px solid var(--carte); }
-    .vitrine .corps { padding: 40px 22px 22px; }
-    .vitrine h2 { font-size: 2em; color: var(--ivoire); margin: 0 0 2px; }
-    .sous { color: var(--sable); font-family: "Fraunces", Georgia, serif; font-size: 1.15em; margin-bottom: 10px; }
-    .boutons { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 14px; }
-    .bouton { display: inline-flex; align-items: center; padding: 11px 18px; border-radius: 10px; background: var(--laiton); color: #08111f; font-weight: 600; text-decoration: none; }
-    .bouton.second { background: transparent; color: var(--ivoire); border: 1.5px solid var(--gris); }
-    .reperes { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--gris); font-size: .92em; }
-    .reperes b { color: var(--ivoire); font-weight: 600; font-variant-numeric: tabular-nums; }
-    .section { margin-top: 40px; }
-    .grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-    .jeu { background: var(--fond2); border: 1px solid var(--ligne); border-radius: 14px; padding: 18px 20px; }
-    .jeu h3 { font-size: 1.2em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .jeu p { color: var(--texte); font-size: .95em; margin: 6px 0 0; }
-    .dev { font-family: "Source Sans 3", sans-serif; font-size: .68em; letter-spacing: .12em; text-transform: uppercase; color: var(--gris); border: 1px solid var(--ligne); border-radius: 999px; padding: 2px 9px; font-weight: 600; }
-    .studio { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
-    .studio p { color: var(--texte); }
-    .liens { display: grid; gap: 8px; font-size: .95em; }
-    .liens a { display: flex; justify-content: space-between; gap: 10px; padding: 10px 14px; border: 1px solid var(--ligne); border-radius: 10px; color: var(--ivoire); text-decoration: none; }
-    .liens a span:last-child { color: var(--gris); }
-    footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--ligne); color: var(--gris); font-size: .9em; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-    footer a { color: var(--gris); }
-    [hidden] { display: none !important; }
-    @media (max-width: 640px) {
-      .studio { grid-template-columns: 1fr; }
-      .vitrine .corps { padding-top: 34px; }
-      .vitrine .icone { width: 64px; height: 64px; border-radius: 16px; bottom: -20px; inset-inline-start: 16px; }
-      .vitrine .visuel { background-image: url("/ramio/assets/ramio-bandeau-mobile.jpg"); aspect-ratio: 16 / 9; }
-    }
-  </style>
 </head>
 <body>
   <main>
-    <header>
+    <header class="entete">
       <div class="marque">
         <svg class="embleme" viewBox="96 120 832 832" role="img" aria-label="Emblème Quintain Games">
           <g fill="none" stroke="currentColor" stroke-width="36" stroke-linecap="butt" stroke-linejoin="round">
@@ -89,15 +41,14 @@
     </header>
 
     <section class="vitrine" aria-label="Ramio">
-      <div class="visuel"><img class="icone" src="/assets/ramio-icone-512.png" alt=""></div>
-      <div class="corps">
+      <div>
         <h2>Ramio</h2>
         <p class="sous" data-t="sous">Le rami voleur, en ligne, en famille ou entre amis.</p>
-        <p data-t="pitch">Le jeu de cartes auquel beaucoup ont joué sans en connaître le nom : on démonte et on recompose toute la table pour poser ses cartes. Onze langues, gratuit. Sortie le 8 octobre 2026.</p>
-        <div class="boutons">
-          <a class="bouton" href="https://play.google.com/store/apps/details?id=com.ramio" data-t="android">Android · Google Play</a>
-          <a class="bouton" href="https://testflight.apple.com/join/X8tt9MQw" data-t="iphone">iPhone · TestFlight</a>
-          <a class="bouton second" href="/ramio/defi/?defi=1dbcleh&amp;couleurs=4&amp;src=accueil" data-t="essayer">Essayer dans le navigateur</a>
+        <p class="pitch" data-t="pitch">Le jeu de cartes auquel beaucoup ont joué sans en connaître le nom : on démonte et on recompose toute la table pour poser ses cartes. Onze langues, gratuit. Sortie le 8 octobre 2026.</p>
+        <div class="actions">
+          <a class="bouton" id="essayer" href="/ramio/defi/?defi=jour&amp;couleurs=4&amp;src=accueil" data-t="essayer">Essayer dans le navigateur</a>
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img id="badge-play" src="/ramio/assets/badge-play-fr.png" alt="Android · Google Play" width="163" height="48"></a>
+          <a class="bouton second" href="https://testflight.apple.com/join/X8tt9MQw" data-t="iphone">iPhone · TestFlight</a>
         </div>
         <div class="reperes">
           <span><b>670</b> <span data-t="defis">casse-têtes</span></span>
@@ -107,18 +58,19 @@
           <span><a href="/ramio/" id="lien-ramio" data-t="site">Tout sur Ramio</a></span>
         </div>
       </div>
+      <div class="visuel"><img class="icone" src="/assets/ramio-icone-512.png" alt=""></div>
     </section>
 
     <section class="section">
-      <h2 data-t="prepa">En préparation</h2>
-      <div class="grille">
+      <div class="titre"><h2 data-t="prepa">En préparation</h2></div>
+      <div class="jeux">
         <div class="jeu"><h3>Meldfall <span class="dev" data-t="dev">en développement</span></h3><p data-t="meldfall">Un jeu de cartes solo, calme et exigeant. Bêta fermée en cours.</p></div>
         <div class="jeu"><h3>Unhorsed <span class="dev" data-t="dev">en développement</span></h3></div>
       </div>
     </section>
 
-    <section class="section studio">
-      <div>
+    <section class="studio">
+      <div class="titre">
         <h2 data-t="studio">Le studio</h2>
         <p data-t="studio1">Quintain Games est un petit studio de taille familiale, à Angers. On fabrique des jeux que l'on aime et auxquels on aimerait jouer.</p>
         <p data-t="studio2">La quintaine de l'emblème est la cible d'entraînement des chevaliers : on y revient, on s'y frotte, on progresse.</p>
@@ -129,7 +81,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="pied">
       <span data-t="pied">Quintain Games · Angers, France</span>
       <span><a href="/mentions-legales" data-t="legal">Mentions légales</a> · <a href="/confidentialite" data-t="conf">Confidentialité</a></span>
     </footer>
@@ -165,6 +117,10 @@
     });
     document.getElementById("meta-desc").setAttribute("content", "Quintain Games — " + t.tag + " Ramio : " + t.sous);
     document.getElementById("lien-ramio").href = "/ramio/" + t.page;
+    document.getElementById("essayer").href = "/ramio/defi/?defi=jour&couleurs=4&lang=" + lang + "&src=accueil";
+    var badge = document.getElementById("badge-play");
+    badge.src = "/ramio/assets/badge-play-" + lang + ".png";
+    badge.alt = t.android;
     document.getElementById("lien-presse").hidden = lang !== "fr";
     var sel = document.getElementById("langues");
     ordre.forEach(function (code) {
