@@ -46,10 +46,11 @@
         <p class="sous" data-t="sous">Le rami voleur, en ligne, en famille ou entre amis.</p>
         <p class="pitch" data-t="pitch">Le jeu de cartes auquel beaucoup ont joué sans en connaître le nom : on démonte et on recompose toute la table pour poser ses cartes. Onze langues, gratuit. Sortie le 8 octobre 2026.</p>
         <div class="actions">
-          <a class="bouton" id="essayer" href="/ramio/defi/?defi=jour&amp;couleurs=4&amp;src=accueil" data-t="essayer">Essayer dans le navigateur</a>
           <a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img id="badge-play" src="/ramio/assets/badge-play-fr.png" alt="Android · Google Play" width="163" height="48"></a>
+          <a class="badge" href="https://apps.apple.com/app/id6788317282"><img id="badge-appstore" src="/ramio/assets/badge-appstore-fr.svg" alt="iPhone · App Store" height="48"></a>
           <a class="bouton second" href="https://testflight.apple.com/join/X8tt9MQw" data-t="iphone">iPhone · TestFlight</a>
         </div>
+        <p class="essai"><a id="essayer" href="/ramio/defi/?defi=jour&amp;couleurs=4&amp;src=accueil" data-t="essayer">Essayer dans le navigateur</a></p>
         <div class="reperes">
           <span><b>670</b> <span data-t="defis">casse-têtes</span></span>
           <span><b>11</b> <span data-t="langues">langues</span></span>
@@ -121,6 +122,7 @@
     var badge = document.getElementById("badge-play");
     badge.src = "/ramio/assets/badge-play-" + lang + ".png";
     badge.alt = t.android;
+    document.getElementById("badge-appstore").src = "/ramio/assets/badge-appstore-" + lang + ".svg";
     document.getElementById("lien-presse").hidden = lang !== "fr";
     var sel = document.getElementById("langues");
     ordre.forEach(function (code) {

@@ -42,6 +42,8 @@ select.langue { font: inherit; font-size: .9em; color: var(--encre); background:
 .bouton.second { background: transparent; color: var(--encre); border: 1.5px solid var(--gris); }
 .badge { display: inline-flex; border-radius: 8px; }
 .badge img { display: block; height: 48px; width: auto; }
+.essai { margin-top: 10px; font-size: .92em; }
+.essai a { color: var(--gris); }
 .reperes { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 18px; color: var(--gris); font-size: .92em; }
 .reperes b { color: var(--encre); font-weight: 600; font-variant-numeric: tabular-nums; }
 
