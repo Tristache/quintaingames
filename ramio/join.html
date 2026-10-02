@@ -139,9 +139,20 @@
     var de = (params.get("de") || "").slice(0, 20);
     var src = clean(params.get("src"), 40);
 
+    // ÉVÉNEMENT DES STORES (2026-10-01) : lien de l'événement Apple et du
+    // contenu promotionnel Play (?evenement=halloween), ouvert dans l'app
+    // par parseEvenementUri. Sans l'app, la page dit l'événement, puis un
+    // message neutre après la fin (heure locale du navigateur). Un
+    // événement inconnu est ignoré (comportement d'avant).
+    var FINS_EVENEMENT = { halloween: new Date(2026, 10, 5) };
+    var evenement = clean(params.get("evenement"), 20).toLowerCase();
+    if (!Object.prototype.hasOwnProperty.call(FINS_EVENEMENT, evenement)) evenement = "";
+    var evenementFini = !!evenement && new Date() >= FINS_EVENEMENT[evenement];
 
     var cas = ami ? "ami" : defi ? (temps ? "beat" : "puzzle") :
+      evenement && !code ? "evenement" :
       type === "course" ? "course" : type === "differe" ? "differe" : "salon";
+    var campagne = cas === "evenement" ? "evenement-" + evenement : cas;
 
     var L = {
       "fr": {
@@ -394,6 +405,77 @@
     var T = L[lang];
     T.ami = de ? T.amiDe.replace("{de}", de) : T.ami;
 
+    // Textes de l'événement Halloween (titre = halTitre de l'app).
+    var LE = {
+      "fr": {
+        "titre": "La table hantée",
+        "note": "Installe Ramio : dix cadeaux t'attendent du 22 octobre au 4 novembre, sans rien acheter. Une fois l'app installée, ce lien ouvre directement le calendrier.",
+        "fini": "L'événement d'Halloween est terminé. Ramio reste à installer : le rami voleur en ligne ou hors ligne, avec un défi chaque jour.",
+        "appstore": "iPhone : Ramio sur l'App Store"
+      },
+      "en": {
+        "titre": "The Haunted Table",
+        "note": "Install Ramio: ten gifts await you from October 22 to November 4, nothing to buy. Once the app is installed, this link opens the calendar directly.",
+        "fini": "The Halloween event is over. Ramio is still here to install: Manipulation Rummy online or offline, with a daily puzzle.",
+        "appstore": "iPhone: get Ramio on the App Store"
+      },
+      "es": {
+        "titre": "La mesa embrujada",
+        "note": "Instala Ramio: diez regalos te esperan del 22 de octubre al 4 de noviembre, sin comprar nada. Con la app instalada, este enlace abre directamente el calendario.",
+        "fini": "El evento de Halloween ha terminado. Ramio sigue disponible: rummy en línea o sin conexión, con un desafío cada día.",
+        "appstore": "iPhone: instalar Ramio desde el App Store"
+      },
+      "de": {
+        "titre": "Der Spuktisch",
+        "note": "Installiere Ramio: Vom 22. Oktober bis 4. November warten zehn Geschenke auf dich, ohne etwas zu kaufen. Ist die App installiert, öffnet dieser Link direkt den Kalender.",
+        "fini": "Das Halloween-Event ist vorbei. Ramio kannst du weiterhin installieren: Räuber-Rommé online oder offline, mit einem Tagesrätsel.",
+        "appstore": "iPhone: Ramio im App Store laden"
+      },
+      "it": {
+        "titre": "Il tavolo stregato",
+        "note": "Installa Ramio: dieci regali ti aspettano dal 22 ottobre al 4 novembre, senza comprare nulla. Con l'app installata, questo link apre direttamente il calendario.",
+        "fini": "L'evento di Halloween è finito. Ramio resta disponibile: Machiavelli online o offline, con una sfida al giorno.",
+        "appstore": "iPhone: installa Ramio dall'App Store"
+      },
+      "pt": {
+        "titre": "A mesa assombrada",
+        "note": "Instale o Ramio: dez presentes esperam por você de 22 de outubro a 4 de novembro, sem comprar nada. Com o app instalado, este link abre direto o calendário.",
+        "fini": "O evento de Halloween terminou. O Ramio continua disponível: Mexe-Mexe online ou offline, com um desafio por dia.",
+        "appstore": "iPhone: instalar o Ramio pela App Store"
+      },
+      "pl": {
+        "titre": "Nawiedzony stół",
+        "note": "Zainstaluj Ramio: od 22 października do 4 listopada czeka na Ciebie dziesięć prezentów, bez kupowania. Gdy aplikacja jest zainstalowana, ten link od razu otwiera kalendarz.",
+        "fini": "Wydarzenie Halloween dobiegło końca. Ramio nadal możesz zainstalować: remik online i offline, z łamigłówką dnia.",
+        "appstore": "iPhone: zainstaluj Ramio z App Store"
+      },
+      "tr": {
+        "titre": "Perili masa",
+        "note": "Ramio'yu yükle: 22 Ekim ile 4 Kasım arasında seni on hediye bekliyor, hiçbir şey satın almadan. Uygulama yüklüyse bu bağlantı takvimi doğrudan açar.",
+        "fini": "Cadılar Bayramı etkinliği sona erdi. Ramio'yu yine de yükleyebilirsin: çevrimiçi ya da çevrimdışı Remi, her gün bir bulmaca.",
+        "appstore": "iPhone: Ramio'yu App Store'dan yükle"
+      },
+      "ro": {
+        "titre": "Masa bântuită",
+        "note": "Instalează Ramio: zece cadouri te așteaptă între 22 octombrie și 4 noiembrie, fără să cumperi nimic. Cu aplicația instalată, acest link deschide direct calendarul.",
+        "fini": "Evenimentul de Halloween s-a încheiat. Ramio rămâne disponibil: remi online sau offline, cu o provocare în fiecare zi.",
+        "appstore": "iPhone: instalează Ramio din App Store"
+      },
+      "hu": {
+        "titre": "A kísértetasztal",
+        "note": "Telepítsd a Ramiót: október 22. és november 4. között tíz ajándék vár rád, vásárlás nélkül. Ha az app telepítve van, ez a link közvetlenül a naptárat nyitja meg.",
+        "fini": "A halloweeni esemény véget ért. A Ramio továbbra is telepíthető: rablórömi online vagy offline, napi kihívással.",
+        "appstore": "iPhone: Ramio letöltése az App Store-ból"
+      },
+      "ar": {
+        "titre": "الطاولة المسكونة",
+        "note": "ثبّت Ramio: عشر هدايا بانتظارك من 22 أكتوبر إلى 4 نوفمبر، دون شراء أي شيء. إذا كان التطبيق مثبّتًا، يفتح هذا الرابط التقويم مباشرة.",
+        "fini": "انتهت فعالية الهالوين. لا يزال بإمكانك تثبيت Ramio: رمي عبر الإنترنت أو دون اتصال، مع تحدٍّ كل يوم.",
+        "appstore": "iPhone: ثبّت Ramio من App Store"
+      }
+    };
+    T.evenement = LE[lang].titre;
+
     var el = function (id) { return document.getElementById(id); };
     document.title = T[cas] + " - Ramio";
     el("titre").textContent = T[cas];
@@ -410,7 +492,17 @@
       el("code-intro").style.display = "none";
       el("code").style.display = "none";
       el("note").textContent = cas === "ami" ? T.noteAmi :
-        cas === "beat" ? T.noteBeat : cas === "puzzle" ? T.notePuzzle : T.noteSalon;
+        cas === "beat" ? T.noteBeat : cas === "puzzle" ? T.notePuzzle :
+        cas === "evenement" ? (evenementFini ? LE[lang].fini : LE[lang].note) : T.noteSalon;
+    }
+
+    // Événement : publié avec la version des stores, donc plus de bêta ;
+    // l'iPhone va à l'App Store du pays de la langue, pas à TestFlight.
+    if (cas === "evenement") {
+      el("beta").style.display = "none";
+      var vitrine = { en: "us", pt: "br", ar: "sa" }[lang] || lang;
+      el("ios").href = "https://apps.apple.com/" + vitrine + "/app/id6788317282";
+      el("ios").textContent = LE[lang].appstore;
     }
 
     // DUEL SANS INSTALLATION (2026-09-09) : un défi (posté ou « bats mon
@@ -430,7 +522,7 @@
     }
 
     // Referrer Play : canal + ce que l'app doit reprendre après l'install.
-    var utm = "utm_source=" + (src || "lien") + "&utm_medium=rejoindre&utm_campaign=" + cas;
+    var utm = "utm_source=" + (src || "lien") + "&utm_medium=rejoindre&utm_campaign=" + campagne;
     if (ami) utm += "&ami=" + ami;
     if (defi) utm += "&defi=" + defi;
     el("play").href = "https://play.google.com/store/apps/details?id=com.ramio&referrer=" +
@@ -465,12 +557,12 @@
             Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprcmthaW1yeWJ4YmRyem54aHh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDkzMTYsImV4cCI6MjA5NjY4NTMxNn0.28Ns814SQSFXaKRR0-ZrHoX1G8Cpnhf6sNCZ6kgtAio",
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ p_kind: kind, p_src: src || "rejoindre-" + cas, p_lang: lang, p_ref: "" })
+          body: JSON.stringify({ p_kind: kind, p_src: src || "rejoindre-" + campagne, p_lang: lang, p_ref: "" })
         }).catch(function () {});
       } catch (e) {}
     };
     el("play").addEventListener("click", function () { log("play"); });
-    el("ios").addEventListener("click", function () { log("testflight"); });
+    el("ios").addEventListener("click", function () { log(cas === "evenement" ? "appstore" : "testflight"); });
     log("visit");
   </script>
 </body>
