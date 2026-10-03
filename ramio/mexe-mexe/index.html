@@ -119,7 +119,7 @@
 
       <h2>O Ramio no celular</h2>
 
-      <p>O app está em <strong>beta aberto</strong> e é grátis: salas privadas com
+      <p>O app é <strong>grátis</strong>: salas privadas com
       código de 6 caracteres, partidas públicas, solo contra o computador em
       quatro níveis (até sem internet), mais de 300 quebra-cabeças de
       reorganização, um desafio do dia igual para todos e duelos de
@@ -129,13 +129,9 @@
         <a class="cta" href="https://play.google.com/store/apps/details?id=com.ramio">
           Android — baixe no Google Play
         </a>
-        <a class="cta" href="https://testflight.apple.com/join/X8tt9MQw">
-          iPhone — entre no beta pelo TestFlight
+        <a class="cta" href="https://apps.apple.com/br/app/id6788317282">
+          iPhone — baixe na App Store
         </a>
-      </p>
-
-      <p align="center" class="discret">
-        No iPhone, o beta é distribuído pelo app TestFlight da Apple.
       </p>
 
       <p align="center">
@@ -148,8 +144,7 @@
       <div class="encadre">
         <p><strong>Contas fundadoras.</strong> As 1.000 primeiras contas criadas
         antes do dia 8 de outubro de 2026 ficam com o premium para sempre,
-        além de uma moldura de avatar exclusiva e do seu número de fundador.
-        Quem começa agora, no beta, está dentro.</p>
+        além de uma moldura de avatar exclusiva e do seu número de fundador.</p>
       </div>
 
       <h2>Mais sobre o Ramio</h2>
@@ -173,7 +168,7 @@
           var API = 'https://zkrkaimrybxbdrznxhxx.supabase.co/rest/v1/rpc/log_site_visit';
           var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprcmthaW1yeWJ4YmRyem54aHh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDkzMTYsImV4cCI6MjA5NjY4NTMxNn0.28Ns814SQSFXaKRR0-ZrHoX1G8Cpnhf6sNCZ6kgtAio';
           var PLAY = 'https://play.google.com/store/apps/details?id=com.ramio';
-          var TESTFLIGHT = 'https://testflight.apple.com/join/';
+          var APPSTORE = 'https://apps.apple.com/';
           var LANG = 'pt';
           var src = 'landing-pt';
           try {
@@ -200,8 +195,8 @@
               a.href = PLAY + '&referrer=' + encodeURIComponent(
                 'utm_source=' + src + '&utm_medium=site&utm_campaign=beta-' + LANG);
               a.addEventListener('click', function () { log('play'); });
-            } else if (a.href.indexOf(TESTFLIGHT) === 0) {
-              a.addEventListener('click', function () { log('testflight'); });
+            } else if (a.href.indexOf(APPSTORE) === 0) {
+              a.addEventListener('click', function () { log('appstore'); });
             }
           }
           log('visit');
