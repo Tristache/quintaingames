@@ -31,7 +31,7 @@ select.langue { font: inherit; font-size: .9em; color: var(--encre); background:
 
 /* Vitrine Ramio : bandeau du jeu, puis texte sur l'ivoire. */
 .vitrine { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
-.visuel { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--ligne); aspect-ratio: 16 / 10; max-width: 100%; background: #6b3f21 url("/ramio/assets/ramio-bandeau-mobile.jpg") center / cover no-repeat; box-shadow: 0 24px 60px rgba(18, 35, 58, .22); }
+.visuel { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--ligne); aspect-ratio: 16 / 10; max-width: 100%; background: #1a2647 url("/assets/ramio-vitrine-nuit.jpg") center / cover no-repeat; box-shadow: 0 24px 60px rgba(18, 35, 58, .22); }
 .visuel .icone { position: absolute; inset-inline-start: 18px; bottom: 18px; width: 72px; height: 72px; border-radius: 18px; border: 2px solid var(--fond); box-shadow: 0 8px 22px rgba(0, 0, 0, .35); }
 .vitrine h2 { font-size: clamp(1.9em, 4vw, 2.5em); line-height: 1.1; margin: 6px 0 6px; }
 .sous { font-size: 1.15em; color: var(--encre); }
