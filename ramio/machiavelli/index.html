@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Machiavelli: regole del gioco di carte, jolly compresi | Ramio</title>
-    <meta name="description" content="Le regole del Machiavelli come le applica Ramio: 13 carte, scale e tris, tavolo da riorganizzare, jolly e punteggio. Con una sfida da provare nel browser.">
+    <title>Machiavelli: regole, jolly e quante carte si danno | Ramio</title>
+    <meta name="description" content="Regole del Machiavelli: quante carte si danno in 2, 3 o 4, come funziona il jolly, se si scarta e come si apre. Con esempi passo passo e una sfida gratis.">
     <link rel="canonical" href="https://quintaingames.com/ramio/machiavelli/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ramio">
     <meta property="og:locale" content="it_IT">
     <meta property="og:url" content="https://quintaingames.com/ramio/machiavelli/">
-    <meta property="og:title" content="Le regole del Machiavelli, jolly compresi — Ramio">
-    <meta property="og:description" content="Il Machiavelli regola per regola: scale, tris, apertura, jolly e punteggio. E una sfida da risolvere subito nel browser, senza installare nulla.">
+    <meta property="og:title" content="Machiavelli: regole, jolly e quante carte si danno">
+    <meta property="og:description" content="Quante carte si danno, se si pesca sempre, come funziona il jolly, come si gioca in due: la regola più diffusa e quella di Ramio a confronto, con esempi e una sfida da risolvere nel browser.">
     <meta property="og:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -46,14 +46,119 @@
         margin: 2rem 0;
       }
       .encadre p { margin-bottom: 0; }
+      /* Due regole affiancate (una sotto l'altra sugli schermi stretti). */
+      .confronto {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin: 1.2rem 0;
+      }
+      @media (min-width: 44em) {
+        .confronto { grid-template-columns: 1fr 1fr; }
+      }
+      .confronto > div {
+        border: 1px solid #b8c4cc;
+        border-radius: 0.5rem;
+        background: #fff;
+        color: #3d474c;
+        padding: 0.9rem 1rem;
+      }
+      .confronto > .ramio { border: 2px solid #155799; background: #f3f6fa; }
+      .confronto ul { margin: 0; padding-left: 1.2em; }
+      .confronto p { margin: 0 0 0.6em; }
+      .confronto p:last-child { margin-bottom: 0; }
+      .etichetta {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #1c2327;
+      }
+      /* Esempi con le carte: quattro colori, seme disegnato, fondo proprio. */
+      .caso {
+        border-left: 4px solid #155799;
+        border-radius: 0 0.5rem 0.5rem 0;
+        background: #f3f6fa;
+        color: #3d474c;
+        padding: 0.7rem 1rem;
+        margin: 1rem 0 1.4rem;
+      }
+      .caso p { margin: 0.5em 0 0; }
+      .riga {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.3rem 0.6rem;
+        margin: 0.4rem 0;
+      }
+      .riga .etichetta { flex: 0 0 5.4em; }
+      .carte { display: inline-flex; flex-wrap: wrap; gap: 3px; }
+      .carta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        min-width: 2.2em;
+        padding: 0.2em 0.3em;
+        border: 1px solid #8a959b;
+        border-radius: 5px;
+        background: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+      .carta svg { width: 0.8em; height: 0.8em; fill: currentColor; }
+      .carta.p { color: #111; }
+      .carta.c { color: #c62828; }
+      .carta.q { color: #1257b0; }
+      .carta.f { color: #1b7a34; }
+      .carta.j {
+        color: #111;
+        border-style: dashed;
+        font-size: 0.78rem;
+        letter-spacing: 0.03em;
+        padding: 0.42em 0.35em;
+      }
+      .carta.m { background: #ffe680; border: 2px solid #111; }
+      .legenda { font-size: 0.9em; }
+      .tabella-stretta th, .tabella-stretta td { padding: 0.45rem 0.6rem; }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://quintaingames.com/ramio/machiavelli/#articolo",
+          "headline": "Machiavelli: le regole del gioco di carte",
+          "description": "Regole del Machiavelli: quante carte si danno in 2, 3 o 4, come funziona il jolly, se si scarta e come si apre. Con esempi passo passo e una sfida gratis.",
+          "inLanguage": "it",
+          "datePublished": "2026-10-12",
+          "dateModified": "2026-10-14",
+          "image": "https://quintaingames.com/ramio/assets/ramio-partie-og.jpg",
+          "mainEntityOfPage": "https://quintaingames.com/ramio/machiavelli/",
+          "author": {"@type": "Organization", "name": "Quintain Games", "url": "https://quintaingames.com/"},
+          "publisher": {"@type": "Organization", "name": "Quintain Games", "url": "https://quintaingames.com/"}
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Quintain Games", "item": "https://quintaingames.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Ramio", "item": "https://quintaingames.com/ramio/it.html"},
+            {"@type": "ListItem", "position": 3, "name": "Regole del Machiavelli", "item": "https://quintaingames.com/ramio/machiavelli/"}
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Vai al contenuto</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">Le regole del Machiavelli</h1>
-      <h2 class="project-tagline">Scale, tris, jolly e un tavolo che è di tutti: le regole che Ramio applica.</h2>
+      <h1 class="project-name">Machiavelli: le regole del gioco di carte</h1>
+      <p class="project-tagline">Quante carte, quando si pesca, come funziona il jolly: la regola più diffusa e quella di Ramio, a confronto.</p>
       <a href="#sfida" class="btn">Risolvi una sfida subito nel browser</a>
     </header>
 
@@ -63,113 +168,532 @@
         <img src="/ramio/assets/ramio-bandeau.jpg" alt="Un tavolo di Ramio di notte nel deserto: scale, tris, un jolly e il mazzo." style="display:block;width:100%;border-radius:12px;margin:0 0 1.5em;">
       </picture>
 
-      <p><strong>Machiavelli</strong> — è il gioco di carte in cui non ti limiti
-      a calare le tue combinazioni: smonti e ricomponi quelle già sul tavolo,
-      comprese quelle degli avversari, finché le tue carte trovano posto.
-      Ramio è proprio questo: online con gli amici, da solo contro il
-      computer, sul telefono o direttamente nel browser.</p>
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+          <symbol id="s-c" viewBox="0 0 24 24"><path d="M12 21.5C5 15.5 2 12 2 8.2a5 5 0 0 1 10-1.7 5 5 0 0 1 10 1.7c0 3.8-3 7.3-10 13.3z"/></symbol>
+          <symbol id="s-q" viewBox="0 0 24 24"><path d="M12 1.5 20 12l-8 10.500L4 12z"/></symbol>
+          <symbol id="s-p" viewBox="0 0 24 24"><path d="M12 1.5c7 6 10 9.500 10 13.300a5 5 0 0 1-9.100 2.800l1.600 4.900h-5l1.600-4.900A5 5 0 0 1 2 14.800c0-3.800 3-7.300 10-13.300z"/></symbol>
+          <symbol id="s-f" viewBox="0 0 24 24"><circle cx="12" cy="6.500" r="4.700"/><circle cx="6.200" cy="14" r="4.700"/><circle cx="17.800" cy="14" r="4.700"/><path d="M12 10l2.600 12.500H9.400z"/></symbol>
+        </defs>
+      </svg>
 
-      <p>Come in molti giochi di carte, ogni tavolo ha le sue abitudini. Qui
-      trovi le regole che Ramio applica, <strong>con o senza jolly</strong>:
-      valgono anche per giocare con due mazzi di carte veri.</p>
+      <p>Il <strong>Machiavelli</strong> (detto anche, con due c,
+      «Macchiavelli») è il gioco di carte in cui non ti limiti a calare le
+      tue combinazioni: smonti e ricomponi quelle già sul tavolo, comprese
+      quelle degli avversari, finché le tue carte trovano posto. Vince chi
+      resta per primo senza carte.</p>
 
-      <p>Se conosci il Rummikub ti sentirai a casa, con due differenze: qui
-      si gioca con le <strong>carte</strong>, non con le tessere, e per aprire
-      non serve un punteggio minimo ma una <strong>scala pulita di
-      tre</strong>.</p>
+      <p>Un regolamento ufficiale non esiste: le regole cambiano da una casa
+      all'altra, e anche le fonti scritte si contraddicono su quante carte
+      dare, su quando pescare e sul jolly. Per questo, a ogni punto, trovi
+      qui due risposte affiancate: la <strong>regola più diffusa</strong> e
+      <strong>come si gioca in Ramio</strong>, l'app gratuita per Android e
+      iPhone in cui si gioca a Machiavelli online, da soli o tra amici.
+      Quella di Ramio è una variante fra le altre, non «la» regola: se
+      giocate con carte vere, mettetevi d'accordo prima di distribuire.</p>
 
-      <h2 id="regole">Le regole, punto per punto</h2>
+      <p>Se conosci il Rummikub ti sentirai a casa: il principio è lo stesso,
+      con le <strong>carte</strong> al posto delle tessere.</p>
 
-      <h3>Carte e giocatori</h3>
+      <h2 id="regole">Le regole in breve: che cosa cambia da un tavolo all'altro</h2>
 
-      <ul>
-        <li>Da <strong>2 a 4 giocatori</strong>.</li>
-        <li><strong>Due mazzi da 52 carte</strong> mescolati insieme: 104
-        carte, oppure 106 con i 2 jolly.</li>
-        <li>Ogni giocatore riceve <strong>13 carte</strong>. Le altre formano
-        il mazzo, coperto: non si scopre nessuna carta e non c'è una pila
-        degli scarti.</li>
-        <li>Il primo a giocare è estratto a sorte nella prima mano, poi
-        cambia a ogni mano.</li>
-      </ul>
+      <table class="tabella-stretta">
+        <thead>
+          <tr><th></th><th>Regola più diffusa</th><th>In Ramio</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Carte a testa</th><td>13 in due, meno se si è di più</td><td>13 per tutti, da 2 a 4 giocatori</td></tr>
+          <tr><th scope="row">Pesca</th><td>solo se non cali nulla</td><td>sempre, a inizio turno</td></tr>
+          <tr><th scope="row">Scarto</th><td>no</td><td>no</td></tr>
+          <tr><th scope="row">Apertura</th><td>libera</td><td>una scala di tre senza jolly</td></tr>
+          <tr><th scope="row">Jolly</th><td>spesso tolti; altrimenti regole variabili</td><td>2 o nessuno; mai ripresi in mano</td></tr>
+          <tr><th scope="row">Fine</th><td>vince chi cala l'ultima carta</td><td>lo stesso, con penalità per le carte rimaste in mano</td></tr>
+        </tbody>
+      </table>
 
-      <h3>Le combinazioni</h3>
+      <h2 id="carte">Quante carte si danno a Machiavelli?</h2>
+
+      <p>Si gioca con <strong>due mazzi di carte francesi da 52</strong>, gli
+      stessi della Scala 40, mescolati insieme: 104 carte, più i jolly se
+      decidete di usarli. Quante darne a testa è il primo punto su cui le
+      fonti non concordano.</p>
+
+      <table class="tabella-stretta">
+        <thead>
+          <tr><th>Giocatori</th><th>Ripartizione più citata</th><th>In Ramio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2</td><td>13 carte a testa</td><td>13 carte a testa</td></tr>
+          <tr><td>3</td><td>9 carte a testa</td><td>13 carte a testa</td></tr>
+          <tr><td>4</td><td>7 carte a testa</td><td>13 carte a testa</td></tr>
+          <tr><td>5 o 6</td><td>5 carte a testa</td><td>non previsto: si gioca da 2 a 4</td></tr>
+        </tbody>
+      </table>
+
+      <p>La ripartizione «a scalare» è la più citata, ma non è la sola:
+      altre fonti danno <strong>13 carte a tutti</strong>, quanti che siano i
+      giocatori, e c'è chi lascia scegliere al tavolo, da 3 a 15 carte.
+      Ramio ne distribuisce 13 a ognuno; in una stanza privata, con
+      l'opzione «Personalizza», chi crea la partita può scegliere <strong>da
+      7 a 15 carte a testa</strong>: abbastanza per ritrovare le 9 carte in
+      tre o le 7 in quattro di casa vostra.</p>
+
+      <p>Le carte che restano formano il mazzo, coperto. In Ramio non si
+      scopre nessuna carta e non c'è un pozzo degli scarti. Il primo a
+      giocare è estratto a sorte nella prima mano, poi cambia a ogni
+      mano.</p>
+
+      <h2 id="pesca">Si pesca sempre o solo se non si cala? E si scarta?</h2>
+
+      <p>È la domanda su cui si discute di più, e le risposte in
+      circolazione sono tre.</p>
+
+      <div class="confronto">
+        <div>
+          <p class="etichetta">Regola più diffusa</p>
+          <ul>
+            <li>Nel tuo turno fai <strong>una sola delle due cose</strong>: o
+            cali almeno una carta, o peschi una carta dal mazzo e passi. Chi
+            riesce a giocare non pesca.</li>
+            <li>Variante molto comune: si pesca <strong>sempre</strong> una
+            carta a inizio turno, poi si cala se si può.</li>
+            <li>Più raro: qualche tavolo gioca con lo <strong>scarto</strong>,
+            come nella Scala 40. La maggior parte non scarta mai.</li>
+          </ul>
+        </div>
+        <div class="ramio">
+          <p class="etichetta">Come si gioca in Ramio</p>
+          <ul>
+            <li><strong>Peschi sempre</strong> una carta all'inizio del turno:
+            nell'app la pescata è automatica.</li>
+            <li>Poi <strong>puoi calare</strong>, se vuoi e se puoi. Calare è
+            facoltativo: puoi anche passare.</li>
+            <li><strong>Non si scarta mai</strong>: la mano si riduce solo
+            calando.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>La differenza pesa. Con la pesca obbligatoria ricevi una carta a
+      ogni turno, anche quando cali: la mano si svuota più lentamente e le
+      carte che ti restano a fine mano costano punti, ma hai più materiale
+      per ricombinare il tavolo.</p>
+
+      <h2 id="apertura">Come si apre: serve un punteggio minimo?</h2>
+
+      <div class="confronto">
+        <div>
+          <p class="etichetta">Regola più diffusa</p>
+          <p>No. Il Machiavelli tradizionale non ha apertura: puoi calare
+          qualsiasi combinazione valida e mettere mano al tavolo fin dal
+          primo turno. I 40 punti per aprire sono la regola della Scala
+          40, non del Machiavelli.</p>
+        </div>
+        <div class="ramio">
+          <p class="etichetta">Come si gioca in Ramio</p>
+          <p>Nessun punteggio minimo, ma una condizione: la tua prima calata
+          deve contenere una <strong>scala pulita di tre</strong>, cioè tre
+          carte consecutive dello stesso seme, <strong>senza jolly</strong>,
+          tutte uscite dalla tua mano. Già in quel turno puoi allungarla
+          (anche con un jolly), calare altre combinazioni e riorganizzare il
+          tavolo.</p>
+        </div>
+      </div>
+
+      <div class="caso">
+        <p class="etichetta">L'apertura in Ramio, in quattro esempi</p>
+        <div class="riga">
+          <span class="etichetta">Apre</span>
+          <span class="carte" role="img" aria-label="4, 5 e 6 di picche">
+            <span class="carta p">4<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">6<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+          </span>
+          <span>scala pulita di tre</span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Apre</span>
+          <span class="carte" role="img" aria-label="4, 5 e 6 di picche, poi un jolly">
+            <span class="carta p">4<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">6<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta j">JOLLY</span>
+          </span>
+          <span>la scala pulita c'è, il jolly la allunga</span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Non apre</span>
+          <span class="carte" role="img" aria-label="4 e 5 di picche, poi un jolly">
+            <span class="carta p">4<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta j">JOLLY</span>
+          </span>
+          <span>per aprire il jolly non conta</span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Non apre</span>
+          <span class="carte" role="img" aria-label="9 di picche, 9 di cuori e 9 di quadri">
+            <span class="carta p">9<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta c">9<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta q">9<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+          <span>un tris da solo non basta: serve una scala</span>
+        </div>
+      </div>
+
+      <h2 id="combinazioni">Scale e tris: quali combinazioni valgono?</h2>
 
       <ul>
         <li><strong>Scala</strong>: almeno tre carte consecutive dello stesso
-        seme, per esempio 7-8-9 di cuori. L'asso può stare prima del 2
-        (Asso-2-3) o dopo il re (Donna-Re-Asso), ma la scala non gira mai:
-        Re-Asso-2 non è ammesso.</li>
+        seme, per esempio 7, 8 e 9 di cuori.</li>
         <li><strong>Tris o poker</strong>: tre o quattro carte dello stesso
-        valore, tutte di semi diversi. Due 9 di picche nello stesso tris non
-        sono ammessi.</li>
+        valore, tutte di semi diversi. Con due mazzi capita di avere due 9
+        di picche: nello stesso tris non possono stare.</li>
       </ul>
 
-      <h3>Come si svolge un turno</h3>
+      <p>Sull'asso Ramio fa così: può stare prima del 2 (Asso, 2, 3) o dopo
+      il re (Donna, Re, Asso), ma la scala non gira mai: Re, Asso, 2 non è
+      ammesso.</p>
 
-      <ol>
-        <li><strong>Peschi una carta</strong> dal mazzo: è obbligatorio, a
-        ogni turno.</li>
-        <li>Poi <strong>puoi calare</strong> combinazioni, se vuoi e se puoi.
-        Calare è sempre facoltativo: puoi pescare e passare.</li>
-      </ol>
+      <h2 id="tavolo">Come si riorganizza il tavolo?</h2>
 
-      <p><strong>Non si scarta mai</strong>: la mano si riduce solo
-      calando.</p>
-
-      <h3>L'apertura: la scala pulita di tre</h3>
-
-      <p>La tua prima calata deve contenere una <strong>scala pulita di
-      tre</strong>: tre carte consecutive dello stesso seme, <strong>senza
-      jolly</strong>, uscite dalla tua mano. Non c'è un punteggio minimo. Già
-      in quel turno puoi allungarla (anche con un jolly), calare altre
-      combinazioni e riorganizzare il tavolo.</p>
-
-      <h3>Riorganizzare il tavolo</h3>
-
-      <p>Una volta aperto, nel tuo turno puoi <strong>riorganizzare
-      liberamente tutto il tavolo</strong>: spostare, dividere e ricombinare
-      le calate di tutti per far entrare le tue carte. Le condizioni sono
-      tre:</p>
+      <p>È il cuore del gioco. Nel tuo turno puoi <strong>spostare, dividere
+      e ricombinare le combinazioni di tutti</strong> per far entrare le tue
+      carte (in Ramio, una volta aperto). Le condizioni che Ramio applica, e
+      in genere anche quelle del gioco al tavolo, sono tre:</p>
 
       <ul>
         <li>a fine turno <strong>tutto il tavolo deve essere di nuovo
         valido</strong>: ogni combinazione è una scala, un tris o un poker;
         altrimenti tutto torna al suo posto;</li>
-        <li>la tua calata deve usare <strong>almeno una carta della tua
+        <li>la tua giocata deve usare <strong>almeno una carta della tua
         mano</strong>;</li>
         <li>una carta del tavolo <strong>non torna mai in mano</strong>.</li>
       </ul>
 
-      <h3 id="jolly">Il jolly</h3>
+      <p class="legenda">Negli esempi, le carte su fondo giallo con il bordo
+      spesso sono quelle che arrivano dalla tua mano.</p>
 
-      <ul>
-        <li>Il jolly <strong>sostituisce qualsiasi carta</strong>, in una
-        scala come in un tris.</li>
-        <li>Una combinazione può contenere <strong>più jolly</strong>, purché
-        resti almeno una carta vera.</li>
-        <li>Un jolly calato può essere <strong>spostato e
-        riutilizzato</strong> durante le riorganizzazioni, quante volte vuoi,
-        ma <strong>resta sul tavolo</strong>: non si riprende mai in mano,
-        nemmeno portando la carta che sostituisce.</li>
-        <li>Per l'apertura il jolly non conta: la scala pulita di tre si fa
-        senza jolly. Poi, nello stesso turno, puoi allungarla anche con un
-        jolly.</li>
-        <li>Un jolly rimasto in mano a fine mano costa <strong>50
-        punti</strong> di penalità.</li>
-        <li>I jolly sono <strong>facoltativi</strong>: in stanza privata
-        scegli tu se giocare con 2 jolly o senza; le partite pubbliche si
-        giocano sempre con i jolly.</li>
-      </ul>
+      <h3>Dividere una scala</h3>
+
+      <div class="caso">
+        <div class="riga">
+          <span class="etichetta">Tavolo</span>
+          <span class="carte" role="img" aria-label="scala di picche dal 3 al 7">
+            <span class="carta p">3<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">4<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">6<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">7<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Mano</span>
+          <span class="carte" role="img" aria-label="5 di picche">
+            <span class="carta p m">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Dopo</span>
+          <span class="carte" role="img" aria-label="3, 4 e 5 di picche">
+            <span class="carta p">3<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">4<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+          </span>
+          <span class="carte" role="img" aria-label="5 dalla mano, 6 e 7 di picche">
+            <span class="carta p m">5<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">6<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta p">7<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+          </span>
+        </div>
+        <p>Il secondo 5 di picche (i mazzi sono due) non entra nella scala
+        così com'è. Tagliandola in due, ogni metà resta una scala di tre.</p>
+      </div>
+
+      <h3>Prendere una carta in prestito</h3>
+
+      <div class="caso">
+        <div class="riga">
+          <span class="etichetta">Tavolo</span>
+          <span class="carte" role="img" aria-label="poker di 9: picche, cuori, quadri e fiori">
+            <span class="carta p">9<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta c">9<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta q">9<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta f">9<svg aria-hidden="true"><use href="#s-f"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Mano</span>
+          <span class="carte" role="img" aria-label="7 e 8 di cuori">
+            <span class="carta c m">7<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c m">8<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Dopo</span>
+          <span class="carte" role="img" aria-label="7 e 8 di cuori dalla mano, poi il 9 di cuori">
+            <span class="carta c m">7<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c m">8<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c">9<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+          </span>
+          <span class="carte" role="img" aria-label="tris di 9: picche, quadri e fiori">
+            <span class="carta p">9<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta q">9<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta f">9<svg aria-hidden="true"><use href="#s-f"/></svg></span>
+          </span>
+        </div>
+        <p>Il poker presta il suo 9 di cuori e resta un tris valido; le tue
+        due carte, da sole inutili, diventano una scala.</p>
+      </div>
+
+      <h3>Unire due scale</h3>
+
+      <div class="caso">
+        <div class="riga">
+          <span class="etichetta">Tavolo</span>
+          <span class="carte" role="img" aria-label="2, 3 e 4 di quadri">
+            <span class="carta q">2<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">3<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">4<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+          <span class="carte" role="img" aria-label="6, 7 e 8 di quadri">
+            <span class="carta q">6<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">7<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">8<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Mano</span>
+          <span class="carte" role="img" aria-label="5 di quadri">
+            <span class="carta q m">5<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Dopo</span>
+          <span class="carte" role="img" aria-label="scala di quadri dal 2 all'8, con il 5 dalla mano">
+            <span class="carta q">2<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">3<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">4<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q m">5<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">6<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">7<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">8<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+        </div>
+        <p>Il 5 fa da ponte: due scale di tre diventano una scala di sette,
+        più facile da tagliare in seguito.</p>
+      </div>
+
+      <h2 id="jolly">Come funziona il jolly a Machiavelli?</h2>
+
+      <p>Machiavelli con o senza jolly? Si gioca in entrambi i modi, ed è il
+      punto su cui le regole variano di più.</p>
+
+      <div class="confronto">
+        <div>
+          <p class="etichetta">Regola più diffusa</p>
+          <ul>
+            <li><strong>Quanti jolly</strong>: molti li tolgono dai due mazzi
+            e giocano con 104 carte; chi li tiene ne usa 4 oppure 2.</li>
+            <li><strong>Riprenderlo</strong>: in molte case chi ha la carta
+            che il jolly sostituisce può metterla al suo posto e riutilizzare
+            il jolly; altri tavoli lo vietano. Va deciso prima di
+            cominciare.</li>
+            <li><strong>In mano a fine partita</strong>: il valore cambia
+            secondo le fonti; alcune lo contano 25 punti.</li>
+          </ul>
+        </div>
+        <div class="ramio">
+          <p class="etichetta">Come si gioca in Ramio</p>
+          <ul>
+            <li><strong>2 jolly oppure nessuno</strong>: in stanza privata
+            scegli tu; le partite pubbliche si giocano con i jolly.</li>
+            <li>Il jolly <strong>sostituisce qualsiasi carta</strong>, in una
+            scala come in un tris.</li>
+            <li>Sul tavolo si può <strong>spostare e riutilizzare</strong>
+            quante volte vuoi, ma <strong>non torna mai in mano</strong>.</li>
+            <li>Per l'apertura non conta.</li>
+            <li>Rimasto in mano a fine mano costa <strong>50
+            punti</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Quattro casi concreti, con la regola di Ramio.</p>
+
+      <h3>Quando si può calare il jolly?</h3>
+
+      <p>Appena hai aperto, in qualsiasi combinazione: il jolly prende il
+      valore che serve. Una combinazione può contenerne anche due, purché
+      resti almeno una carta vera.</p>
+
+      <div class="caso">
+        <div class="riga">
+          <span class="etichetta">Valida</span>
+          <span class="carte" role="img" aria-label="7 e 8 di cuori dalla mano, poi un jolly">
+            <span class="carta c m">7<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c m">8<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta j m">JOLLY</span>
+          </span>
+          <span>il jolly vale 9 di cuori (o 6 di cuori)</span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Valida</span>
+          <span class="carte" role="img" aria-label="donna di picche e donna di quadri dalla mano, poi un jolly">
+            <span class="carta p m">Q<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta q m">Q<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta j m">JOLLY</span>
+          </span>
+          <span>tris di donne: il jolly vale una delle due che mancano</span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Valida</span>
+          <span class="carte" role="img" aria-label="7 di fiori dalla mano, poi due jolly">
+            <span class="carta f m">7<svg aria-hidden="true"><use href="#s-f"/></svg></span>
+            <span class="carta j m">JOLLY</span>
+            <span class="carta j m">JOLLY</span>
+          </span>
+          <span>due jolly e una carta vera</span>
+        </div>
+      </div>
+
+      <h3>Si può spostare un jolly già calato?</h3>
+
+      <p>Sì, ed è spesso la mossa che sblocca il turno: liberi il jolly
+      mettendo al suo posto una carta vera e lo porti dove ti serve.</p>
+
+      <div class="caso">
+        <div class="riga">
+          <span class="etichetta">Tavolo</span>
+          <span class="carte" role="img" aria-label="9 di picche, 9 di quadri e un jolly">
+            <span class="carta p">9<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta q">9<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta j">JOLLY</span>
+          </span>
+          <span class="carte" role="img" aria-label="6, 7 e 8 di cuori">
+            <span class="carta c">6<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c">7<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c">8<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Mano</span>
+          <span class="carte" role="img" aria-label="9 di fiori e 10 di cuori">
+            <span class="carta f m">9<svg aria-hidden="true"><use href="#s-f"/></svg></span>
+            <span class="carta c m">10<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Dopo</span>
+          <span class="carte" role="img" aria-label="9 di picche, 9 di quadri e 9 di fiori dalla mano">
+            <span class="carta p">9<svg aria-hidden="true"><use href="#s-p"/></svg></span>
+            <span class="carta q">9<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta f m">9<svg aria-hidden="true"><use href="#s-f"/></svg></span>
+          </span>
+          <span class="carte" role="img" aria-label="6, 7 e 8 di cuori, il jolly, poi il 10 di cuori dalla mano">
+            <span class="carta c">6<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c">7<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta c">8<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+            <span class="carta j">JOLLY</span>
+            <span class="carta c m">10<svg aria-hidden="true"><use href="#s-c"/></svg></span>
+          </span>
+        </div>
+        <p>Il 9 di fiori prende il posto del jolly nel tris. Il jolly passa
+        nella scala di cuori, dove vale 9, e apre la strada al tuo 10: senza
+        spostarlo, il 10 di cuori non avrebbe trovato posto.</p>
+      </div>
+
+      <h3>Il jolly si può riprendere in mano?</h3>
+
+      <p>È il caso che divide i tavoli. Sul tavolo c'è una scala con un
+      jolly, e tu hai proprio la carta che il jolly sostituisce.</p>
+
+      <div class="caso">
+        <div class="riga">
+          <span class="etichetta">Tavolo</span>
+          <span class="carte" role="img" aria-label="5 di quadri, un jolly, 7 di quadri">
+            <span class="carta q">5<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta j">JOLLY</span>
+            <span class="carta q">7<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">Mano</span>
+          <span class="carte" role="img" aria-label="6 di quadri">
+            <span class="carta q m">6<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+          </span>
+        </div>
+        <div class="riga">
+          <span class="etichetta">In Ramio</span>
+          <span class="carte" role="img" aria-label="5 di quadri, 6 di quadri dalla mano, 7 di quadri, poi il jolly">
+            <span class="carta q">5<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q m">6<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta q">7<svg aria-hidden="true"><use href="#s-q"/></svg></span>
+            <span class="carta j">JOLLY</span>
+          </span>
+        </div>
+        <p><strong>Dove riprenderlo è ammesso</strong>, metti il 6 di quadri
+        al suo posto e il jolly è di nuovo tuo.</p>
+        <p><strong>In Ramio</strong> il 6 va al suo posto, ma il jolly resta
+        sul tavolo: nello stesso turno lo sposti in una combinazione valida,
+        per esempio in coda alla stessa scala (dove vale 8 di quadri) o in
+        un'altra combinazione che ne ha bisogno. In mano non torna, nemmeno
+        portando la carta che sostituisce.</p>
+      </div>
+
+      <h3>Quanto costa un jolly rimasto in mano?</h3>
+
+      <p>In Ramio <strong>50 punti</strong> di penalità, più di qualsiasi
+      altra carta: tenerlo da parte per la giocata perfetta è un rischio.
+      Altre regole lo contano meno (25 punti in alcune fonti): un altro punto
+      da chiarire prima di cominciare.</p>
 
       <p align="center">
         <img src="/ramio/assets/ramio-reorganisation-it.gif" alt="Il jolly lascia un tris di fanti per allungare una scala di cuori; poi il fante di fiori dalla mano ripara il tris e la giocata è valida." width="300" style="border-radius:12px;max-width:100%;">
       </p>
 
-      <h3>Fine della mano e punteggio</h3>
+      <h2 id="in-due">Come si gioca a Machiavelli in due?</h2>
 
-      <p>La mano finisce quando un giocatore cala la sua ultima carta. Gli
-      altri contano le <strong>penalità</strong> delle carte rimaste in
+      <p>In due le regole non cambiano: stesse combinazioni, stesso tavolo
+      comune. Cambia il ritmo della partita.</p>
+
+      <ul>
+        <li><strong>Carte</strong>: 13 a testa, sia nella ripartizione più
+        citata sia in Ramio.</li>
+        <li><strong>Mazzo</strong>: distribuite 26 carte, nel mazzo ne restano
+        78 (80 con due jolly). In quattro, con 13 carte a testa, ne
+        resterebbero 52: in due il mazzo dura molto di più.</li>
+        <li><strong>Tavolo</strong>: si riempie più lentamente, perché a
+        calare siete solo in due. All'inizio c'è poco da smontare; poi ogni
+        combinazione dell'altro diventa materiale per te.</li>
+        <li><strong>Pesca</strong>: con la regola «pesca solo chi non cala»,
+        chi resta bloccato accumula carte mentre l'altro si alleggerisce; con
+        la pesca a ogni turno, come in Ramio, pescate entrambi.</li>
+      </ul>
+
+      <p>Per giocare in due con Ramio basta una stanza privata: la crei,
+      mandi all'altro il codice di sei caratteri e ognuno gioca dal proprio
+      telefono. Se sei da solo, c'è il computer.</p>
+
+      <h2 id="punti">Quando finisce la partita e come si contano i punti?</h2>
+
+      <div class="confronto">
+        <div>
+          <p class="etichetta">Regola più diffusa</p>
+          <p>La mano finisce quando un giocatore cala la sua ultima carta:
+          ha vinto. C'è chi conta solo le mani vinte e chi segna come
+          penalità le carte rimaste in mano agli altri, con valori che
+          cambiano da una fonte all'altra.</p>
+        </div>
+        <div class="ramio">
+          <p class="etichetta">Come si gioca in Ramio</p>
+          <p>Stessa fine: vince la mano chi cala l'ultima carta. Gli altri
+          contano le penalità della tabella qui sotto. Poi dipende dal tipo
+          di partita: a punti, oppure semplice.</p>
+        </div>
+      </div>
+
+      <p>Le <strong>penalità</strong> di Ramio per le carte rimaste in
       mano:</p>
 
       <table>
@@ -184,25 +708,45 @@
         </tbody>
       </table>
 
-      <p>Se il <strong>mazzo si esaurisce</strong> prima che qualcuno finisca,
-      la mano si ferma e ognuno conta i punti rimasti nella propria mano.</p>
-
-      <h3>La partita</h3>
+      <p>La partita, in Ramio, ha due formule:</p>
 
       <ul>
         <li><strong>Partita a punti</strong>: le penalità si sommano mano dopo
         mano; la partita termina appena un giocatore raggiunge <strong>100
         punti</strong>, e vince chi ne ha meno.</li>
         <li><strong>Partita semplice</strong>: una sola mano, vince il primo
-        che resta senza carte. Se il mazzo si esaurisce, la mano si
-        rigioca.</li>
+        che resta senza carte. È la formula delle partite pubbliche.</li>
+        <li><strong>Se il mazzo si esaurisce</strong> prima che qualcuno
+        finisca, la mano si ferma e ognuno conta i punti rimasti nella
+        propria mano. In partita semplice, la mano si rigioca.</li>
       </ul>
 
-      <h2 id="sfida">Una sfida subito, nel browser</h2>
+      <h2 id="scala-40">Machiavelli e Scala 40: che differenza c'è?</h2>
 
-      <p>Senza installare nulla e senza creare un account: cala tutte le carte
-      della tua mano riorganizzando il tavolo. Un minuto e una scheda del
-      browser — è il Machiavelli allo stato puro.</p>
+      <p>Le carte sono le stesse, due mazzi francesi, e in entrambi i giochi
+      si calano scale e tris. Il resto cambia parecchio.</p>
+
+      <table class="tabella-stretta">
+        <thead>
+          <tr><th></th><th>Machiavelli</th><th>Scala 40</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Tavolo</th><td>comune: si smonta e si ricompone</td><td>le combinazioni si allungano, non si smontano</td></tr>
+          <tr><th scope="row">Apertura</th><td>nessun punteggio minimo</td><td>almeno 40 punti</td></tr>
+          <tr><th scope="row">Scarto</th><td>di norma non si scarta</td><td>si scarta una carta a ogni turno</td></tr>
+        </tbody>
+      </table>
+
+      <p>Chi viene dalla Scala 40 deve soprattutto cambiare sguardo: a
+      Machiavelli le carte calate dagli altri non sono un ostacolo, sono
+      pezzi con cui costruire.</p>
+
+      <h2 id="sfida">Si può giocare a Machiavelli online gratis?</h2>
+
+      <p>Sì, e puoi cominciare da questa pagina. Senza installare nulla e
+      senza creare un account: cala tutte le carte della tua mano
+      riorganizzando il tavolo. Un minuto e una scheda del browser: è il
+      Machiavelli allo stato puro.</p>
 
       <p align="center" style="margin:1.5em 0;">
         <a class="cta cta-grand" href="/ramio/defi/?defi=1dbcleh&amp;couleurs=4&amp;src=page-machiavelli&amp;lang=it">
@@ -210,9 +754,10 @@
         </a>
       </p>
 
-      <h2>Ramio sul telefono</h2>
+      <h3>Ramio sul telefono</h3>
 
-      <p>L'app è <strong>gratis</strong>: stanze private con codice di sei
+      <p>Per le partite vere c'è l'app, <strong>gratis</strong> su Android e
+      iPhone: stanze private con codice di sei
       caratteri, partite pubbliche, in solitario contro il computer su
       quattro livelli (anche offline), 1000 rompicapi di riorganizzazione, una
       sfida del giorno uguale per tutti e duelli di velocità.</p>
@@ -232,6 +777,58 @@
         <img src="/ramio/assets/it-stanza-privata.webp" alt="Una stanza privata tra amici, con il codice da condividere" width="170" style="border-radius:12px;max-width:23%;">
         <img src="/ramio/assets/it-kit-forgia.webp" alt="Le ambientazioni: tappeti, dorsi delle carte e avatar a scelta" width="170" style="border-radius:12px;max-width:23%;">
       </p>
+
+      <h2 id="faq">Domande frequenti</h2>
+
+      <h3>Quante carte si danno a Machiavelli in 2, 3 o 4?</h3>
+      <p>La ripartizione più citata è 13 carte a testa in due, 9 in tre e 7
+      in quattro; altre fonti ne danno 13 a tutti. Ramio ne distribuisce 13 a
+      ogni giocatore, da 2 a 4.</p>
+
+      <h3>A Machiavelli si pesca sempre?</h3>
+      <p>Dipende dal tavolo. Nella regola più diffusa pesca solo chi non cala
+      nulla; in un'altra, molto comune, si pesca una carta a ogni turno.
+      Ramio applica la seconda: la pesca è obbligatoria a inizio turno.</p>
+
+      <h3>A Machiavelli si scarta?</h3>
+      <p>Di norma no: non c'è un pozzo degli scarti e la mano si riduce solo
+      calando. Alcuni tavoli giocano con lo scarto, ma sono una minoranza. In
+      Ramio non si scarta mai.</p>
+
+      <h3>Machiavelli si gioca con o senza jolly?</h3>
+      <p>In entrambi i modi. Molti tolgono i jolly e giocano con 104 carte;
+      altri ne tengono 2 o 4. In Ramio, in stanza privata, scegli tu tra 2
+      jolly e nessuno.</p>
+
+      <h3>Il jolly si può riprendere?</h3>
+      <p>In molte case sì, mettendo al suo posto la carta che sostituisce;
+      altri tavoli lo vietano. In Ramio il jolly si può spostare sul tavolo
+      quante volte vuoi, ma non torna mai in mano.</p>
+
+      <h3>Serve un punteggio minimo per aprire?</h3>
+      <p>No. Il Machiavelli tradizionale non ha apertura; Ramio chiede
+      soltanto una scala di tre carte senza jolly nella prima calata. I 40
+      punti sono la regola della Scala 40.</p>
+
+      <h3>Si può giocare a Machiavelli in due?</h3>
+      <p>Sì: 13 carte a testa e le stesse regole. Il mazzo dura di più e il
+      tavolo si riempie più lentamente.</p>
+
+      <h3>C'è un tempo limite per il turno?</h3>
+      <p>Al tavolo lo decide chi gioca. In Ramio le partite pubbliche danno
+      120 secondi per turno; in stanza privata il tempo lo sceglie chi crea
+      la partita, anche senza cronometro.</p>
+
+      <h2 id="altri-paesi">Lo stesso gioco in altri paesi</h2>
+
+      <p>Il Machiavelli fuori dall'Italia ha altri nomi: in Francia si chiama
+      <a href="https://quintaingames.com/ramio/regles-rami-chinois.html">rami voleur</a>,
+      in Germania <a href="https://quintaingames.com/ramio/raeuber-romme/">Räuber-Rommé</a>,
+      in Brasile e in Portogallo <a href="https://quintaingames.com/ramio/mexe-mexe/">mexe-mexe</a>,
+      in Ungheria rablórömi, in Spagna Maquiavelo e in inglese manipulation
+      rummy. Ovunque l'idea è la stessa: il tavolo è di tutti e, quando tocca
+      a te, puoi riorganizzare le combinazioni già calate. Le pagine collegate
+      spiegano le regole nella lingua del paese.</p>
 
       <h2>Altro su Ramio</h2>
 

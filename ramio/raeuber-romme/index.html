@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Räuber-Rommé online spielen | Ramio</title>
-    <meta name="description" content="Räuber-Rommé online spielen: Ramio ist Räuberrommé mit Karten statt Steinen. Ein Rätsel sofort im Browser lösen, dann kostenlos mit Freunden spielen.">
+    <title>Räuber-Rommé: Regeln, Joker und Kartenzahl erklärt | Ramio</title>
+    <meta name="description" content="Räuber-Rommé-Regeln: Wie viele Karten, mit oder ohne Ablagestapel, erste Auslage, Joker, Wertung? Mit Beispielen, auch zu zweit, und häufigen Fragen.">
     <link rel="canonical" href="https://quintaingames.com/ramio/raeuber-romme/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="Ramio">
     <meta property="og:locale" content="de_DE">
     <meta property="og:url" content="https://quintaingames.com/ramio/raeuber-romme/">
-    <meta property="og:title" content="Räuber-Rommé online spielen — Ramio">
-    <meta property="og:description" content="Räuberrommé mit Karten statt Steinen: den ganzen Tisch umbauen, bis die eigenen Karten passen. Ein Rätsel sofort im Browser, ohne Installation.">
+    <meta property="og:title" content="Räuber-Rommé: Regeln, Joker und Kartenzahl erklärt">
+    <meta property="og:description" content="Kartenzahl, Ablagestapel, erste Auslage, Rauben, Joker und Wertung: die übliche Regel und die von Ramio nebeneinander, mit Beispielen.">
     <meta property="og:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -46,14 +46,100 @@
         margin: 2rem 0;
       }
       .encadre p { margin-bottom: 0; }
+      .inhalt { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
+      .inhalt li { break-inside: avoid; }
+      .ramio-regel {
+        border-left: 4px solid #1558b0;
+        background: #f3f6fa;
+        color: #333;
+        padding: 0.8rem 1rem;
+        margin: 1rem 0;
+      }
+      .ramio-regel > :last-child { margin-bottom: 0; }
+      .beispiel {
+        border: 1px solid #c9d3dc;
+        border-radius: 0.5rem;
+        background: #f7f9fb;
+        color: #333;
+        padding: 0.8rem 1rem;
+        margin: 1.2rem 0;
+      }
+      .beispiel p { margin: 0 0 0.5rem; }
+      .beispiel > :last-child { margin-bottom: 0; }
+      .lbl {
+        display: inline-block;
+        min-width: 4.2em;
+        font-size: 0.85em;
+        font-weight: 700;
+        color: #333;
+      }
+      .k {
+        display: inline-block;
+        min-width: 2.5em;
+        margin: 2px 1px;
+        padding: 0.15em 0.35em;
+        border: 1px solid #8a949b;
+        border-radius: 5px;
+        background: #fff;
+        font-weight: 700;
+        line-height: 1.35;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .k-pik { color: #111; }
+      .k-herz { color: #c62828; }
+      .k-karo { color: #1558b0; }
+      .k-kreuz { color: #1b7a34; }
+      .k-joker { color: #111; background: #ffe27a; border-style: dashed; border-color: #111; }
+      .k-hand { border: 2px solid #111; box-shadow: 0 2px 0 #111; }
+      .gruppe { display: inline-block; margin: 0 0.6em 0.2em 0; white-space: nowrap; }
+      .faq h3 { margin-top: 1.5rem; margin-bottom: 0.4rem; }
+      @media screen and (max-width: 42em) {
+        .inhalt { columns: 1; }
+        .main-content table th, .main-content table td { padding: 0.4rem 0.5rem; }
+      }
+      @media print {
+        .page-header .btn, .cta, .kein-druck, #skip-to-content { display: none !important; }
+        .page-header { background: none; color: #000; padding: 0; }
+        .main-content { padding: 0; font-size: 11pt; }
+        .beispiel, .ramio-regel, table { break-inside: avoid; }
+      }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://quintaingames.com/ramio/raeuber-romme/#article",
+          "headline": "Räuber-Rommé: Regeln, Joker und Kartenzahl erklärt",
+          "description": "Räuber-Rommé-Regeln: Wie viele Karten, mit oder ohne Ablagestapel, erste Auslage, Joker, Wertung? Mit Beispielen, auch zu zweit, und häufigen Fragen.",
+          "inLanguage": "de",
+          "datePublished": "2026-09-12",
+          "dateModified": "2026-10-14",
+          "image": "https://quintaingames.com/ramio/assets/ramio-partie-og.jpg",
+          "mainEntityOfPage": "https://quintaingames.com/ramio/raeuber-romme/",
+          "author": { "@type": "Organization", "name": "Quintain Games", "url": "https://quintaingames.com/" },
+          "publisher": { "@type": "Organization", "name": "Quintain Games", "url": "https://quintaingames.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Quintain Games", "item": "https://quintaingames.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Ramio", "item": "https://quintaingames.com/ramio/de.html" },
+            { "@type": "ListItem", "position": 3, "name": "Räuber-Rommé: Regeln", "item": "https://quintaingames.com/ramio/raeuber-romme/" }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Zum Inhalt springen</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">Räuber-Rommé online spielen</h1>
-      <h2 class="project-tagline">Ramio ist Räuberrommé mit Karten — der ganze Tisch gehört allen.</h2>
+      <h1 class="project-name">Räuber-Rommé: Regeln einfach erklärt</h1>
+      <p class="project-tagline">Kartenzahl, erste Auslage, Rauben, Joker und Wertung: die übliche Regel und die von Ramio nebeneinander.</p>
       <a href="#raetsel" class="btn">Rätsel sofort im Browser lösen</a>
     </header>
 
@@ -63,28 +149,408 @@
         <img src="/ramio/assets/ramio-bandeau.jpg" alt="Ein Ramio-Tisch bei Nacht in der Wüste: Reihen, Drillinge, ein Joker und der Stapel." style="display:block;width:100%;border-radius:12px;margin:0 0 1.5em;">
       </picture>
 
-      <p><strong>Räuber-Rommé, Räuberrommé, Manipulationsrommé</strong> — gemeint ist
-      immer dasselbe Spiel: das Rommé, bei dem man nicht nur eigene Karten
-      anlegt, sondern die Auslage auf dem Tisch auseinandernimmt und neu
-      zusammensetzt, bis die eigenen Karten passen. Genau das ist Ramio,
-      online mit Freunden, offline gegen den Computer, auf dem Handy oder
-      direkt im Browser.</p>
+      <p><strong>Räuber-Rommé</strong> ist das Rommé, bei dem der Tisch allen
+      gehört: Wer einmal ausgelegt hat, darf die Auslagen aller Spieler
+      auseinandernehmen und neu zusammensetzen, bis die eigenen Karten
+      passen. Dieser Leitfaden klärt die Punkte, über die am Tisch am
+      häufigsten gestritten wird: Kartenzahl, Ablagestapel, erste Auslage,
+      Joker und Wertung.</p>
 
-      <p>Wer Rummikub kennt, ist sofort zu Hause — mit drei Unterschieden:
-      Bei Ramio wird mit <strong>Karten</strong> gespielt statt mit Steinen (zwei
-      Kartenspiele zu je 52 Blatt und <strong>zwei Joker</strong>), es wird <strong>nie
-      abgeworfen</strong>, und zum Eröffnen braucht man keine Mindestpunktzahl,
-      sondern eine <strong>reine Dreierreihe</strong>.</p>
+      <p>Eine einzige verbindliche Regel gibt es nicht. Spielanleitungen,
+      Online-Portale und Familienrunden weichen in mehreren Punkten
+      voneinander ab. Deshalb stehen hier immer zwei Angaben nebeneinander:
+      die <strong>übliche Regel</strong>, wie sie in verbreiteten Anleitungen
+      steht, und <strong>so spielt Ramio</strong>, das kostenlose
+      Räuber-Rommé für Android und iPhone. Wo Ramio abweicht, steht es
+      ausdrücklich da. Mit zwei Rommé-Blättern lässt sich beides auch am
+      Küchentisch spielen.</p>
 
-      <p align="center">
-        <img src="/ramio/assets/ramio-reorganisation-en.gif" alt="Der Joker verlässt einen Buben-Drilling, um eine Herz-Reihe zu verlängern; dann repariert der Kreuz-Bube aus der Hand den Drilling, und der Zug wird bestätigt." width="300" style="border-radius:12px;max-width:100%;">
+      <p class="discret">Stand: 14. Oktober 2026.</p>
+
+      <ol class="inhalt kein-druck">
+        <li><a href="#was">Was ist Räuber-Rommé?</a></li>
+        <li><a href="#kurz">Die Regeln in Kürze</a></li>
+        <li><a href="#karten">Wie viele Karten bekommt man?</a></li>
+        <li><a href="#kombinationen">Welche Kombinationen gelten?</a></li>
+        <li><a href="#ablagestapel">Mit oder ohne Ablagestapel?</a></li>
+        <li><a href="#erstauslage">Wie funktioniert die erste Auslage?</a></li>
+        <li><a href="#rauben">Was darf man beim Rauben?</a></li>
+        <li><a href="#joker">Wie funktioniert der Joker?</a></li>
+        <li><a href="#zu-zweit">Räuber-Rommé zu zweit</a></li>
+        <li><a href="#wertung">Rundenende und Punkte</a></li>
+        <li><a href="#app">Online und als App</a></li>
+        <li><a href="#faq">Häufige Fragen</a></li>
+      </ol>
+
+      <h2 id="was">Was ist Räuber-Rommé?</h2>
+
+      <p>Beim klassischen Rommé gehört jede Auslage dem Spieler, der sie
+      gelegt hat; die anderen dürfen höchstens passende Karten anlegen. Beim
+      Räuber-Rommé fällt diese Grenze weg: Alles, was auf dem Tisch liegt,
+      ist Baumaterial für alle. Man „raubt“ eine Karte aus einer fremden
+      Reihe, teilt eine lange Folge, löst einen Vierling auf. Erlaubt ist,
+      was am Ende des Zuges wieder lauter gültige Kombinationen ergibt.</p>
+
+      <p>Den Namen findet man in mehreren Schreibweisen: mit Bindestrich,
+      zusammengeschrieben als Räuberrommé oder, ohne Sonderzeichen getippt,
+      als Rauber Romme. Auch Manipulationsrommé meint dasselbe Spiel. Wer
+      Rummikub kennt, kennt das Prinzip bereits: Es ist dieselbe Idee,
+      gespielt mit einem gewöhnlichen Rommé-Blatt statt mit
+      Zahlensteinen.</p>
+
+      <h2 id="kurz">Die Regeln in Kürze: üblich und bei Ramio</h2>
+
+      <table>
+        <thead>
+          <tr><th>Punkt</th><th>Übliche Regel</th><th>So spielt Ramio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Blatt</td><td>2 × 52 Karten und Joker, häufig 110 Karten mit 6 Jokern</td><td>2 × 52 Karten und 2 Joker (106 Karten) oder ohne Joker (104 Karten)</td></tr>
+          <tr><td>Karten pro Spieler</td><td>13</td><td>13</td></tr>
+          <tr><td>Ablagestapel</td><td>mit oder ohne, je nach Anleitung und Absprache</td><td>ohne: Es wird nie abgeworfen</td></tr>
+          <tr><td>Ziehen</td><td>je nach Runde</td><td>Pflicht in jedem Zug</td></tr>
+          <tr><td>Erste Auslage</td><td>Mindestwert, je nach Regelwerk 30 oder 40 Punkte</td><td>eine reine Dreierreihe ohne Joker, kein Mindestwert</td></tr>
+          <tr><td>Joker auf dem Tisch</td><td>darf beim Rauben umgesetzt werden; Jokertausch auf die Hand nach Absprache</td><td>darf umgesetzt werden, bleibt aber immer auf dem Tisch</td></tr>
+          <tr><td>Joker auf der Hand</td><td>häufig 20 Minuspunkte</td><td>50 Minuspunkte</td></tr>
+          <tr><td>Partie</td><td>nach Absprache</td><td>bis 100 Punkte oder eine einzelne Runde</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="karten">Wie viele Karten bekommt man bei Räuber-Rommé?</h2>
+
+      <p><strong>13 Karten pro Spieler</strong>, zu zweit genauso wie zu dritt
+      oder zu viert. So steht es in den verbreiteten Anleitungen, und so
+      teilt auch Ramio aus. Die übrigen Karten bilden den verdeckten Stapel.
+      Unterschiede gibt es beim Blatt:</p>
+
+      <ul>
+        <li><strong>Übliche Regel:</strong> zwei Blätter zu je 52 Karten und
+        Joker, häufig zusammen 110 Karten mit sechs Jokern.</li>
+        <li><strong>So spielt Ramio:</strong> zwei Blätter zu je 52 Karten und
+        <strong>zwei Joker</strong>, also 106 Karten, oder ganz ohne Joker
+        mit 104 Karten. Gespielt wird zu zweit, zu dritt oder zu viert.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Spieler</th><th>Karten pro Spieler</th><th>Stapel bei Ramio, mit 2 Jokern</th><th>Stapel bei Ramio, ohne Joker</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2</td><td>13</td><td>80</td><td>78</td></tr>
+          <tr><td>3</td><td>13</td><td>67</td><td>65</td></tr>
+          <tr><td>4</td><td>13</td><td>54</td><td>52</td></tr>
+        </tbody>
+      </table>
+
+      <p>Bei Ramio wird nach dem Austeilen keine Karte aufgedeckt. Wer die
+      erste Runde beginnt, wird ausgelost; danach wechselt der Startspieler
+      von Runde zu Runde. In einem privaten Raum wählst du, ob mit oder ohne
+      Joker gespielt wird, und kannst unter „Anpassen“ auch eine andere
+      Kartenzahl einstellen, von 7 bis 15 Karten pro Spieler, falls deine
+      Runde es so gewohnt ist. Öffentliche Partien laufen immer mit
+      Jokern.</p>
+
+      <h2 id="kombinationen">Welche Kombinationen sind gültig?</h2>
+
+      <p>In diesem Punkt sind sich die Regeln einig. Es gibt zwei Arten von
+      Kombinationen, jede mit mindestens drei Karten:</p>
+
+      <ul>
+        <li><strong>Reihe</strong> (auch Folge oder Sequenz): mindestens drei
+        aufeinanderfolgende Karten derselben Farbe, zum Beispiel
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 7</span><span class="k k-herz">&hearts;&#xFE0E; 8</span><span class="k k-herz">&hearts;&#xFE0E; 9</span></span></li>
+        <li><strong>Satz</strong>, also Drilling oder Vierling: drei oder vier
+        Karten desselben Werts, zum Beispiel
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; 9</span><span class="k k-karo">&diams;&#xFE0E; 9</span><span class="k k-kreuz">&clubs;&#xFE0E; 9</span></span></li>
+      </ul>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio:</strong> Im Satz müssen alle Farben
+        verschieden sein. Zweimal die Pik 9 im selben Drilling gilt nicht,
+        obwohl jede Karte im doppelten Blatt zweimal vorkommt. Das Ass
+        steht vor der 2 (A-2-3) oder nach dem König (D-K-A), aber eine
+        Reihe läuft nie um die Ecke: K-A-2 gilt nicht.</p>
+      </div>
+
+      <h2 id="ablagestapel">Mit oder ohne Ablagestapel?</h2>
+
+      <p>Hier gehen die Regeln am weitesten auseinander.</p>
+
+      <p><strong>Übliche Regel:</strong> Beides ist verbreitet. Die
+      Spielanleitungen von Kartenherstellern überlassen die Entscheidung
+      ausdrücklich der Runde: Man einigt sich vor dem Spiel, ob mit oder ohne
+      Ablagestapel gespielt wird. Andere Regelwerke schreiben das Abwerfen
+      am Ende jedes Zuges vor, wie beim klassischen Rommé.</p>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio: ohne Ablagestapel.</strong> Ein Zug hat
+        zwei Schritte:</p>
+        <ol>
+          <li><strong>Ziehen:</strong> Du nimmst eine Karte vom verdeckten
+          Stapel. Das ist Pflicht in jedem Zug, auch wenn du gleich danach
+          auslegen willst. Die gezogene Karte sieht nur, wer sie zieht.</li>
+          <li><strong>Auslegen, anlegen, umbauen:</strong> wenn du willst und
+          kannst. Du darfst auch nur ziehen und den Zug beenden.</li>
+        </ol>
+        <p>Abgeworfen wird nie. Deine Hand wird nur kleiner, wenn du Karten
+        auf den Tisch bringst; jeder Zug, in dem du nichts auslegst, macht
+        sie um eine Karte größer.</p>
+      </div>
+
+      <p>Hast du anderswo gelesen, dass jeder Zug mit dem Abwerfen endet?
+      Dann war dort die Variante mit Ablagestapel beschrieben. Beide
+      Spielweisen sind Räuber-Rommé; wichtig ist nur, dass die Runde sich
+      vorher einigt. Dasselbe gilt für das Ziehen: In verwandten Varianten
+      zieht nur, wer nichts auslegen kann. Bei Ramio wird immer
+      gezogen.</p>
+
+      <h2 id="erstauslage">Wie funktioniert die erste Auslage?</h2>
+
+      <p><strong>Übliche Regel:</strong> Für die erste Auslage, oft
+      Erstauslage genannt, verlangen die meisten Regelwerke einen
+      Mindestwert. Genannt werden <strong>30 oder 40 Punkte</strong>; selbst
+      innerhalb eines Regelwerks findet man beide Zahlen. Das gehört also zu
+      den Dingen, die man vor dem Spiel festlegt.</p>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio: kein Mindestwert, dafür eine reine
+        Dreierreihe.</strong> Deine erste Auslage muss drei aufeinanderfolgende
+        Karten derselben Farbe enthalten, ohne Joker und alle aus deiner
+        Hand. Das gilt auch in Partien ohne Joker.</p>
+      </div>
+
+      <div class="beispiel">
+        <p><span class="lbl">Zählt</span>
+        <span class="gruppe"><span class="k k-kreuz">&clubs;&#xFE0E; 4</span><span class="k k-kreuz">&clubs;&#xFE0E; 5</span><span class="k k-kreuz">&clubs;&#xFE0E; 6</span></span></p>
+        <p><span class="lbl">Zählt nicht</span>
+        <span class="gruppe"><span class="k k-kreuz">&clubs;&#xFE0E; 4</span><span class="k k-joker">Joker</span><span class="k k-kreuz">&clubs;&#xFE0E; 6</span></span>
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; 9</span><span class="k k-karo">&diams;&#xFE0E; 9</span><span class="k k-kreuz">&clubs;&#xFE0E; 9</span></span></p>
+        <p>Eine Reihe mit Joker oder ein Drilling allein öffnet das Spiel
+        nicht, egal wie viele Punkte die Karten wert sind.</p>
+      </div>
+
+      <p>Liegt die reine Dreierreihe, ist im selben Zug schon alles erlaubt:
+      Du darfst sie verlängern, auch mit einem Joker, weitere Kombinationen
+      auslegen und bereits den Tisch umbauen. Die drei Karten müssen nur in
+      derselben Kombination liegen; die darf auch länger sein, etwa wenn du
+      deine drei Karten an eine ausliegende Reihe anlegst. Solange du nicht
+      eröffnet hast, kannst du nur ziehen: kein Anlegen, kein Rauben.</p>
+
+      <h2 id="rauben">Was darf man beim Rauben – und was nicht?</h2>
+
+      <p>Wer eröffnet hat, darf in seinem Zug den <strong>ganzen Tisch
+      umbauen</strong>, die Auslagen der Gegner eingeschlossen: Karten an
+      bestehende Kombinationen anlegen, Reihen teilen, einzelne Karten
+      herausnehmen und woanders einbauen, Kombinationen zusammenlegen. Wie
+      viele Schritte du dafür brauchst, spielt keine Rolle. Es zählt nur der
+      Tisch am Ende des Zuges.</p>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio:</strong> Die App prüft drei Bedingungen,
+        bevor sie einen Zug annimmt.</p>
+        <ul>
+          <li>Am Ende muss <strong>jede Kombination auf dem Tisch gültig</strong>
+          sein. Sonst wird der Zug nicht angenommen, und der Tisch bleibt,
+          wie er war.</li>
+          <li>Du musst <strong>mindestens eine Karte aus deiner Hand</strong>
+          auf den Tisch bringen. Nur umzubauen, ohne etwas dazuzulegen, geht
+          nicht.</li>
+          <li><strong>Keine Karte wandert vom Tisch auf die Hand.</strong> Was
+          einmal liegt, bleibt auf dem Tisch, auch der Joker.</li>
+        </ul>
+      </div>
+
+      <p>Drei typische Fälle. Dick umrandet sind die Karten, die aus der Hand
+      kommen.</p>
+
+      <div class="beispiel">
+        <p><strong>Beispiel 1: eine Reihe teilen</strong></p>
+        <p><span class="lbl">Tisch</span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 3</span><span class="k k-herz">&hearts;&#xFE0E; 4</span><span class="k k-herz">&hearts;&#xFE0E; 5</span><span class="k k-herz">&hearts;&#xFE0E; 6</span><span class="k k-herz">&hearts;&#xFE0E; 7</span></span></p>
+        <p><span class="lbl">Hand</span>
+        <span class="gruppe"><span class="k k-herz k-hand">&hearts;&#xFE0E; 5</span></span></p>
+        <p><span class="lbl">Danach</span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 3</span><span class="k k-herz">&hearts;&#xFE0E; 4</span><span class="k k-herz k-hand">&hearts;&#xFE0E; 5</span></span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 5</span><span class="k k-herz">&hearts;&#xFE0E; 6</span><span class="k k-herz">&hearts;&#xFE0E; 7</span></span></p>
+        <p>Die zweite Herz 5 aus deiner Hand passt in keine Reihe, in der
+        schon eine liegt. Teilst du die Fünferreihe, entstehen zwei gültige
+        Dreierreihen.</p>
+      </div>
+
+      <div class="beispiel">
+        <p><strong>Beispiel 2: eine Karte aus einem Vierling leihen</strong></p>
+        <p><span class="lbl">Tisch</span>
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; 9</span><span class="k k-herz">&hearts;&#xFE0E; 9</span><span class="k k-karo">&diams;&#xFE0E; 9</span><span class="k k-kreuz">&clubs;&#xFE0E; 9</span></span></p>
+        <p><span class="lbl">Hand</span>
+        <span class="gruppe"><span class="k k-karo k-hand">&diams;&#xFE0E; 10</span><span class="k k-karo k-hand">&diams;&#xFE0E; B</span></span></p>
+        <p><span class="lbl">Danach</span>
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; 9</span><span class="k k-herz">&hearts;&#xFE0E; 9</span><span class="k k-kreuz">&clubs;&#xFE0E; 9</span></span>
+        <span class="gruppe"><span class="k k-karo">&diams;&#xFE0E; 9</span><span class="k k-karo k-hand">&diams;&#xFE0E; 10</span><span class="k k-karo k-hand">&diams;&#xFE0E; B</span></span></p>
+        <p>Der Vierling kann eine Karte abgeben, denn drei Neunen bleiben ein
+        gültiger Drilling. Aus einem Drilling ginge das nicht: Zwei Karten
+        sind keine Kombination.</p>
+      </div>
+
+      <div class="beispiel">
+        <p><strong>Beispiel 3: das Ende einer Reihe rauben</strong></p>
+        <p><span class="lbl">Tisch</span>
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; A</span><span class="k k-pik">&spades;&#xFE0E; 2</span><span class="k k-pik">&spades;&#xFE0E; 3</span><span class="k k-pik">&spades;&#xFE0E; 4</span></span></p>
+        <p><span class="lbl">Hand</span>
+        <span class="gruppe"><span class="k k-karo k-hand">&diams;&#xFE0E; 4</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 4</span></span></p>
+        <p><span class="lbl">Danach</span>
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; A</span><span class="k k-pik">&spades;&#xFE0E; 2</span><span class="k k-pik">&spades;&#xFE0E; 3</span></span>
+        <span class="gruppe"><span class="k k-pik">&spades;&#xFE0E; 4</span><span class="k k-karo k-hand">&diams;&#xFE0E; 4</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 4</span></span></p>
+        <p>Dir fehlt die dritte 4. Die Pik 4 am Ende der gegnerischen Reihe
+        ist frei, weil A-2-3 auch ohne sie gültig bleibt.</p>
+      </div>
+
+      <p><strong>Nicht erlaubt</strong> ist bei Ramio also: rauben, bevor man
+      eröffnet hat; eine Karte vom Tisch auf die Hand nehmen; eine
+      Kombination mit weniger als drei Karten zurücklassen; den Tisch
+      umbauen, ohne selbst eine Karte dazuzulegen.</p>
+
+      <h2 id="joker">Wie funktioniert der Joker beim Räuber-Rommé?</h2>
+
+      <p><strong>Übliche Regel:</strong> Der Joker vertritt jede beliebige
+      Karte, und beim Rauben darf er wie jede andere Karte umgesetzt werden.
+      Bleibt er am Rundenende auf der Hand, kostet er häufig 20 Minuspunkte.
+      Aus dem klassischen Rommé kennen viele Runden außerdem den Jokertausch:
+      Wer die vertretene Karte hat, legt sie hin und nimmt den Joker auf die
+      Hand. Ob das auch beim Räuber-Rommé gilt, ist Absprache.</p>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio:</strong></p>
+        <ul>
+          <li>Der Joker steht für jede Karte, in einer Reihe wie in einem
+          Satz.</li>
+          <li>Eine Kombination darf <strong>mehrere Joker</strong> enthalten,
+          solange mindestens eine echte Karte darin liegt.</li>
+          <li>Ein ausliegender Joker darf beim Umbauen <strong>beliebig oft
+          umgesetzt</strong> werden, aber er <strong>bleibt immer auf dem
+          Tisch</strong>. Auf die Hand kommt er nie zurück, auch nicht im
+          Tausch gegen die Karte, die er vertritt.</li>
+          <li>Für die erste Auslage zählt er nicht mit.</li>
+          <li>Auf der Hand kostet er am Rundenende <strong>50
+          Minuspunkte</strong>.</li>
+          <li>Gespielt wird mit zwei Jokern oder ganz ohne.</li>
+        </ul>
+      </div>
+
+      <div class="beispiel">
+        <p><strong>Fall 1: Du hast die Karte, die der Joker vertritt</strong></p>
+        <p><span class="lbl">Tisch</span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 5</span><span class="k k-joker">Joker</span><span class="k k-herz">&hearts;&#xFE0E; 7</span></span></p>
+        <p><span class="lbl">Hand</span>
+        <span class="gruppe"><span class="k k-herz k-hand">&hearts;&#xFE0E; 6</span></span></p>
+        <p><span class="lbl">Danach</span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 5</span><span class="k k-herz k-hand">&hearts;&#xFE0E; 6</span><span class="k k-herz">&hearts;&#xFE0E; 7</span><span class="k k-joker">Joker</span></span></p>
+        <p>Deine Herz 6 nimmt den Platz des Jokers ein. Der Joker wird
+        dadurch frei, aber nicht für deine Hand: Er muss im selben Zug
+        wieder in einer gültigen Kombination liegen. Hier rückt er ans Ende
+        der Reihe und steht nun für die Herz 8; er dürfte ebenso gut in eine
+        andere Kombination wandern.</p>
+      </div>
+
+      <div class="beispiel">
+        <p><strong>Fall 2: den Joker umsetzen und die Lücke schließen</strong></p>
+        <p><span class="lbl">Tisch</span>
+        <span class="gruppe"><span class="k k-karo">&diams;&#xFE0E; B</span><span class="k k-pik">&spades;&#xFE0E; B</span><span class="k k-joker">Joker</span></span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 8</span><span class="k k-herz">&hearts;&#xFE0E; 9</span><span class="k k-herz">&hearts;&#xFE0E; 10</span></span></p>
+        <p><span class="lbl">Hand</span>
+        <span class="gruppe"><span class="k k-kreuz k-hand">&clubs;&#xFE0E; B</span></span></p>
+        <p><span class="lbl">Danach</span>
+        <span class="gruppe"><span class="k k-karo">&diams;&#xFE0E; B</span><span class="k k-pik">&spades;&#xFE0E; B</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; B</span></span>
+        <span class="gruppe"><span class="k k-herz">&hearts;&#xFE0E; 8</span><span class="k k-herz">&hearts;&#xFE0E; 9</span><span class="k k-herz">&hearts;&#xFE0E; 10</span><span class="k k-joker">Joker</span></span></p>
+        <p>Der Joker verlässt den Buben-Drilling und verlängert die
+        Herz-Reihe. Dein Kreuz-Bube schließt die Lücke im Drilling. Am Ende
+        sind beide Kombinationen gültig, und der Joker liegt weiter auf dem
+        Tisch.</p>
+      </div>
+
+      <p align="center" class="kein-druck">
+        <img src="/ramio/assets/ramio-reorganisation-de.gif" alt="Fall 2 in der App: Der Joker verlässt einen Buben-Drilling, um eine Herz-Reihe zu verlängern; dann schließt der Kreuz-Bube aus der Hand die Lücke im Drilling, und der Zug wird bestätigt." width="300" loading="lazy" style="border-radius:12px;max-width:100%;">
       </p>
+
+      <div class="beispiel">
+        <p><strong>Fall 3: Joker und erste Auslage</strong></p>
+        <p><span class="lbl">Hand</span>
+        <span class="gruppe"><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 4</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 5</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 6</span><span class="k k-joker k-hand">Joker</span></span></p>
+        <p><span class="lbl">Erlaubt</span>
+        <span class="gruppe"><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 4</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 5</span><span class="k k-kreuz k-hand">&clubs;&#xFE0E; 6</span><span class="k k-joker k-hand">Joker</span></span></p>
+        <p>Die drei echten Kreuz-Karten bilden die reine Dreierreihe, die
+        Ramio für die erste Auslage verlangt. Der Joker darf im selben Zug
+        als Kreuz 7 dahinter. Ersetzt er dagegen eine der drei Karten, etwa
+        die Kreuz 5, ist das zwar eine gültige Reihe, aber keine
+        Eröffnung.</p>
+      </div>
+
+      <p>Weil der Joker bei Ramio 50 Minuspunkte kostet, also mehr als jede
+      andere Karte, lohnt es sich selten, ihn lange auf der Hand zu
+      behalten.</p>
+
+      <h2 id="zu-zweit">Räuber-Rommé zu zweit: Geht das?</h2>
+
+      <p>Ja, und es braucht dafür keine Sonderregeln. Die verbreiteten
+      Anleitungen kennen keine eigene Zweierregel: Jeder bekommt 13 Karten,
+      der Rest bildet den Stapel.</p>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio:</strong> Zu zweit gelten dieselben Regeln
+        wie zu dritt oder zu viert. Nur der Stapel ist größer: 80 Karten mit
+        Jokern, 78 ohne. Das reicht für 40 Züge pro Spieler, während es zu
+        viert 13 oder 14 sind.</p>
+      </div>
+
+      <p>Am Spielgefühl ändert sich trotzdem etwas. Zwischen zwei eigenen
+      Zügen baut nur ein einziger Gegner den Tisch um, du kannst also
+      weiter vorausplanen. Und weil nie abgeworfen wird, wächst die Hand mit
+      jedem Zug ohne Auslage: Wer zu lange auf die perfekte Kombination
+      wartet, sitzt am Ende auf vielen Minuspunkten.</p>
+
+      <h2 id="wertung">Wann endet die Runde, und wie zählt man die Punkte?</h2>
+
+      <p>Die Runde endet, sobald ein Spieler seine <strong>letzte Karte
+      ausgelegt</strong> hat. Alle anderen zählen die Karten, die sie noch
+      auf der Hand haben, als Minuspunkte. Bei Ramio gelten diese Werte:</p>
+
+      <table>
+        <thead>
+          <tr><th>Karte</th><th>Minuspunkte bei Ramio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2 bis 10</td><td>Wert der Karte</td></tr>
+          <tr><td>Bube, Dame, König</td><td>10</td></tr>
+          <tr><td>Ass</td><td>11</td></tr>
+          <tr><td>Joker</td><td>50</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Übliche Regel:</strong> Den Joker rechnen andere Regelwerke
+      häufig mit 20 Minuspunkten ab. Wie lange eine Partie dauert, ist
+      Absprache.</p>
+
+      <div class="ramio-regel">
+        <p><strong>So spielt Ramio:</strong></p>
+        <ul>
+          <li><strong>Leerer Stapel:</strong> Ist der Stapel aufgebraucht,
+          wenn jemand ziehen müsste, endet die Runde ohne Sieger, und jeder
+          zählt die Minuspunkte seiner Hand.</li>
+          <li><strong>Punktepartie:</strong> Die Minuspunkte werden von Runde
+          zu Runde addiert. Die Partie endet, sobald ein Spieler 100 Punkte
+          erreicht; es gewinnt, wer die wenigsten hat. In einem privaten
+          Raum lässt sich diese Grenze verstellen, von 50 bis 300
+          Punkten.</li>
+          <li><strong>Einfache Partie:</strong> nur eine Runde, ohne Punkte.
+          Wer zuerst seine Hand leert, gewinnt. Geht vorher der Stapel aus,
+          wird die Runde wiederholt.</li>
+        </ul>
+      </div>
 
       <h2 id="raetsel">Ein Rätsel sofort im Browser</h2>
 
-      <p>Keine Installation, kein Konto: Leg alle Karten deiner Hand ab, indem
-      du den Tisch umbaust. Eine Minute, ein Browserfenster — das ist Räuber-Rommé
-      in Reinform.</p>
+      <p>Keine Installation, kein Konto: Werde alle Karten deiner Hand los,
+      indem du den Tisch umbaust. Eine Minute, ein Browserfenster, und du
+      weißt, wie sich Rauben anfühlt.</p>
 
       <p align="center" style="margin:1.5em 0;">
         <a class="cta cta-grand" href="/ramio/defi/?defi=1dbcleh&amp;couleurs=4&amp;src=landing-de&amp;lang=de">
@@ -92,38 +558,15 @@
         </a>
       </p>
 
-      <h2>Die Regeln in Kürze</h2>
+      <h2 id="app">Räuber-Rommé online und als App</h2>
 
-      <ol>
-        <li>2 bis 4 Spieler, zwei Kartenspiele zu je 52 Blatt und zwei Joker; jeder
-        bekommt <strong>13 Karten</strong>.</li>
-        <li>Gültig sind <strong>Reihen</strong> (mindestens drei aufeinanderfolgende
-        Karten derselben Farbe) und <strong>Drillinge oder Vierlinge</strong> (gleicher
-        Wert, lauter verschiedene Farben).</li>
-        <li>Wer am Zug ist, <strong>zieht eine Karte</strong> und darf danach ablegen.
-        Abgeworfen wird nie: Die Hand wird nur durch Ablegen kleiner.</li>
-        <li>Die <strong>erste Ablage</strong> muss eine reine Dreierreihe enthalten —
-        drei aufeinanderfolgende Karten derselben Farbe, ohne Joker.</li>
-        <li>Wer eröffnet hat, darf den <strong>ganzen Tisch umbauen</strong>:
-        Kombinationen aller Spieler verschieben, teilen und neu zusammensetzen,
-        solange am Ende des Zugs alles wieder gültig ist.</li>
-        <li>Der <strong>Joker</strong> steht für jede Karte und darf beim Umbau
-        wiederverwendet werden, solange er auf dem Tisch bleibt; jede Partie
-        wird mit oder ohne Joker angelegt.</li>
-        <li>Das <strong>Ass</strong> steht vor der 2 oder nach dem König, aber eine Reihe
-        läuft nie um die Ecke: K-A-2 gilt nicht.</li>
-        <li>Wer zuerst die Hand leert, beendet die Runde; die anderen zählen
-        Minuspunkte (2 bis 10 nach Wert, Bilder 10, Asse 11, Joker 50). Bei
-        100 Punkten ist die Partie vorbei — es gewinnt, wer am wenigsten
-        Punkte hat.</li>
-      </ol>
-
-      <h2>Ramio auf dem Handy</h2>
-
-      <p>Die App ist <strong>kostenlos</strong>: private Räume mit
-      sechsstelligem Code, öffentliche Partien, Solo gegen den Computer in vier
-      Stufen (auch offline), über 300 Umbau-Rätsel, ein Tagesrätsel für alle
-      und Schnelligkeitsduelle.</p>
+      <p>Ramio ist <strong>kostenlos</strong> für Android und iPhone und
+      wendet die Regeln dieser Seite automatisch an: Ein ungültiger Zug
+      wird gar nicht erst angenommen. In der App findest du private Räume
+      mit sechsstelligem Code für zwei bis vier Spieler, öffentliche Partien,
+      Solo-Partien gegen den Computer in vier Stufen (auch offline), 1.000
+      Umbau-Rätsel, ein Tagesrätsel für alle und Schnellduelle am selben
+      Rätsel.</p>
 
       <p align="center" style="margin:1.5em 0;">
         <a class="cta" href="https://play.google.com/store/apps/details?id=com.ramio">
@@ -135,17 +578,47 @@
       </p>
 
       <p align="center">
-        <img src="/ramio/assets/en-game-art-deco.png" alt="Eine laufende Partie, Thema Art déco" width="170" style="border-radius:12px;max-width:23%;">
-        <img src="/ramio/assets/en-online-game.png" alt="Eine Online-Partie gegen Maya: ihr Avatar, ihre Karten und der Zähler oben, deine Hand unten" width="170" style="border-radius:12px;max-width:23%;">
-        <img src="/ramio/assets/en-private-room.png" alt="Ein privater Raum mit Freunden, mit seinem teilbaren Code" width="170" style="border-radius:12px;max-width:23%;">
-        <img src="/ramio/assets/en-kits-forge.png" alt="Themen: Tischfilze, Kartenrücken und Avatare zur Auswahl" width="170" style="border-radius:12px;max-width:23%;">
+        <img src="/ramio/assets/de-partie-forge.webp" alt="Eine laufende Partie gegen den Computer, Thema Schmiede &amp; Obsidian" width="170" style="border-radius:12px;max-width:23%;">
+        <img src="/ramio/assets/de-online-partie.webp" alt="Eine Online-Partie gegen Lena: ihr Avatar, ihre Karten und der Zähler oben, deine Hand unten" width="170" style="border-radius:12px;max-width:23%;">
+        <img src="/ramio/assets/de-privater-raum.webp" alt="Ein privater Raum mit Freunden, mit seinem teilbaren Code" width="170" style="border-radius:12px;max-width:23%;">
+        <img src="/ramio/assets/de-kit-forge.webp" alt="Themen: Tischfilze, Kartenrücken und Avatare zur Auswahl" width="170" style="border-radius:12px;max-width:23%;">
       </p>
 
-      <div class="encadre">
-        <p><strong>Gründerkonten.</strong> Die ersten 1.000 Konten, die bis zum
-        15. Oktober 2026 angelegt werden, behalten den Premium-Zugang dauerhaft —
-        dazu ein eigener Avatar-Rahmen und die persönliche Gründernummer.</p>
+      <h2 id="faq">Häufige Fragen</h2>
+
+      <div class="faq">
+        <h3>Wie viele Karten bekommt man bei Räuber-Rommé?</h3>
+        <p>13 Karten pro Spieler, zu zweit genauso wie zu dritt oder zu viert. So steht es in den verbreiteten Anleitungen, und so teilt auch Ramio aus. Unterschiedlich ist das Blatt: häufig 110 Karten mit sechs Jokern, bei Ramio 106 Karten mit zwei Jokern oder 104 Karten ohne Joker.</p>
+
+        <h3>Spielt man Räuber-Rommé mit oder ohne Ablagestapel?</h3>
+        <p>Beides ist verbreitet. Die Anleitungen von Kartenherstellern überlassen die Entscheidung der Runde, andere Regelwerke schreiben das Abwerfen vor. Ramio spielt ohne Ablagestapel: In jedem Zug wird eine Karte gezogen, abgeworfen wird nie.</p>
+
+        <h3>Wie viele Punkte braucht man für die erste Auslage?</h3>
+        <p>Je nach Regelwerk 30 oder 40 Punkte; das sollte die Runde vor dem Spiel festlegen. Ramio verlangt keinen Mindestwert, sondern eine reine Dreierreihe: drei aufeinanderfolgende Karten derselben Farbe aus der eigenen Hand, ohne Joker.</p>
+
+        <h3>Darf man den Joker austauschen und auf die Hand nehmen?</h3>
+        <p>Das ist Absprache: Viele Runden übernehmen den Jokertausch aus dem klassischen Rommé. Bei Ramio darf ein ausliegender Joker beliebig oft umgesetzt werden, er bleibt aber immer auf dem Tisch, auch wenn man die Karte bringt, die er vertritt.</p>
+
+        <h3>Kann man Räuber-Rommé zu zweit spielen?</h3>
+        <p>Ja, ohne Sonderregeln. Jeder bekommt 13 Karten, der Rest bildet den verdeckten Stapel. Bei Ramio liegen zu zweit 80 Karten im Stapel (78 ohne Joker), sonst gelten dieselben Regeln wie zu dritt oder zu viert.</p>
+
+        <h3>Gibt es die Spielregeln als PDF?</h3>
+        <p>Eine eigene PDF-Datei gibt es hier nicht. Diese Seite ist aber für den Druck eingerichtet: Über die Druckfunktion des Browsers lässt sie sich ausdrucken oder als PDF speichern.</p>
+
+        <h3>Wie viele Minuspunkte zählt ein Joker auf der Hand?</h3>
+        <p>Häufig 20 Minuspunkte. Bei Ramio sind es 50, mehr als jede andere Karte: Ein Joker sollte deshalb nicht bis zum Rundenende auf der Hand bleiben.</p>
       </div>
+
+      <h2 id="andere-laender">Dasselbe Spiel in anderen Ländern</h2>
+
+      <p>Räuber-Rommé heißt anderswo anders: In Frankreich spielt man es als
+      <a href="https://quintaingames.com/ramio/regles-rami-chinois.html">Rami voleur</a>,
+      in Italien als <a href="https://quintaingames.com/ramio/machiavelli/">Machiavelli</a>,
+      in Brasilien und Portugal als <a href="https://quintaingames.com/ramio/mexe-mexe/">Mexe-Mexe</a>,
+      in Ungarn als rablórömi, in Spanien als Maquiavelo und im Englischen als
+      manipulation rummy. Überall gilt dieselbe Grundidee: Der Tisch gehört
+      allen, und wer am Zug ist, darf die ausliegenden Karten umbauen. Die
+      verlinkten Seiten erklären die Regeln jeweils in der Landessprache.</p>
 
       <h2>Mehr zu Ramio</h2>
 
