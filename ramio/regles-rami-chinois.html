@@ -2,12 +2,12 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Les règles du rami voleur (rami chinois) — le guide complet | Ramio</title>
+<title>Rami voleur : règles, joker, nombre de cartes | Ramio</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Les règles du rami voleur (rami chinois) — le guide complet" />
+<meta property="og:title" content="Rami voleur : règles, joker, nombre de cartes" />
 <meta property="og:locale" content="fr" />
-<meta name="description" content="Règles complètes du rami voleur, aussi appelé rami chinois : 13 cartes, pas de défausse, tierce franche, réorganisation libre de la table. Le guide de référence, avec le décompte des points et les différences avec le rami classique et le Rummikub." />
-<meta property="og:description" content="Règles complètes du rami voleur, aussi appelé rami chinois : 13 cartes, pas de défausse, tierce franche, réorganisation libre de la table. Le guide de référence, avec le décompte des points et les différences avec le rami classique et le Rummikub." />
+<meta name="description" content="Règles du rami voleur (ou rami chinois) : combien de cartes à 2, 3 ou 4, pas de défausse, tierce franche, joker. Cas concrets et questions fréquentes." />
+<meta property="og:description" content="Règles du rami voleur (ou rami chinois) : combien de cartes à 2, 3 ou 4, pas de défausse, tierce franche, joker. Cas concrets et questions fréquentes." />
 <link rel="canonical" href="https://quintaingames.com/ramio/regles-rami-chinois.html" />
 <meta property="og:url" content="https://quintaingames.com/ramio/regles-rami-chinois.html" />
 <meta property="og:site_name" content="Ramio" />
@@ -15,9 +15,9 @@
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg" />
-<meta property="twitter:title" content="Les règles du rami voleur (rami chinois) — le guide complet" />
+<meta property="twitter:title" content="Rami voleur : règles, joker, nombre de cartes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Règles complètes du rami voleur, aussi appelé rami chinois : 13 cartes, pas de défausse, tierce franche, réorganisation libre de la table. Le guide de référence, avec le décompte des points et les différences avec le rami classique et le Rummikub.","headline":"Les règles du rami voleur (rami chinois) — le guide complet","image":"https://quintaingames.com/ramio/assets/ramio-partie-og.jpg","url":"https://quintaingames.com/ramio/regles-rami-chinois.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Règles du rami voleur (ou rami chinois) : combien de cartes à 2, 3 ou 4, pas de défausse, tierce franche, joker. Cas concrets et questions fréquentes.","headline":"Rami voleur : règles, joker, nombre de cartes","image":"https://quintaingames.com/ramio/assets/ramio-partie-og.jpg","url":"https://quintaingames.com/ramio/regles-rami-chinois.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Pages de texte (règles, politiques, mentions) : même habillage que
@@ -26,7 +26,7 @@
     <meta name="theme-color" content="#F3F1EA">
     <link rel="icon" type="image/png" href="assets/ramio-icone-192.png">
     <link rel="preload" href="assets/jost.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/ramio.css?v=faeb2e3b3efd11a702e32f1789f8e7a50fff072d">
+    <link rel="stylesheet" href="assets/ramio.css?v=68dc057fb74aa1be3cc9a806ea62aef03eb67fea">
   </head>
   <body>
     <div class="page">
@@ -38,7 +38,21 @@
       </header>
 
       <main id="content" class="article">
-        <h1 id="les-règles-du-rami-voleur">Les règles du rami voleur</h1>
+        <style>
+/* Cartes en texte, affichage simplifié en quatre couleurs (pique noir,
+   cœur rouge, carreau bleu, trèfle vert). Fond et encre fixés ici : la
+   carte reste lisible sur fond clair comme sur fond sombre. */
+.k { display: inline-block; min-width: 1.6em; padding: 0 .3em; margin: 1px 0;
+  border: 1px solid #8A93A3; border-radius: 5px; background: #fff; color: #111;
+  font-weight: 700; line-height: 1.5; text-align: center; white-space: nowrap;
+  font-variant-emoji: text; }
+.k.kc { color: #C8102E; }
+.k.kd { color: #0B5FB3; }
+.k.kt { color: #1B7A33; }
+.k.kj { border-style: dashed; }
+</style>
+
+<h1 id="les-règles-du-rami-voleur">Les règles du rami voleur</h1>
 
 <p>Le rami voleur — aussi appelé <strong>rami chinois</strong> — est un jeu de cartes de
 la famille du rami, qui se joue de
@@ -47,12 +61,31 @@ Sa grande particularité : <strong>on ne se défausse jamais</strong>, et une fo
 première pose faite, chacun peut <strong>réorganiser librement toute la table</strong>
 pour caser ses cartes — comme au Rummikub, mais avec de vraies cartes.</p>
 
-<p>Ce guide est la règle de référence du rami chinois telle qu’elle est jouée
-dans <a href="./">Ramio</a>, l’application officielle du jeu. Vous pouvez aussi y
-jouer avec deux jeux de cartes classiques : tout ce qu’il faut savoir est
-sur cette page.</p>
+<p>Cette page décrit la règle telle qu’elle est jouée dans <a href="./">Ramio</a>,
+application gratuite pour Android et iPhone. Le jeu est traditionnel et se
+transmet de table en table : là où l’usage courant diffère, c’est signalé
+au fil du texte. Vous pouvez aussi y jouer avec deux jeux de cartes
+classiques : tout ce qu’il faut savoir est sur cette page.</p>
 
-<h2 id="le-matériel">Le matériel</h2>
+<p>L’essentiel, en cinq lignes :</p>
+
+<ul>
+  <li><strong>13 cartes</strong> par joueur, à 2, 3 ou 4 ;</li>
+  <li>à son tour, on <strong>pioche une carte</strong>, puis on pose si on veut : <strong>pas de
+défausse</strong> ;</li>
+  <li>pour poser la première fois, il faut une <strong>tierce franche</strong> (trois
+cartes qui se suivent, même couleur, sans joker) ;</li>
+  <li>ensuite, <strong>toute la table se recompose</strong>, poses des adversaires
+comprises ;</li>
+  <li>le premier qui <strong>vide sa main</strong> gagne la manche.</li>
+</ul>
+
+<p>Pour voir tout cela joué carte après carte : <a href="https://www.youtube.com/watch?v=5oETEAFIu_s">Rami voleur : la règle en
+2 minutes</a> (vidéo, 2 min 13).</p>
+
+<h2 id="combien-de-cartes-au-rami-voleur-">Combien de cartes au rami voleur ?</h2>
+
+<p>Le matériel :</p>
 
 <ul>
   <li><strong>Deux jeux de 52 cartes</strong> mélangés ensemble, soit 104 cartes.</li>
@@ -60,6 +93,44 @@ sur cette page.</p>
 jokers, plus spectaculaire avec.</li>
   <li>De quoi noter les points si vous jouez une partie en plusieurs manches.</li>
 </ul>
+
+<p>Chaque joueur reçoit <strong>13 cartes</strong>, quel que soit le nombre de joueurs.
+Seule la pioche change :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Joueurs</th>
+      <th>Cartes par joueur</th>
+      <th>Pioche au départ, sans joker</th>
+      <th>Pioche au départ, avec 2 jokers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>13</td>
+      <td>78</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>13</td>
+      <td>65</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>13</td>
+      <td>52</td>
+      <td>54</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>À table, on voit aussi des donnes plus courtes, de 10 ou 11 cartes. Dans
+Ramio, la donne est de 13 cartes ; en salon privé, elle se règle de 7 à
+15 cartes.</p>
 
 <h2 id="le-but-du-jeu">Le but du jeu</h2>
 
@@ -78,6 +149,14 @@ valeur, de couleurs <strong>toutes différentes</strong> : deux 9 de pique dans 
 brelan, c’est interdit.</li>
 </ul>
 
+<p>En cartes (V = Valet, D = Dame, R = Roi) :</p>
+
+<ul>
+  <li>une suite : <span class="k kc">7♥︎</span> <span class="k kc">8♥︎</span> <span class="k kc">9♥︎</span></li>
+  <li>un brelan : <span class="k">9♠︎</span> <span class="k kc">9♥︎</span> <span class="k kd">9♦︎</span></li>
+  <li>un carré : <span class="k">R♠︎</span> <span class="k kc">R♥︎</span> <span class="k kd">R♦︎</span> <span class="k kt">R♣︎</span></li>
+</ul>
+
 <h2 id="la-donne">La donne</h2>
 
 <p>Chaque joueur reçoit <strong>13 cartes</strong>. Le reste forme la <strong>pioche</strong> (le
@@ -85,7 +164,7 @@ brelan, c’est interdit.</li>
 <strong>pas de défausse</strong> au rami chinois. Le premier joueur de la première
 manche est tiré au sort ; ensuite, la main tourne à chaque manche.</p>
 
-<h2 id="le-tour-de-jeu">Le tour de jeu</h2>
+<h2 id="le-tour-de-jeu--y-a-t-il-une-défausse-">Le tour de jeu : y a-t-il une défausse ?</h2>
 
 <p>À son tour, un joueur :</p>
 
@@ -100,6 +179,9 @@ toujours facultatif : on peut piocher et passer.</li>
 posant. C’est ce qui donne au jeu son tempo particulier : chaque tour sans
 pose fait grossir la main — et les pénalités potentielles.</p>
 
+<p>À table, on voit aussi des règles qui gardent une défausse en fin de
+tour. Ce n’est pas le cas dans Ramio.</p>
+
 <h3 id="la-première-pose--la-tierce-franche">La première pose : la tierce franche</h3>
 
 <p>Pour avoir le droit de poser, il faut ouvrir avec au moins une <strong>tierce
@@ -107,6 +189,11 @@ franche</strong> : trois cartes qui se suivent, de la même couleur, <strong>san
 joker</strong>. Pas de minimum de points (contrairement aux 51 points du rami
 classique) : la tierce franche est la seule porte d’entrée. On peut poser
 d’autres combinaisons dans le même tour, la tierce franche en fait partie.</p>
+
+<p>Par exemple, <span class="k kt">4♣︎</span> <span class="k kt">5♣︎</span> <span class="k kt">6♣︎</span>
+ouvre le jeu ; <span class="k kt">4♣︎</span> <span class="k kj">Joker</span> <span class="k kt">6♣︎</span>
+ne l’ouvre pas, pas plus qu’un brelan. À table, on voit aussi une
+ouverture à 30 ou 40 points.</p>
 
 <h3 id="la-réorganisation-de-la-table">La réorganisation de la table</h3>
 
@@ -121,7 +208,33 @@ carré corrects. Si ce n’est pas le cas, tout revient en place.</p>
 <p>C’est le cœur du rami chinois : bien jouer, ce n’est pas seulement poser
 ses cartes, c’est voir les recompositions que personne d’autre n’a vues.</p>
 
-<h3 id="le-joker">Le joker</h3>
+<p>Trois recompositions courantes :</p>
+
+<ul>
+  <li><strong>Emprunter la quatrième carte d’un carré.</strong>
+Sur la table : <span class="k">8♠︎</span> <span class="k kc">8♥︎</span> <span class="k kd">8♦︎</span> <span class="k kt">8♣︎</span>.
+En main : <span class="k kc">6♥︎</span> <span class="k kc">7♥︎</span>.
+Après le tour : <span class="k kc">6♥︎</span> <span class="k kc">7♥︎</span> <span class="k kc">8♥︎</span>
+et <span class="k">8♠︎</span> <span class="k kd">8♦︎</span> <span class="k kt">8♣︎</span>.</li>
+  <li><strong>Couper une longue suite.</strong>
+Sur la table : <span class="k kt">3♣︎</span> <span class="k kt">4♣︎</span> <span class="k kt">5♣︎</span> <span class="k kt">6♣︎</span> <span class="k kt">7♣︎</span>.
+En main : le second <span class="k kt">5♣︎</span> (on joue avec deux jeux).
+Après le tour : <span class="k kt">3♣︎</span> <span class="k kt">4♣︎</span> <span class="k kt">5♣︎</span>
+et <span class="k kt">5♣︎</span> <span class="k kt">6♣︎</span> <span class="k kt">7♣︎</span>.</li>
+  <li><strong>Prendre le bout d’une suite.</strong>
+Sur la table : <span class="k kd">9♦︎</span> <span class="k kd">10♦︎</span> <span class="k kd">V♦︎</span> <span class="k kd">D♦︎</span>.
+En main : <span class="k">D♠︎</span> <span class="k kc">D♥︎</span>.
+Après le tour : <span class="k kd">9♦︎</span> <span class="k kd">10♦︎</span> <span class="k kd">V♦︎</span>
+et <span class="k">D♠︎</span> <span class="k kc">D♥︎</span> <span class="k kd">D♦︎</span>.</li>
+</ul>
+
+<p>Dans les trois cas, une carte au moins vient de la main : on ne recompose
+pas la table sans rien y ajouter. Et une carte posée ne revient jamais en
+main.</p>
+
+<h2 id="le-joker-au-rami-voleur--quatre-cas-concrets">Le joker au rami voleur : quatre cas concrets</h2>
+
+<p>La règle, d’abord :</p>
 
 <ul>
   <li>Le joker <strong>remplace n’importe quelle carte</strong>, dans une suite comme dans
@@ -132,6 +245,84 @@ au moins une vraie carte.</li>
 réorganisations, à volonté — mais il <strong>reste sur la table</strong> : on ne le
 reprend jamais en main, même en apportant la carte qu’il remplace.</li>
 </ul>
+
+<p>C’est le point sur lequel les tables divergent le plus. Voici ce que
+Ramio applique, et ce que l’on voit ailleurs.</p>
+
+<h3 id="1-vous-avez-la-carte-que-le-joker-remplace">1. Vous avez la carte que le joker remplace</h3>
+
+<p>Sur la table : <span class="k kc">5♥︎</span> <span class="k kj">Joker</span> <span class="k kc">7♥︎</span>.
+En main : <span class="k kc">6♥︎</span>.</p>
+
+<p>Vous posez votre 6 à sa place. Le joker est libéré, mais il reste sur la
+table : il glisse au bout de la suite,
+<span class="k kc">5♥︎</span> <span class="k kc">6♥︎</span> <span class="k kc">7♥︎</span> <span class="k kj">Joker</span>
+(il vaut alors le 8 de cœur), ou il part dans une autre combinaison
+pendant le même tour.</p>
+
+<p>À table, on voit aussi le joueur reprendre le joker en main contre la
+carte qu’il remplace.</p>
+
+<h3 id="2-le-joker-est-dans-un-brelan">2. Le joker est dans un brelan</h3>
+
+<p>Sur la table : <span class="k">9♠︎</span> <span class="k kc">9♥︎</span> <span class="k kj">Joker</span>.
+En main : <span class="k kd">9♦︎</span>.</p>
+
+<p>Vous ajoutez votre 9 : le brelan devient un carré,
+<span class="k">9♠︎</span> <span class="k kc">9♥︎</span> <span class="k kd">9♦︎</span> <span class="k kj">Joker</span>,
+où le joker tient la place du 9 de trèfle. Vous pouvez aussi l’emmener
+ailleurs, puisque les trois 9 tiennent seuls. Si quelqu’un apporte plus
+tard le 9 de trèfle, le joker doit partir dans une autre combinaison : un
+carré ne compte jamais plus de quatre cartes.</p>
+
+<p>À table, on voit aussi une règle plus stricte : le joker d’un brelan ne se
+libère qu’en apportant les deux cartes manquantes.</p>
+
+<h3 id="3-vous-déplacez-un-joker-pour-poser-vos-cartes">3. Vous déplacez un joker pour poser vos cartes</h3>
+
+<p>Sur la table : <span class="k">3♠︎</span> <span class="k">4♠︎</span> <span class="k">5♠︎</span> <span class="k kj">Joker</span>.
+En main : <span class="k kd">D♦︎</span> <span class="k kd">R♦︎</span>.</p>
+
+<p>La suite de pique tient sans son joker. Vous le prenez et vous posez
+<span class="k kd">D♦︎</span> <span class="k kd">R♦︎</span> <span class="k kj">Joker</span> :
+il vaut maintenant l’As ou le Valet de carreau. Aucune condition, sinon celles de
+toute réorganisation : avoir déjà fait sa première pose, jouer au moins
+une carte de sa main, laisser toute la table valide.</p>
+
+<h3 id="4-deux-jokers-ensemble-et-le-joker-gardé-en-main">4. Deux jokers ensemble, et le joker gardé en main</h3>
+
+<p>La suite <span class="k kt">7♣︎</span> <span class="k kj">Joker</span> <span class="k kj">Joker</span>
+est valide : il suffit d’une vraie carte. À table, on voit
+aussi la limite d’un seul joker par combinaison.</p>
+
+<p>Un joker encore en main à la fin de la manche coûte <strong>50 points</strong>, plus
+que toute autre carte : mieux vaut le poser tôt. Selon les tables, on voit
+aussi 15 à 25 points.</p>
+
+<p>Dernier point : le joker ne compte pas dans la tierce franche de la
+première pose. Une fois vos trois cartes franches réunies, rien n’empêche
+de prolonger la suite avec un joker dans le même tour.</p>
+
+<h2 id="le-rami-voleur-à-deux-joueurs">Le rami voleur à deux joueurs</h2>
+
+<p>Le rami voleur se joue très bien à deux, avec la même règle qu’à trois ou
+quatre : <strong>13 cartes chacun</strong>, la pioche obligatoire, la tierce franche
+pour ouvrir, la table à recomposer.</p>
+
+<p>Ce qui change, ce sont les proportions :</p>
+
+<ul>
+  <li>26 cartes sont distribuées, et la pioche en compte <strong>78</strong> (80 avec les
+jokers) : chacun peut piocher 39 fois avant qu’elle ne s’épuise ;</li>
+  <li>la table se garnit moins vite, puisque deux mains seulement
+l’alimentent ;</li>
+  <li>toute carte posée vient de votre unique adversaire, et tout ce que
+vous posez lui sert au tour suivant.</li>
+</ul>
+
+<p>Le décompte est le même : partie à 100 points, ou partie simple en une
+manche. Dans Ramio, on joue à deux en salon privé avec un ami, ou contre
+l’ordinateur.</p>
 
 <h2 id="la-fin-de-manche-et-les-points">La fin de manche et les points</h2>
 
@@ -179,7 +370,11 @@ gagne la partie.</p>
 <p>Variante rapide, la <strong>partie simple</strong> : une seule manche, le premier à
 vider sa main gagne. Si la pioche s’épuise, on rejoue la manche.</p>
 
-<h2 id="rami-chinois-rami-classique-rummikub--les-différences">Rami chinois, rami classique, Rummikub : les différences</h2>
+<p>Dans Ramio, les parties publiques se jouent avec les jokers, en partie
+simple, avec 120 secondes par tour. En salon privé, jokers, partie à
+points ou partie simple se choisissent à la création.</p>
+
+<h2 id="rami-voleur-rami-classique-rummikub--les-différences">Rami voleur, rami classique, Rummikub : les différences</h2>
 
 <p><strong>Face au rami classique</strong> (celui de la défausse et des 51 points) :</p>
 
@@ -217,19 +412,156 @@ familles et les régions on dira rami voleur, rami chinois, ou simplement
 « notre rami » ; les règles de cette page valent pour tous. Ramio est
 donc aussi l’application du rami voleur.</p>
 
-<h2 id="jouer-au-rami-chinois-en-ligne">Jouer au rami chinois en ligne</h2>
+<h2 id="la-règle-du-rami-voleur-en-vidéo">La règle du rami voleur en vidéo</h2>
 
-<p><a href="./">Ramio</a> est l’application du rami chinois : salons privés entre
-amis, parties publiques, mode solo contre l’ordinateur (même hors ligne),
-défis à résoudre façon problèmes d’échecs. Les règles de cette page y sont
-arbitrées automatiquement — impossible de se tromper, impossible de
-tricher. Gratuit, sur Android et iPhone.</p>
+<p><a href="https://www.youtube.com/watch?v=5oETEAFIu_s">Rami voleur : la règle en 2 minutes</a>
+(YouTube, chaîne Quintain Games, 2 min 13) montre la règle de Ramio,
+chaque coup étant joué dans l’application : le but, les
+combinaisons, le tour, la première pose, la table à défaire,
+<a href="https://www.youtube.com/watch?v=5oETEAFIu_s&amp;t=91s">le joker</a> et la fin de
+manche.</p>
+
+<h2 id="le-même-jeu-dans-dautres-pays">Le même jeu dans d’autres pays</h2>
+
+<p>Le rami voleur porte d’autres noms ailleurs : en Allemagne, <a href="https://quintaingames.com/ramio/raeuber-romme/">Räuber-Rommé</a> ;
+en Italie, <a href="https://quintaingames.com/ramio/machiavelli/">Machiavelli</a> ;
+au Brésil et au Portugal, <a href="https://quintaingames.com/ramio/mexe-mexe/">mexe-mexe</a> ;
+en Hongrie, rablórömi ; en Espagne, Maquiavelo ; en anglais, manipulation
+rummy. L’idée est la même partout : la table est à tout le monde et, à son
+tour, on peut recomposer les combinaisons déjà posées. Les pages liées
+expliquent les règles dans la langue de chaque pays.</p>
+
+<h2 id="jouer-au-rami-voleur-en-ligne">Jouer au rami voleur en ligne</h2>
+
+<p><a href="./">Ramio</a> est l’application du rami voleur, ou rami chinois : salons
+privés entre amis, parties publiques, mode solo contre l’ordinateur (même
+hors ligne), et 1 000 casse-têtes à résoudre façon problèmes d’échecs.
+L’application applique les règles de cette page : une pose qui ne tient
+pas est refusée, et rien ne bouge sur la table. Gratuit, sur Android et
+iPhone.</p>
 
 <p>Installer Ramio : <a href="https://play.google.com/store/apps/details?id=com.ramio">Google Play</a> · <a href="https://apps.apple.com/fr/app/id6788317282">App Store</a></p>
+
+<h2 id="questions-fréquentes">Questions fréquentes</h2>
+
+<h3 id="combien-de-cartes-au-rami-voleur--1">Combien de cartes au rami voleur ?</h3>
+
+<p>Chaque joueur reçoit 13 cartes, que l’on soit 2, 3 ou 4. On joue avec deux
+jeux de 52 cartes, soit 104 cartes, ou 106 avec 2 jokers. À table, on voit
+aussi des donnes de 10 ou 11 cartes.</p>
+
+<h3 id="y-a-t-il-une-défausse-au-rami-voleur-">Y a-t-il une défausse au rami voleur ?</h3>
+
+<p>Non. À son tour, on pioche une carte, puis on pose si on le peut et si on
+le veut. On ne se défausse jamais : la main ne diminue qu’en posant.
+Certaines règles de table gardent une défausse en fin de tour ; ce n’est
+pas le cas dans Ramio.</p>
+
+<h3 id="peut-on-reprendre-le-joker-au-rami-voleur-">Peut-on reprendre le joker au rami voleur ?</h3>
+
+<p>Dans Ramio, non : un joker posé reste sur la table. On peut le déplacer
+d’une combinaison à l’autre pendant son tour, autant de fois qu’on veut,
+mais jamais le remettre en main. À table, on voit aussi la reprise du
+joker contre la carte qu’il remplace.</p>
+
+<h3 id="combien-vaut-le-joker-au-rami-voleur-">Combien vaut le joker au rami voleur ?</h3>
+
+<p>Dans Ramio, un joker resté en main à la fin de la manche coûte 50 points
+de pénalité. C’est la carte la plus chère, devant l’As (11 points) et les
+figures (10 points). Selon les tables, on voit aussi 15 à 25 points.</p>
+
+<h3 id="peut-on-jouer-au-rami-voleur-à-deux-">Peut-on jouer au rami voleur à deux ?</h3>
+
+<p>Oui. La règle est la même à 2, 3 ou 4 joueurs : 13 cartes chacun. À deux,
+la pioche compte 78 cartes au départ, ou 80 avec les jokers.</p>
+
+<h3 id="rami-voleur-et-rami-chinois-est-ce-le-même-jeu-">Rami voleur et rami chinois, est-ce le même jeu ?</h3>
+
+<p>Oui : deux noms pour un même jeu, dit « voleur » parce qu’on y prend les
+cartes déjà posées par les autres. D’une table à l’autre, quelques règles
+varient, surtout sur le joker et le nombre de cartes.</p>
+
+<h3 id="peut-on-jouer-au-rummikub-avec-des-cartes-">Peut-on jouer au Rummikub avec des cartes ?</h3>
+
+<p>Le rami voleur en est très proche : deux jeux de 52 cartes remplacent les
+tuiles, et la table se réorganise librement. Les différences tiennent à
+l’ouverture, une tierce franche au lieu de 30 points, et au décompte des
+pénalités.</p>
+
+<h3 id="où-jouer-au-rami-voleur-en-ligne-">Où jouer au rami voleur en ligne ?</h3>
+
+<p>Ramio est une application gratuite pour Android et iPhone : parties en
+ligne, salons privés entre amis, mode solo contre l’ordinateur et 1 000
+casse-têtes.</p>
 
 <p>Contact : contact@quintaingames.com</p>
 
 <p style="font-size:0.85em;color:#666;margin-top:2em;"><a href="mentions-legales.html">Mentions légales</a></p>
+
+<!-- Données structurées (sans FAQPage, retiré volontairement).
+     Vidéo : date et durée lues sur YouTube le 13/10/2026. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://quintaingames.com/ramio/regles-rami-chinois.html#article",
+      "headline": "Les règles du rami voleur",
+      "description": "Règles du rami voleur (ou rami chinois) : combien de cartes à 2, 3 ou 4, pas de défausse, tierce franche, joker. Cas concrets et questions fréquentes.",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://quintaingames.com/ramio/regles-rami-chinois.html",
+      "image": "https://quintaingames.com/ramio/assets/ramio-partie-og.jpg",
+      "datePublished": "2026-07-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@type": "Organization",
+        "name": "Quintain Games",
+        "url": "https://quintaingames.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Quintain Games",
+        "url": "https://quintaingames.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quintain Games",
+          "item": "https://quintaingames.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ramio",
+          "item": "https://quintaingames.com/ramio/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Règles du rami voleur",
+          "item": "https://quintaingames.com/ramio/regles-rami-chinois.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Rami voleur : la règle en 2 minutes (Ramio)",
+      "description": "Apprenez la règle du rami voleur telle qu'elle se joue dans Ramio : deux jeux de cartes, 13 cartes chacun, pas de défausse, et une table que l'on peut défaire et recomposer à chaque tour.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/5oETEAFIu_s/hqdefault.jpg",
+      "uploadDate": "2026-10-07T22:00:32-07:00",
+      "duration": "PT2M13S",
+      "inLanguage": "fr",
+      "url": "https://www.youtube.com/watch?v=5oETEAFIu_s",
+      "embedUrl": "https://www.youtube.com/embed/5oETEAFIu_s"
+    }
+  ]
+}
+</script>
 
 
       </main>
