@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><title>Ramio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ramio">
+<meta property="og:title" content="Relève le défi sur Ramio">
+<meta property="og:description" content="Le rami voleur en casse-tête : vide ta main en réorganisant la table. Joue dans ton navigateur ou dans l'app.">
+<meta property="og:image" content="https://quintaingames.com/assets/ramio-defi-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // Lien court du partage du défi du jour (build 87, migration 124) :
+  // /d?<code> -> partage enregistré -> page rejoindre avec défi, temps,
+  // pseudo et uid. Code inconnu ou hors ligne : page rejoindre sans défi.
+  (function () {
+    var page = "/ramio/rejoindre";
+    var cle = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprcmthaW1yeWJ4YmRyem54aHh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDkzMTYsImV4cCI6MjA5NjY4NTMxNn0.28Ns814SQSFXaKRR0-ZrHoX1G8Cpnhf6sNCZ6kgtAio";
+    var code = location.search.slice(1).split("&")[0];
+    if (!/^[2-9a-zA-Z]{6,10}$/.test(code)) { location.replace(page); return; }
+    fetch("https://zkrkaimrybxbdrznxhxx.supabase.co/rest/v1/rpc/lire_partage_defi", {
+      method: "POST",
+      headers: { apikey: cle, Authorization: "Bearer " + cle, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_code: code })
+    }).then(function (r) { return r.ok ? r.json() : []; }).then(function (lignes) {
+      var p = lignes && lignes[0];
+      if (!p) { location.replace(page); return; }
+      var q = "defi=" + encodeURIComponent(p.defi) + "&temps=" + p.temps_ms;
+      if (p.de) q += "&de=" + encodeURIComponent(p.de);
+      if (p.uid) q += "&uid=" + p.uid;
+      location.replace(page + "?" + q + "&src=partage-jour");
+    }).catch(function () { location.replace(page); });
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/ramio/rejoindre"></noscript>
+</head><body style="background:#123c4a"></body></html>
