@@ -403,9 +403,9 @@
 
     // La rétention des JOUEURS (a rejoué) a sa section, ramio_retention ;
     // ici, tous les appareils sauf les robots (migration 128), joueurs ou non (a rouvert l'app).
-    B.retention += tableCard('Retour dans l\'app par semaine d\'installation', 'tous les appareils sauf les robots des stores, joueurs ou non · D1 = a rouvert l\'app le lendemain · S1 = dans les 7 jours',
-      [{ t: 'Semaine du' }, { t: 'Nouveaux', n: 1 }, { t: 'D1', n: 1 }, { t: 'S1', n: 1 }],
-      d.retention.map(function (r) { return [fmtDay(r.week), r.n, pct(r.d1, r.n_d1), pct(r.w1, r.n_w1)]; }));
+    B.retention += tableCard('Retour dans l\'app par semaine d\'installation', 'tous les appareils sauf les robots des stores, joueurs ou non · D1 = a rouvert l\'app le lendemain · S1 = dans les 7 jours · J30 = entre J28 et J34',
+      [{ t: 'Semaine du' }, { t: 'Nouveaux', n: 1 }, { t: 'D1', n: 1 }, { t: 'S1', n: 1 }, { t: 'J30', n: 1 }],
+      d.retention.map(function (r) { return [fmtDay(r.week), r.n, pct(r.d1, r.n_d1), pct(r.w1, r.n_w1), pct(r.d30, r.n_d30)]; }));
 
     var modes = Object.keys(d.games_by_mode_30d).map(function (m) { return [m, d.games_by_mode_30d[m]]; }).sort(function (a, b) { return b[1] - a[1]; });
     B.parties += tableCard('Parties par mode (30 jours)', 'parties distinctes', [{ t: 'Mode' }, { t: 'Parties', n: 1 }], modes);
