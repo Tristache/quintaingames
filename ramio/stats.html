@@ -402,8 +402,8 @@
       }), 'funnel');
 
     // La rétention des JOUEURS (a rejoué) a sa section, ramio_retention ;
-    // ici, tous les appareils, joueurs ou non (a rouvert l'app).
-    B.retention += tableCard('Retour dans l\'app par semaine d\'installation', 'tous les appareils, joueurs ou non · D1 = a rouvert l\'app le lendemain · S1 = dans les 7 jours',
+    // ici, tous les appareils sauf les robots (migration 128), joueurs ou non (a rouvert l'app).
+    B.retention += tableCard('Retour dans l\'app par semaine d\'installation', 'tous les appareils sauf les robots des stores, joueurs ou non · D1 = a rouvert l\'app le lendemain · S1 = dans les 7 jours',
       [{ t: 'Semaine du' }, { t: 'Nouveaux', n: 1 }, { t: 'D1', n: 1 }, { t: 'S1', n: 1 }],
       d.retention.map(function (r) { return [fmtDay(r.week), r.n, pct(r.d1, r.n_d1), pct(r.w1, r.n_w1)]; }));
 
@@ -820,7 +820,7 @@
       return '<div class="tile"><div class="k">' + esc(x[0]) + '</div><div class="v">' + x[1] + '</div><div class="s">' + esc(x[2]) + '</div></div>';
     }).join('') + '</div><div class="grid">';
 
-    html += tableCard('Par semaine d\'arrivée', 'semaine du premier jour de jeu, 12 semaines',
+    html += tableCard('Par semaine d\'arrivée', 'semaine du premier jour de jeu, 12 semaines · solo : de la 79 à la 86, une partie solo abandonnée avant la fin n'était pas mesurée, d'où une rupture de série avec la 87',
       [{ t: 'Semaine du' }, { t: 'Joueurs', n: 1 }, { t: 'J1', n: 1 }, { t: 'J7', n: 1 }, { t: 'J7 ou après', n: 1 }, { t: 'J30', n: 1 }, { t: 'J30 ou après', n: 1 }],
       d.cohortes.slice().reverse().map(function (c) {
         return [fmtDay(c.week), c.joueurs, part(c.d1, c.n_d1), part(c.d7, c.n_d7), part(c.d7p, c.n_d7), part(c.d30, c.n_d30), part(c.d30p, c.n_d30)];
