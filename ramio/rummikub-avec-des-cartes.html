@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Rummikub avec des cartes : la règle du rami voleur | Ramio</title>
+    <meta name="description" content="Jouer au Rummikub avec des cartes : deux jeux de 52 cartes et deux jokers suffisent. La règle du rami voleur pas à pas, les différences et un exemple.">
+    <link rel="canonical" href="https://quintaingames.com/ramio/rummikub-avec-des-cartes.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Ramio">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://quintaingames.com/ramio/rummikub-avec-des-cartes.html">
+    <meta property="og:title" content="Jouer au Rummikub avec des cartes : la règle du rami voleur">
+    <meta property="og:description" content="Deux jeux de 52 cartes et deux jokers donnent le même matériel que les tuiles. La règle du rami voleur, ce qui change par rapport au Rummikub et un coup expliqué carte par carte.">
+    <meta property="og:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg">
+    <meta name="theme-color" content="#F3F1EA">
+    <link rel="icon" type="image/png" href="assets/ramio-icone-192.png">
+    <link rel="preload" href="assets/jost.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/ramio.css?v=4374e32c732acfc402d334e24f00892e8b40a36b">
+    <style>
+      /* Cartes en texte, affichage simplifié en quatre couleurs (pique noir,
+         cœur rouge, carreau bleu, trèfle vert), comme regles-rami-chinois. */
+      .k { display: inline-block; min-width: 1.6em; padding: 0 .3em; margin: 1px 0;
+        border: 1px solid #8A93A3; border-radius: 5px; background: #fff; color: #111;
+        font-weight: 700; line-height: 1.5; text-align: center; white-space: nowrap;
+        font-variant-emoji: text; }
+      .k.kc { color: #C8102E; }
+      .k.kd { color: #0B5FB3; }
+      .k.kt { color: #1B7A33; }
+      .k.kj { border-style: dashed; }
+      .k.km { border: 2px solid #111; box-shadow: 0 2px 0 #111; }
+      .combo { display: inline-block; white-space: nowrap; margin: 0 .6em .2em 0; }
+      .avis { border: 1px solid var(--ligne); border-radius: 10px; background: var(--fond2);
+        padding: 10px 14px; margin: 0 0 18px; font-size: .92em; }
+      .sommaire { margin: 0 0 8px; padding-inline-start: 22px; }
+      @media (min-width: 700px) { .sommaire { columns: 2; column-gap: 32px; } }
+      .sommaire li { break-inside: avoid; }
+      .exemple { border-inline-start: 4px solid var(--laiton); border-radius: 0 10px 10px 0;
+        background: #fff; padding: 12px 16px; margin: 0 0 18px; }
+      .exemple p { margin: 0 0 8px; }
+      .exemple > :last-child { margin-bottom: 0; }
+      .lbl { display: inline-block; min-width: 7.2em; font-size: .85em; font-weight: 600;
+        color: var(--encre); }
+      .telephone { margin: 8px auto 0; }
+      .captures { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 8px 0 18px; max-width: 560px; }
+      .captures figure { margin: 0; }
+      .captures .large { grid-column: 1 / -1; }
+      .captures img { display: block; width: 100%; height: auto; border: 1px solid var(--ligne); }
+      .captures figcaption, .legende { color: var(--gris); font-size: .85em; margin-top: 6px; }
+      .actions { margin: 8px 0 18px; }
+      /* .article img (ramio.css) écraserait la hauteur des badges. */
+      .article .badge img { height: 48px; width: auto; border-radius: 0; }
+      .bouton { margin: 4px 0 18px; }
+      .discret { color: var(--gris); font-size: .9em; }
+    </style>
+
+    <!-- Données structurées : Article et fil d'Ariane (pas de FAQPage,
+         retirée des autres pages le 13/10 : Google ne l'affiche plus). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://quintaingames.com/ramio/rummikub-avec-des-cartes.html#article",
+          "headline": "Jouer au Rummikub avec des cartes : la règle du rami voleur",
+          "description": "Jouer au Rummikub avec des cartes : deux jeux de 52 cartes et deux jokers suffisent. La règle du rami voleur pas à pas, les différences et un exemple.",
+          "inLanguage": "fr",
+          "mainEntityOfPage": "https://quintaingames.com/ramio/rummikub-avec-des-cartes.html",
+          "image": "https://quintaingames.com/ramio/assets/ramio-partie-og.jpg",
+          "datePublished": "2026-11-05",
+          "dateModified": "2026-11-05",
+          "author": {
+            "@type": "Organization",
+            "name": "Quintain Games",
+            "url": "https://quintaingames.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Quintain Games",
+            "url": "https://quintaingames.com/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Quintain Games",
+              "item": "https://quintaingames.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ramio",
+              "item": "https://quintaingames.com/ramio/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Rummikub avec des cartes",
+              "item": "https://quintaingames.com/ramio/rummikub-avec-des-cartes.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="entete">
+        <a class="marque" href="./">
+          <img src="assets/ramio-icone-192.png" alt="" width="40" height="40">
+          <div><b>Ramio</b><span>par Quintain Games</span></div>
+        </a>
+      </header>
+
+      <main id="content" class="article">
+        <h1>Jouer au Rummikub avec des cartes : la règle du rami voleur</h1>
+
+        <p>Pas de boîte de Rummikub sous la main ? <strong>Deux jeux de 52 cartes
+        et deux jokers</strong> donnent le même matériel : 106 pièces, quatre
+        couleurs, treize valeurs, chacune en deux exemplaires. Et le jeu de
+        cartes qui se joue ainsi existe déjà : en France, on l’appelle le
+        <strong>rami voleur</strong>, ou rami chinois. La table y est à tout le
+        monde et, à son tour, on peut recomposer toutes les combinaisons
+        posées.</p>
+
+        <p>Cette page fait la correspondance entre tuiles et cartes, donne la
+        règle du rami voleur pas à pas, puis ce qui change par rapport au
+        Rummikub, avec un coup expliqué carte par carte. La règle décrite est
+        celle de <a href="./">Ramio</a>, application gratuite de rami voleur
+        pour Android et iPhone ; elle se joue telle quelle avec de vraies
+        cartes.</p>
+
+        <p class="avis">Rummikub est une marque déposée de son titulaire. Ramio
+        n’est ni affilié au Rummikub ni approuvé par son titulaire.</p>
+
+        <ol class="sommaire">
+          <li><a href="#rummikub">Le Rummikub, et pourquoi des cartes suffisent</a></li>
+          <li><a href="#materiel">Le matériel</a></li>
+          <li><a href="#regle">La règle du rami voleur, pas à pas</a></li>
+          <li><a href="#differences">Ce qui change par rapport au Rummikub</a></li>
+          <li><a href="#exemple">Un coup de réorganisation, carte par carte</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+          <li><a href="#ramio">Jouer seul, à plusieurs ou en ligne</a></li>
+        </ol>
+
+        <h2 id="rummikub">Le Rummikub, et pourquoi des cartes suffisent</h2>
+
+        <p>Le Rummikub est un jeu de tuiles de la famille du rami. On y pose
+        des suites et des combinaisons de même numéro sur une table commune,
+        et l’on peut, à son tour, défaire et recomposer ce qui est posé pour y
+        caser ses propres tuiles. Sa boîte contient <strong>106 tuiles</strong> :
+        des numéros de 1 à 13 en quatre couleurs, chacun en deux exemplaires,
+        et deux jokers.</p>
+
+        <p>Un jeu de cartes a la même structure, à un détail près : chaque
+        carte n’y existe qu’une fois. Il suffit donc d’en mélanger deux.</p>
+
+        <table>
+          <thead>
+            <tr><th>Au Rummikub</th><th>Avec des cartes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Quatre couleurs de tuiles</td><td>Quatre enseignes : pique, cœur, carreau, trèfle</td></tr>
+            <tr><td>Numéros de 1 à 13</td><td>As, 2 à 10, Valet, Dame, Roi</td></tr>
+            <tr><td>Chaque tuile en deux exemplaires</td><td>Deux jeux de 52 cartes mélangés</td></tr>
+            <tr><td>Deux jokers</td><td>Deux jokers</td></tr>
+            <tr><td>106 tuiles</td><td>106 cartes, ou 104 sans jokers</td></tr>
+            <tr><td>Le chevalet</td><td>La main</td></tr>
+            <tr><td>La pioche</td><td>La pioche, ou sabot</td></tr>
+          </tbody>
+        </table>
+
+        <p>Dans une suite, le Valet, la Dame et le Roi suivent le 10 : ils
+        tiennent la place des 11, 12 et 13. L’As se place avant le 2, ou après
+        le Roi (A = As, V = Valet, D = Dame, R = Roi) :</p>
+
+        <p><span class="combo"><span class="k kd">10♦︎</span> <span class="k kd">V♦︎</span> <span class="k kd">D♦︎</span> <span class="k kd">R♦︎</span> <span class="k kd">A♦︎</span></span></p>
+
+        <p>Une gêne, au premier coup d’œil : un jeu classique n’a que deux
+        couleurs, rouge et noir. Un jeu dit «&nbsp;quatre couleurs&nbsp;» donne à chaque
+        enseigne la sienne, comme les tuiles : pique noir, cœur rouge, carreau
+        bleu, trèfle vert. C’est aussi l’affichage que Ramio propose, au
+        choix :</p>
+
+        <p><span class="combo"><span class="k">R♠︎</span> <span class="k kc">R♥︎</span> <span class="k kd">R♦︎</span> <span class="k kt">R♣︎</span></span></p>
+
+        <h2 id="materiel">Le matériel</h2>
+
+        <ul>
+          <li><strong>Deux jeux de 52 cartes</strong>, mélangés ensemble, soit
+          104 cartes.</li>
+          <li><strong>Deux jokers</strong> en tout, si vous jouez avec (106
+          cartes). Avec deux jeux de 54 cartes, gardez deux jokers et rangez les
+          deux autres. Le jeu est plus tactique sans jokers, plus spectaculaire
+          avec.</li>
+          <li>Une feuille et un crayon pour noter les points, si vous jouez une
+          partie en plusieurs manches.</li>
+          <li>De la place au centre : les combinaisons y restent posées, face
+          visible, jusqu’à la fin de la manche.</li>
+        </ul>
+
+        <p>On joue de <strong>2 à 4 joueurs</strong>. Pas de chevalet : chacun
+        tient ses cartes en main.</p>
+
+        <h2 id="regle">La règle du rami voleur, pas à pas</h2>
+
+        <h3>1. La donne</h3>
+
+        <p>Mélangez les deux jeux et distribuez <strong>13 cartes</strong> à
+        chaque joueur, que vous soyez 2, 3 ou 4. Le reste forme la
+        <strong>pioche</strong>, face cachée au centre. On ne retourne aucune
+        carte : il n’y a pas de défausse. Le premier joueur est tiré au sort,
+        puis chacun commence à son tour, une manche après l’autre.</p>
+
+        <h3>2. Le but</h3>
+
+        <p>Être le premier à <strong>vider sa main</strong> en posant toutes ses
+        cartes sur la table, en combinaisons valides.</p>
+
+        <h3>3. Les combinaisons</h3>
+
+        <ul>
+          <li><strong>La suite</strong> : au moins trois cartes qui se suivent,
+          de la même enseigne. L’As se place avant le 2 (A-2-3) ou après le Roi
+          (D-R-A), mais la suite ne «&nbsp;tourne&nbsp;» jamais : R-A-2 est interdit.<br>
+          <span class="combo"><span class="k kc">7♥︎</span> <span class="k kc">8♥︎</span> <span class="k kc">9♥︎</span></span></li>
+          <li><strong>Le brelan</strong> (trois cartes) ou <strong>le carré</strong>
+          (quatre cartes) : même valeur, enseignes toutes différentes. Deux 9 de
+          pique dans le même brelan, c’est interdit, même avec deux jeux.<br>
+          <span class="combo"><span class="k">9♠︎</span> <span class="k kc">9♥︎</span> <span class="k kd">9♦︎</span></span>
+          <span class="combo"><span class="k">R♠︎</span> <span class="k kc">R♥︎</span> <span class="k kd">R♦︎</span> <span class="k kt">R♣︎</span></span></li>
+        </ul>
+
+        <h3>4. Le tour de jeu</h3>
+
+        <ol>
+          <li><strong>Piochez une carte</strong> : c’est obligatoire, à chaque
+          tour, même si vous vous apprêtez à poser.</li>
+          <li><strong>Posez si vous le voulez</strong>, et si vous le pouvez :
+          nouvelles combinaisons, cartes ajoutées à celles de la table,
+          réorganisation.</li>
+        </ol>
+
+        <p>Et c’est tout : <strong>on ne se défausse jamais</strong>. La main ne
+        diminue qu’en posant ; chaque tour sans pose la fait grossir d’une
+        carte.</p>
+
+        <h3>5. La première pose : la tierce franche</h3>
+
+        <p>Pour avoir le droit de poser, il faut ouvrir avec une <strong>tierce
+        franche</strong> : trois cartes de sa main qui se suivent, de la même
+        enseigne, <strong>sans joker</strong>. Il n’y a pas de minimum de
+        points. Dans le même tour, vous pouvez prolonger cette suite, même avec
+        un joker, poser d’autres combinaisons et déjà réorganiser la table.</p>
+
+        <div class="exemple">
+          <p><span class="lbl">Ouvre le jeu</span>
+          <span class="combo"><span class="k kt">4♣︎</span> <span class="k kt">5♣︎</span> <span class="k kt">6♣︎</span></span></p>
+          <p><span class="lbl">Ne l’ouvre pas</span>
+          <span class="combo"><span class="k kt">4♣︎</span> <span class="k kj">Joker</span> <span class="k kt">6♣︎</span></span>
+          <span class="combo"><span class="k">9♠︎</span> <span class="k kc">9♥︎</span> <span class="k kd">9♦︎</span></span></p>
+        </div>
+
+        <h3>6. La réorganisation de la table</h3>
+
+        <p>Une fois sa première pose faite, on peut, pendant son tour,
+        <strong>réorganiser toute la table</strong>, poses des adversaires
+        comprises : déplacer une carte d’une combinaison à l’autre, couper une
+        longue suite, emprunter la quatrième carte d’un carré. Trois
+        conditions :</p>
+
+        <ul>
+          <li>à la fin du tour, <strong>toute la table est valide</strong> ;
+          sinon, tout revient en place ;</li>
+          <li>au moins <strong>une carte de votre main</strong> rejoint la
+          table ;</li>
+          <li>aucune carte posée ne revient en main.</li>
+        </ul>
+
+        <h3>7. Le joker</h3>
+
+        <ul>
+          <li>Il <strong>remplace n’importe quelle carte</strong>, dans une suite
+          comme dans un brelan.</li>
+          <li>Une combinaison peut en contenir <strong>plusieurs</strong>, tant
+          qu’il lui reste au moins une vraie carte.</li>
+          <li>Posé, il se <strong>déplace à volonté</strong> lors des
+          réorganisations, mais il <strong>reste sur la table</strong> : on ne le
+          reprend jamais en main, même en apportant la carte qu’il
+          remplace.</li>
+          <li>Il ne compte pas dans la tierce franche de la première pose.</li>
+        </ul>
+
+        <h3>8. La fin de manche</h3>
+
+        <p>La manche s’arrête dès qu’un joueur a <strong>posé sa dernière
+        carte</strong>. Les autres comptent les pénalités des cartes qui leur
+        restent en main :</p>
+
+        <table>
+          <thead>
+            <tr><th>Cartes</th><th>Pénalité</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2 à 10</td><td>valeur de la carte</td></tr>
+            <tr><td>Valet, Dame, Roi</td><td>10</td></tr>
+            <tr><td>As</td><td>11</td></tr>
+            <tr><td>Joker</td><td>50</td></tr>
+          </tbody>
+        </table>
+
+        <p>Si la pioche s’épuise avant qu’un joueur ait fini, la manche
+        s’arrête sans gagnant et <strong>chacun compte les pénalités de sa
+        main</strong>.</p>
+
+        <h3>9. La partie</h3>
+
+        <p>Les pénalités s’additionnent de manche en manche. La partie s’arrête
+        dès qu’un joueur atteint <strong>100 points</strong> : le moins pénalisé
+        gagne. Pour jouer vite, faites une <strong>partie simple</strong> : une
+        seule manche, le premier qui vide sa main gagne ; si la pioche
+        s’épuise, on rejoue la manche.</p>
+
+        <p>Le <a href="regles-rami-chinois.html">guide complet du rami
+        voleur</a> détaille les cas du joker et les variantes de table ; la
+        vidéo <a href="https://www.youtube.com/watch?v=EyOOPrnz4xU">Rami voleur :
+        la règle en 2 minutes</a> montre la règle jouée coup par coup.</p>
+
+        <h2 id="differences">Ce qui change par rapport au Rummikub</h2>
+
+        <p>L’idée est la même : une table commune que l’on recompose. Les
+        règles diffèrent sur plusieurs points. La colonne Rummikub reprend la règle la
+        plus répandue ; les éditions varient sur quelques détails.</p>
+
+        <table>
+          <thead>
+            <tr><th>Point</th><th>Rummikub</th><th>Rami voleur, règle de Ramio</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Matériel</td><td>106 tuiles, un chevalet par joueur</td><td>deux jeux de 52 cartes et 2 jokers, tenus en main</td></tr>
+            <tr><td>Donne</td><td>14 tuiles par joueur</td><td>13 cartes par joueur</td></tr>
+            <tr><td>Tour</td><td>on pose ; si l’on ne pose rien, on pioche</td><td>on pioche toujours, puis on pose si l’on veut</td></tr>
+            <tr><td>Première pose</td><td>au moins 30 points</td><td>une tierce franche, sans minimum de points</td></tr>
+            <tr><td>Le 1, l’As</td><td>le 1 se place seulement avant le 2</td><td>l’As se place avant le 2 ou après le Roi</td></tr>
+            <tr><td>Joker posé</td><td>se reprend contre la tuile qu’il remplace</td><td>se déplace sur la table, ne revient jamais en main</td></tr>
+            <tr><td>Joker resté en main</td><td>30 points</td><td>50 points</td></tr>
+            <tr><td>Autres pénalités</td><td>la valeur de la tuile</td><td>2 à 10 leur valeur, figures 10, As 11</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Pas de chevalet</h3>
+
+        <p>Les cartes se tiennent en main, en éventail. Comme on ne se défausse
+        jamais, la main grossit à chaque tour sans pose : triez-la par
+        enseigne, puis par valeur, pour repérer vos suites. Au centre, chaque
+        combinaison s’étale en cartes légèrement décalées, pour que toutes les
+        valeurs restent lisibles.</p>
+
+        <h3>Des figures à la place des 11, 12 et 13</h3>
+
+        <p>Valet, Dame et Roi suivent le 10 dans les suites, comme les tuiles
+        11, 12 et 13. Deux nuances : l’As peut aussi venir après le Roi
+        (Dame-Roi-As), et chaque figure ne coûte que 10 points de pénalité,
+        l’As 11.</p>
+
+        <h3>La valeur des jokers</h3>
+
+        <p>Un joker resté en main en fin de manche coûte <strong>50
+        points</strong>, plus que toute autre carte : on a intérêt à le poser
+        tôt. Une fois posé, il appartient à la table : tout joueur qui a fait
+        sa première pose peut le déplacer pendant une réorganisation, mais
+        personne ne le reprend en main.</p>
+
+        <h3>La première pose et la pioche</h3>
+
+        <p>Pas de calcul de points pour ouvrir : une tierce franche suffit,
+        même faite de petites cartes. En revanche, on pioche à chaque tour,
+        même quand on pose : chaque carte gardée en main est une pénalité qui
+        attend.</p>
+
+        <h2 id="exemple">Un coup de réorganisation, carte par carte</h2>
+
+        <p>Le cœur du jeu : défaire ce qui est posé pour caser ses cartes.
+        Voici un coup joué par un joueur qui a déjà fait sa première pose. La
+        carte encadrée en gras vient de sa main.</p>
+
+        <div class="exemple">
+          <p><span class="lbl">Sur la table</span>
+          <span class="combo"><span class="k kd">V♦︎</span> <span class="k">V♠︎</span> <span class="k kj">Joker</span></span>
+          <span class="combo"><span class="k kc">8♥︎</span> <span class="k kc">9♥︎</span> <span class="k kc">10♥︎</span></span></p>
+          <p><span class="lbl">En main</span>
+          <span class="combo"><span class="k kt km">V♣︎</span> <span class="k kd">3♦︎</span> <span class="k">9♠︎</span></span></p>
+          <ol>
+            <li>Le joker quitte le brelan de valets et vient au bout de la suite
+            de cœur, où il vaut le Valet de cœur. Le brelan n’a plus que deux
+            cartes : la table n’est pas encore valide.</li>
+            <li>Le Valet de trèfle de la main vient réparer le brelan.</li>
+          </ol>
+          <p><span class="lbl">Après le tour</span>
+          <span class="combo"><span class="k kd">V♦︎</span> <span class="k">V♠︎</span> <span class="k kt km">V♣︎</span></span>
+          <span class="combo"><span class="k kc">8♥︎</span> <span class="k kc">9♥︎</span> <span class="k kc">10♥︎</span> <span class="k kj">Joker</span></span></p>
+          <p>Toute la table est valide et une carte de la main a été posée : le
+          coup est accepté. Le joker n’est pas revenu en main, il a seulement
+          changé de combinaison.</p>
+        </div>
+
+        <div class="telephone"><video src="assets/ramio-reorganisation-fr.mp4" poster="assets/ramio-reorganisation-fr.jpg" width="420" height="898" autoplay muted loop playsinline aria-label="Le joker quitte un brelan de valets pour prolonger une suite de cœur, puis le valet de trèfle de la main vient réparer le brelan : la pose est validée."></video></div>
+        <p class="legende" style="text-align:center;">Le même coup dans Ramio, en affichage quatre couleurs.</p>
+
+        <p>Autre recomposition courante, qui n’existe que parce que chaque carte
+        est en double : couper une longue suite avec le second exemplaire
+        d’une carte.</p>
+
+        <div class="exemple">
+          <p><span class="lbl">Sur la table</span>
+          <span class="combo"><span class="k kt">3♣︎</span> <span class="k kt">4♣︎</span> <span class="k kt">5♣︎</span> <span class="k kt">6♣︎</span> <span class="k kt">7♣︎</span></span></p>
+          <p><span class="lbl">En main</span>
+          <span class="combo"><span class="k kt km">5♣︎</span></span></p>
+          <p><span class="lbl">Après le tour</span>
+          <span class="combo"><span class="k kt">3♣︎</span> <span class="k kt">4♣︎</span> <span class="k kt">5♣︎</span></span>
+          <span class="combo"><span class="k kt km">5♣︎</span> <span class="k kt">6♣︎</span> <span class="k kt">7♣︎</span></span></p>
+        </div>
+
+        <h2 id="faq">Questions fréquentes</h2>
+
+        <h3>Peut-on jouer au Rummikub avec un jeu de cartes ?</h3>
+        <p>Oui, avec deux jeux de 52 cartes et deux jokers : on obtient 106 cartes, quatre enseignes à la place des quatre couleurs et deux exemplaires de chaque valeur, comme les tuiles. Le jeu de cartes qui se joue ainsi s’appelle le rami voleur, ou rami chinois.</p>
+
+        <h3>Combien de jeux de cartes faut-il ?</h3>
+        <p>Deux jeux de 52 cartes, mélangés ensemble. Ajoutez deux jokers si vous jouez avec : 106 cartes en tout, ou 104 sans jokers.</p>
+
+        <h3>Combien de cartes distribuer à chaque joueur ?</h3>
+        <p>13 cartes chacun, à 2, 3 ou 4 joueurs. Le reste forme la pioche, face cachée.</p>
+
+        <h3>Que valent les figures ?</h3>
+        <p>Dans une suite, le Valet, la Dame et le Roi suivent le 10, comme les tuiles 11, 12 et 13. En pénalité, chaque figure vaut 10 points, l’As 11 et le joker 50.</p>
+
+        <h3>Peut-on reprendre un joker posé ?</h3>
+        <p>Pas dans la règle de Ramio : un joker posé peut être déplacé d’une combinaison à l’autre pendant une réorganisation, mais il reste sur la table. À table, certains joueurs le reprennent contre la carte qu’il remplace.</p>
+
+        <h3>Peut-on jouer seul ?</h3>
+        <p>Avec un jeu de cartes, il faut au moins deux joueurs. Pour jouer seul, Ramio propose des parties contre l’ordinateur, même hors ligne, et 1 000 casse-têtes.</p>
+
+        <h3>Ramio, est-ce le Rummikub ?</h3>
+        <p>Non. Ramio est une application de rami voleur, un jeu de cartes de la même famille, qui se joue avec deux jeux de 52 cartes. Rummikub est une marque déposée de son titulaire. Ramio n’est ni affilié au Rummikub ni approuvé par son titulaire.</p>
+
+        <h2 id="ramio">Jouer au rami voleur seul, à plusieurs ou en ligne</h2>
+
+        <p>Pas de cartes sous la main, ou personne pour jouer ?
+        <a href="./">Ramio</a> applique la règle de cette page sur téléphone :
+        une pose qui ne tient pas est refusée, et rien ne bouge sur la table.
+        Gratuit, sur Android et iPhone.</p>
+
+        <ul>
+          <li><strong>Seul</strong> : contre l’ordinateur, à quatre niveaux,
+          même sans connexion ; 1 000 casse-têtes et un défi du jour commun à
+          tous les joueurs.</li>
+          <li><strong>À plusieurs</strong> : un salon privé, un code à six
+          caractères à envoyer, et la partie commence, de 2 à 4 joueurs, avec ou
+          sans jokers, aux points ou en partie simple.</li>
+          <li><strong>En ligne</strong> : des parties publiques de 2 à 4 joueurs,
+          quand vos amis ne sont pas là.</li>
+        </ul>
+
+        <div class="actions">
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img src="assets/badge-play-fr.png" alt="Disponible sur Google Play" width="163" height="48"></a>
+          <a class="badge" href="https://apps.apple.com/fr/app/id6788317282"><img src="assets/badge-appstore-fr.svg" alt="Télécharger dans l'App Store" height="48"></a>
+        </div>
+
+        <div class="captures">
+          <figure class="large">
+            <img src="assets/page-table-quatre.webp" alt="Une partie à quatre contre l’ordinateur, en paysage : trois adversaires à gauche, la table au centre, la main en bas ; les cartes que l’adversaire vient de poser sont surlignées." width="1280" height="720" loading="lazy">
+            <figcaption>Seul contre trois ordinateurs, même hors ligne.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/page-salon-fr.webp" alt="Un salon privé entre amis, avec son code à partager" width="480" height="853" loading="lazy">
+            <figcaption>Un salon privé et son code.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/page-defi-fr.webp" alt="Le défi du jour : une table déjà posée et six cartes en main à placer" width="480" height="853" loading="lazy">
+            <figcaption>Le défi du jour.</figcaption>
+          </figure>
+        </div>
+
+        <h3>Un casse-tête dans le navigateur</h3>
+
+        <p>Sans rien installer ni créer de compte : videz votre main en
+        recomposant la table. Une minute suffit pour sentir ce que «&nbsp;voler&nbsp;»
+        une carte veut dire.</p>
+
+        <p><a class="bouton" href="/ramio/defi/?defi=1dbcleh&amp;couleurs=4&amp;src=page-rummikub&amp;lang=fr">Essayer un casse-tête dans le navigateur</a></p>
+
+        <p>Contact : contact@quintaingames.com</p>
+
+        <p class="discret">Rummikub est une marque déposée de son titulaire.
+        Ramio n’est ni affilié au Rummikub ni approuvé par son titulaire.</p>
+      </main>
+
+      <footer class="pied court">
+        <span><a href="https://quintaingames.com/">Quintain Games</a> · France · contact@quintaingames.com</span>
+        <span><a href="./">Ramio</a> · <a href="regles-rami-chinois.html">Règles du rami voleur</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+      </footer>
+    </div>
+
+    <script>
+      // Mesure du site (migration 74) : même RPC que assets/mesure.js, avec
+      // la langue et le canal par défaut écrits ici, comme les pages
+      // d'atterrissage (machiavelli, raeuber-romme) : sans ?src=, le lien
+      // Google Play porte quand même le canal page-rummikub.
+      (function () {
+        'use strict';
+        var API = 'https://zkrkaimrybxbdrznxhxx.supabase.co/rest/v1/rpc/log_site_visit';
+        var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprcmthaW1yeWJ4YmRyem54aHh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDkzMTYsImV4cCI6MjA5NjY4NTMxNn0.28Ns814SQSFXaKRR0-ZrHoX1G8Cpnhf6sNCZ6kgtAio';
+        var PLAY = 'https://play.google.com/store/apps/details?id=com.ramio';
+        var APPSTORE = 'https://apps.apple.com/';
+        var LANG = 'fr';
+        var src = 'page-rummikub';
+        try {
+          src = (new URLSearchParams(location.search).get('src') || '').slice(0, 40) || 'page-rummikub';
+        } catch (e) {}
+        var ref = '';
+        try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+
+        function log(kind) {
+          try {
+            fetch(API, {
+              method: 'POST',
+              keepalive: true,
+              headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' },
+              body: JSON.stringify({ p_kind: kind, p_src: src, p_lang: LANG, p_ref: ref })
+            }).catch(function () {});
+          } catch (e) {}
+        }
+
+        var liens = document.querySelectorAll('a[href]');
+        for (var i = 0; i < liens.length; i++) {
+          var a = liens[i];
+          if (a.href.indexOf(PLAY) === 0) {
+            a.href = PLAY + '&referrer=' + encodeURIComponent(
+              'utm_source=' + src + '&utm_medium=site&utm_campaign=beta-' + LANG);
+            a.addEventListener('click', function () { log('play'); });
+          } else if (a.href.indexOf(APPSTORE) === 0) {
+            a.addEventListener('click', function () { log('appstore'); });
+          }
+        }
+        log('visit');
+      })();
+    </script>
+  </body>
+</html>
