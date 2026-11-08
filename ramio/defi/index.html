@@ -19,10 +19,31 @@
   <style>html, body { margin: 0; height: 100%; background: #0e1730; overflow: hidden; }</style>
 </head>
 <body>
+  <!-- Attente visible dès le premier octet (2026-11-08) : sans elle, l'écran
+       restait bleu nuit vide 5 s en 4G, plus de 20 s en 4G faible. Retirée
+       à la première image de Flutter. -->
+  <style>
+    #attente { position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 22px;
+      transition: opacity .3s; }
+    #attente img { width: 96px; height: 96px; border-radius: 22px; }
+    #attente .cartes { display: flex; gap: 8px; }
+    #attente .cartes i { width: 18px; height: 26px; border-radius: 3px;
+      background: #f3ead8; opacity: .25; animation: attente 1.2s infinite; }
+    #attente .cartes i:nth-child(2) { animation-delay: .2s; }
+    #attente .cartes i:nth-child(3) { animation-delay: .4s; }
+    @keyframes attente { 40% { opacity: .9; transform: translateY(-5px); } }
+    @media (prefers-reduced-motion: reduce) { #attente .cartes i { animation: none; opacity: .6; } }
+  </style>
+  <div id="attente"><img src="icons/Icon-192.png" alt="Ramio"><div class="cartes"><i></i><i></i><i></i></div></div>
   <script>
     // Plugin passkeys (transitif, inutile ici) : son enregistrement web
     // exige window.PasskeyAuthenticator et ferme la page sinon.
     window.PasskeyAuthenticator = window.PasskeyAuthenticator || { init() {} };
+    window.addEventListener('flutter-first-frame', function () {
+      var a = document.getElementById('attente');
+      if (a) { a.style.opacity = '0'; setTimeout(function () { a.remove(); }, 300); }
+    });
   </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
