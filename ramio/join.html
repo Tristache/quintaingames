@@ -140,11 +140,11 @@
     var src = clean(params.get("src"), 40);
 
     // ÉVÉNEMENT DES STORES (2026-10-01) : lien de l'événement Apple et du
-    // contenu promotionnel Play (?evenement=halloween), ouvert dans l'app
+    // contenu promotionnel Play (?evenement=halloween ou noel), ouvert dans l'app
     // par parseEvenementUri. Sans l'app, la page dit l'événement, puis un
     // message neutre après la fin (heure locale du navigateur). Un
     // événement inconnu est ignoré (comportement d'avant).
-    var FINS_EVENEMENT = { halloween: new Date(2026, 10, 5) };
+    var FINS_EVENEMENT = { halloween: new Date(2026, 10, 5), noel: new Date(2027, 0, 1) };
     var evenement = clean(params.get("evenement"), 20).toLowerCase();
     if (!Object.prototype.hasOwnProperty.call(FINS_EVENEMENT, evenement)) evenement = "";
     var evenementFini = !!evenement && new Date() >= FINS_EVENEMENT[evenement];
@@ -427,7 +427,7 @@
     var T = L[lang];
     T.ami = de ? T.amiDe.replace("{de}", de) : T.ami;
 
-    // Textes de l'événement Halloween (titre = halTitre de l'app).
+    // Textes de l'événement Halloween (titre = halTitre de l'app) et texte appstore commun.
     var LE = {
       "fr": {
         "titre": "La table hantée",
@@ -502,7 +502,74 @@
         "appstore": "iPhone: Ramio installeren via de App Store"
       }
     };
-    T.evenement = LE[lang].titre;
+    // Textes de l'événement de Noël (titre = noelTitre de l'app, build 88).
+    // Le texte appstore reste celui de LE.
+    var LN = {
+      "fr": {
+        "titre": "La table de Noël",
+        "note": "Installe Ramio : ta table de Noël t'attend du 1er au 31 décembre, avec des surprises au fil du mois et un cadeau du Père Noël le 25, rien à acheter. Une fois l'app installée, ce lien ouvre directement la table.",
+        "fini": "L'événement de Noël est terminé. Ramio reste à installer : le rami voleur en ligne ou hors ligne, avec un défi chaque jour."
+      },
+      "en": {
+        "titre": "The Christmas Table",
+        "note": "Install Ramio: your Christmas table awaits from December 1 to 31, with surprises through the month and a gift from Santa on the 25th, nothing to buy. Once the app is installed, this link opens the table directly.",
+        "fini": "The Christmas event is over. Ramio is still here to install: Manipulation Rummy online or offline, with a daily puzzle."
+      },
+      "es": {
+        "titre": "La mesa de Navidad",
+        "note": "Instala Ramio: tu mesa de Navidad te espera del 1 al 31 de diciembre, con sorpresas a lo largo del mes y un regalo de Papá Noel el 25, sin comprar nada. Con la app instalada, este enlace abre directamente la mesa.",
+        "fini": "El evento de Navidad ha terminado. Ramio sigue disponible: rummy en línea o sin conexión, con un desafío cada día."
+      },
+      "de": {
+        "titre": "Der Weihnachtstisch",
+        "note": "Installiere Ramio: Vom 1. bis 31. Dezember wartet dein Weihnachtstisch auf dich, mit Überraschungen im Lauf des Monats und einem Geschenk vom Weihnachtsmann am 25., ohne etwas zu kaufen. Ist die App installiert, öffnet dieser Link direkt den Tisch.",
+        "fini": "Das Weihnachts-Event ist vorbei. Ramio kannst du weiterhin installieren: Räuber-Rommé online oder offline, mit einem Tagesrätsel."
+      },
+      "it": {
+        "titre": "La tavola di Natale",
+        "note": "Installa Ramio: la tua tavola di Natale ti aspetta dal 1° al 31 dicembre, con sorprese nel corso del mese e un regalo di Babbo Natale il 25, senza comprare nulla. Con l'app installata, questo link apre direttamente la tavola.",
+        "fini": "L'evento di Natale è finito. Ramio resta disponibile: Machiavelli online o offline, con una sfida al giorno."
+      },
+      "pt": {
+        "titre": "A mesa de Natal",
+        "note": "Instale o Ramio: sua mesa de Natal espera por você de 1 a 31 de dezembro, com surpresas ao longo do mês e um presente do Papai Noel no dia 25, sem comprar nada. Com o app instalado, este link abre direto a mesa.",
+        "fini": "O evento de Natal terminou. O Ramio continua disponível: Mexe-Mexe online ou offline, com um desafio por dia."
+      },
+      "pl": {
+        "titre": "Świąteczny stół",
+        "note": "Zainstaluj Ramio: od 1 do 31 grudnia czeka na Ciebie świąteczny stół, z niespodziankami w ciągu miesiąca i prezentem od Świętego Mikołaja 25 grudnia, bez kupowania. Gdy aplikacja jest zainstalowana, ten link od razu otwiera stół.",
+        "fini": "Wydarzenie świąteczne dobiegło końca. Ramio nadal możesz zainstalować: remik online i offline, z łamigłówką dnia."
+      },
+      "tr": {
+        "titre": "Yılbaşı Masası",
+        "note": "Ramio'yu yükle: Yılbaşı masan 1 ile 31 Aralık arasında seni bekliyor; ay boyunca sürprizler ve 25'inde Noel Baba'dan bir hediye var, hiçbir şey satın almadan. Uygulama yüklüyse bu bağlantı masayı doğrudan açar.",
+        "fini": "Yılbaşı etkinliği sona erdi. Ramio'yu yine de yükleyebilirsin: çevrimiçi ya da çevrimdışı Remi, her gün bir bulmaca."
+      },
+      "ro": {
+        "titre": "Masa de Crăciun",
+        "note": "Instalează Ramio: masa ta de Crăciun te așteaptă între 1 și 31 decembrie, cu surprize pe parcursul lunii și un cadou de la Moș Crăciun pe 25, fără să cumperi nimic. Cu aplicația instalată, acest link deschide direct masa.",
+        "fini": "Evenimentul de Crăciun s-a încheiat. Ramio rămâne disponibil: remi online sau offline, cu o provocare în fiecare zi."
+      },
+      "hu": {
+        "titre": "A karácsonyi asztal",
+        "note": "Telepítsd a Ramiót: december 1. és 31. között vár rád a karácsonyi asztal, a hónap során meglepetésekkel és 25-én egy ajándékkal a Télapótól, vásárlás nélkül. Ha az app telepítve van, ez a link közvetlenül az asztalt nyitja meg.",
+        "fini": "A karácsonyi esemény véget ért. A Ramio továbbra is telepíthető: rablórömi online vagy offline, napi kihívással."
+      },
+      "ar": {
+        "titre": "مائدة رأس السنة",
+        "note": "ثبّت Ramio: مائدة رأس السنة بانتظارك من 1 إلى 31 ديسمبر، مع مفاجآت على مدار الشهر وهدية من بابا نويل يوم 25، دون شراء أي شيء. إذا كان التطبيق مثبّتًا، يفتح هذا الرابط المائدة مباشرة.",
+        "fini": "انتهت فعالية رأس السنة. لا يزال بإمكانك تثبيت Ramio: رمي عبر الإنترنت أو دون اتصال، مع تحدٍّ كل يوم."
+      },
+      "nl": {
+        "titre": "De kersttafel",
+        "note": "Installeer Ramio: van 1 tot 31 december wacht je kersttafel op je, met verrassingen door de maand heen en op de 25e een cadeau van de Kerstman, zonder iets te kopen. Is de app geïnstalleerd, dan opent deze link meteen de tafel.",
+        "fini": "Het kerstevenement is voorbij. Ramio kun je nog steeds installeren: rummy met kaarten, online of offline, met elke dag een nieuwe puzzel."
+      }
+    };
+    // Textes de l'événement demandé ; sans événement, ceux d'Halloween
+    // comme avant (rien n'est affiché hors du cas « evenement »).
+    var EV = evenement === "noel" ? LN[lang] : LE[lang];
+    T.evenement = EV.titre;
 
     var el = function (id) { return document.getElementById(id); };
     document.title = T[cas] + " - Ramio";
@@ -525,7 +592,7 @@
       el("code").style.display = "none";
       el("note").textContent = cas === "ami" ? T.noteAmi :
         cas === "beat" ? T.noteBeat : cas === "puzzle" ? T.notePuzzle :
-        cas === "evenement" ? (evenementFini ? LE[lang].fini : LE[lang].note) : T.noteSalon;
+        cas === "evenement" ? (evenementFini ? EV.fini : EV.note) : T.noteSalon;
     }
 
     // Événement : publié avec la version des stores, donc plus de bêta ;
