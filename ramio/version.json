@@ -48,6 +48,106 @@
         "tr": "Testten ayrıl",
         "ar": "مغادرة الاختبار"
       }
+    },
+    {
+      "id": "ordi-remplace-88",
+      "platform": "android",
+      "installedBefore": "2026-11-19",
+      "title": {
+        "fr": "Du nouveau en partie publique",
+        "en": "New in public games",
+        "de": "Neu bei öffentlichen Partien",
+        "es": "Novedad en las partidas públicas",
+        "it": "Novità nelle partite pubbliche",
+        "pt": "Novidade nas partidas públicas",
+        "nl": "Nieuw bij openbare spellen",
+        "pl": "Nowość w grach publicznych",
+        "ro": "Noutate la partidele publice",
+        "hu": "Újdonság a nyilvános játszmákban",
+        "tr": "Herkese açık oyunlarda yenilik",
+        "ar": "جديد في المباريات العامة",
+        "ko": "공개 게임에 새로운 기능이 생겼어요"
+      },
+      "body": {
+        "fr": "Ramio est un jeu récent. Pour augmenter tes chances de trouver un joueur en ligne, si tu choisis d'attendre contre l'Ordi et que quelqu'un arrive pendant les 2 premières minutes, on vous réunira aussitôt. Après 2 minutes, on te proposera de rejoindre sa partie. Dans les deux cas, ta partie contre l'Ordi est sauvegardée et tu pourras la reprendre.",
+        "en": "Ramio is a new game. To improve your chances of finding an opponent online: if you choose to play the Bot while you wait and someone shows up within the first 2 minutes, we'll match you up right away. After 2 minutes, we'll ask if you want to join them. Either way, your game against the Bot is saved and you can pick it up later.",
+        "de": "Ramio ist ein junges Spiel. Damit du online leichter ein Gegenüber findest: Wenn du beim Warten gegen den Bot spielst und in den ersten 2 Minuten jemand dazukommt, bringen wir euch sofort zusammen. Nach 2 Minuten fragen wir dich, ob du mit dieser Person spielen möchtest. In beiden Fällen bleibt deine Partie gegen den Bot gespeichert, und du kannst sie später fortsetzen.",
+        "es": "Ramio es un juego reciente. Para aumentar tus posibilidades de encontrar rival en línea, si eliges esperar jugando contra el Bot y alguien llega durante los 2 primeros minutos, te emparejamos al instante. Pasados 2 minutos, te propondremos unirte a esa persona. En ambos casos, tu partida contra el Bot queda guardada y podrás reanudarla.",
+        "it": "Ramio è un gioco recente. Per aumentare le tue probabilità di trovare un giocatore online, se scegli di aspettare giocando contro il Bot e qualcuno arriva nei primi 2 minuti, vi facciamo incontrare subito. Dopo 2 minuti, ti proporremo di unirti a quella persona. In entrambi i casi, la tua partita contro il Bot è salvata e potrai riprenderla.",
+        "pt": "O Ramio é um jogo recente. Para aumentar suas chances de encontrar um jogador online, se você escolher esperar jogando contra o Bot e alguém chegar nos 2 primeiros minutos, reunimos vocês na mesma hora. Depois de 2 minutos, vamos perguntar se você quer se juntar a essa pessoa. Nos dois casos, sua partida contra o Bot fica salva e você poderá retomá-la.",
+        "nl": "Ramio is nog een nieuw spel. Om de kans te vergroten dat je online een tegenstander vindt: als je ervoor kiest om tijdens het wachten tegen de bot te spelen en er binnen de eerste 2 minuten iemand bijkomt, brengen we jullie direct samen. Na 2 minuten vragen we of je bij die speler wilt aansluiten. In beide gevallen is je spel tegen de bot opgeslagen en kun je het later hervatten.",
+        "pl": "Ramio to młoda gra. Aby zwiększyć szanse na znalezienie gracza online: jeśli wybierzesz grę z botem w oczekiwaniu na rywala i ktoś pojawi się w ciągu pierwszych 2 minut, natychmiast was połączymy. Po 2 minutach zapytamy, czy chcesz dołączyć do tej osoby. W obu przypadkach twoja gra z botem zostanie zapisana i będzie można do niej wrócić.",
+        "ro": "Ramio este un joc recent. Ca să ai mai multe șanse să găsești un jucător online, dacă alegi să aștepți jucând cu Robotul și cineva sosește în primele 2 minute, vă punem imediat la aceeași masă. După 2 minute, îți vom propune să te alături persoanei respective. În ambele cazuri, partida ta cu Robotul este salvată și o vei putea relua.",
+        "hu": "A Ramio még új játék. Hogy nagyobb eséllyel találj online játékost: ha úgy döntesz, hogy várakozás közben a Gép ellen játszol, és az első 2 percben érkezik valaki, azonnal összehozunk titeket. Két perc után felajánljuk, hogy csatlakozz hozzá. A Gép elleni játszmád mindkét esetben mentve van, és később folytathatod.",
+        "tr": "Ramio yeni bir oyun. Çevrimiçi bir oyuncu bulma şansını artırmak için, beklerken Bot'a karşı oynamayı seçersen ve ilk 2 dakika içinde biri gelirse sizi anında eşleştiririz. 2 dakikadan sonra o oyuncuya katılmanı öneririz. Her iki durumda da Bot'a karşı oyunun kaydedilir ve daha sonra kaldığın yerden devam edebilirsin.",
+        "ar": "لعبة Ramio حديثة. لزيادة فرصك في العثور على لاعب عبر الإنترنت، إذا اخترت اللعب ضد الروبوت أثناء الانتظار ووصل أحدهم خلال أول دقيقتين، نجمعكما فورًا. بعد أول دقيقتين، نقترح عليك الانضمام إلى هذا الشخص. في كلتا الحالتين، مباراتك ضد الروبوت محفوظة ويمكنك استئنافها لاحقًا.",
+        "ko": "Ramio는 새로 나온 게임이에요. 온라인에서 상대를 더 쉽게 만날 수 있도록, 기다리는 동안 봇과 플레이하기로 했을 때 처음 2분 안에 누군가 들어오면 바로 함께 게임을 시작해요. 2분이 지난 뒤에는 그 사람의 게임에 참가할지 물어봐요. 어느 경우든 봇과의 게임은 저장되어 나중에 이어서 할 수 있어요."
+      },
+      "button": {
+        "fr": "Compris",
+        "en": "Got it",
+        "de": "Verstanden",
+        "es": "Entendido",
+        "it": "Ho capito",
+        "pt": "Entendi",
+        "nl": "Begrepen",
+        "pl": "Rozumiem",
+        "ro": "Am înțeles",
+        "hu": "Értem",
+        "tr": "Anladım",
+        "ar": "فهمت",
+        "ko": "확인"
+      }
+    },
+    {
+      "id": "ordi-remplace-88",
+      "platform": "ios",
+      "installedBefore": "2026-11-19",
+      "title": {
+        "fr": "Du nouveau en partie publique",
+        "en": "New in public games",
+        "de": "Neu bei öffentlichen Partien",
+        "es": "Novedad en las partidas públicas",
+        "it": "Novità nelle partite pubbliche",
+        "pt": "Novidade nas partidas públicas",
+        "nl": "Nieuw bij openbare spellen",
+        "pl": "Nowość w grach publicznych",
+        "ro": "Noutate la partidele publice",
+        "hu": "Újdonság a nyilvános játszmákban",
+        "tr": "Herkese açık oyunlarda yenilik",
+        "ar": "جديد في المباريات العامة",
+        "ko": "공개 게임에 새로운 기능이 생겼어요"
+      },
+      "body": {
+        "fr": "Ramio est un jeu récent. Pour augmenter tes chances de trouver un joueur en ligne, si tu choisis d'attendre contre l'Ordi et que quelqu'un arrive pendant les 2 premières minutes, on vous réunira aussitôt. Après 2 minutes, on te proposera de rejoindre sa partie. Dans les deux cas, ta partie contre l'Ordi est sauvegardée et tu pourras la reprendre.",
+        "en": "Ramio is a new game. To improve your chances of finding an opponent online: if you choose to play the Bot while you wait and someone shows up within the first 2 minutes, we'll match you up right away. After 2 minutes, we'll ask if you want to join them. Either way, your game against the Bot is saved and you can pick it up later.",
+        "de": "Ramio ist ein junges Spiel. Damit du online leichter ein Gegenüber findest: Wenn du beim Warten gegen den Bot spielst und in den ersten 2 Minuten jemand dazukommt, bringen wir euch sofort zusammen. Nach 2 Minuten fragen wir dich, ob du mit dieser Person spielen möchtest. In beiden Fällen bleibt deine Partie gegen den Bot gespeichert, und du kannst sie später fortsetzen.",
+        "es": "Ramio es un juego reciente. Para aumentar tus posibilidades de encontrar rival en línea, si eliges esperar jugando contra el Bot y alguien llega durante los 2 primeros minutos, te emparejamos al instante. Pasados 2 minutos, te propondremos unirte a esa persona. En ambos casos, tu partida contra el Bot queda guardada y podrás reanudarla.",
+        "it": "Ramio è un gioco recente. Per aumentare le tue probabilità di trovare un giocatore online, se scegli di aspettare giocando contro il Bot e qualcuno arriva nei primi 2 minuti, vi facciamo incontrare subito. Dopo 2 minuti, ti proporremo di unirti a quella persona. In entrambi i casi, la tua partita contro il Bot è salvata e potrai riprenderla.",
+        "pt": "O Ramio é um jogo recente. Para aumentar suas chances de encontrar um jogador online, se você escolher esperar jogando contra o Bot e alguém chegar nos 2 primeiros minutos, reunimos vocês na mesma hora. Depois de 2 minutos, vamos perguntar se você quer se juntar a essa pessoa. Nos dois casos, sua partida contra o Bot fica salva e você poderá retomá-la.",
+        "nl": "Ramio is nog een nieuw spel. Om de kans te vergroten dat je online een tegenstander vindt: als je ervoor kiest om tijdens het wachten tegen de bot te spelen en er binnen de eerste 2 minuten iemand bijkomt, brengen we jullie direct samen. Na 2 minuten vragen we of je bij die speler wilt aansluiten. In beide gevallen is je spel tegen de bot opgeslagen en kun je het later hervatten.",
+        "pl": "Ramio to młoda gra. Aby zwiększyć szanse na znalezienie gracza online: jeśli wybierzesz grę z botem w oczekiwaniu na rywala i ktoś pojawi się w ciągu pierwszych 2 minut, natychmiast was połączymy. Po 2 minutach zapytamy, czy chcesz dołączyć do tej osoby. W obu przypadkach twoja gra z botem zostanie zapisana i będzie można do niej wrócić.",
+        "ro": "Ramio este un joc recent. Ca să ai mai multe șanse să găsești un jucător online, dacă alegi să aștepți jucând cu Robotul și cineva sosește în primele 2 minute, vă punem imediat la aceeași masă. După 2 minute, îți vom propune să te alături persoanei respective. În ambele cazuri, partida ta cu Robotul este salvată și o vei putea relua.",
+        "hu": "A Ramio még új játék. Hogy nagyobb eséllyel találj online játékost: ha úgy döntesz, hogy várakozás közben a Gép ellen játszol, és az első 2 percben érkezik valaki, azonnal összehozunk titeket. Két perc után felajánljuk, hogy csatlakozz hozzá. A Gép elleni játszmád mindkét esetben mentve van, és később folytathatod.",
+        "tr": "Ramio yeni bir oyun. Çevrimiçi bir oyuncu bulma şansını artırmak için, beklerken Bot'a karşı oynamayı seçersen ve ilk 2 dakika içinde biri gelirse sizi anında eşleştiririz. 2 dakikadan sonra o oyuncuya katılmanı öneririz. Her iki durumda da Bot'a karşı oyunun kaydedilir ve daha sonra kaldığın yerden devam edebilirsin.",
+        "ar": "لعبة Ramio حديثة. لزيادة فرصك في العثور على لاعب عبر الإنترنت، إذا اخترت اللعب ضد الروبوت أثناء الانتظار ووصل أحدهم خلال أول دقيقتين، نجمعكما فورًا. بعد أول دقيقتين، نقترح عليك الانضمام إلى هذا الشخص. في كلتا الحالتين، مباراتك ضد الروبوت محفوظة ويمكنك استئنافها لاحقًا.",
+        "ko": "Ramio는 새로 나온 게임이에요. 온라인에서 상대를 더 쉽게 만날 수 있도록, 기다리는 동안 봇과 플레이하기로 했을 때 처음 2분 안에 누군가 들어오면 바로 함께 게임을 시작해요. 2분이 지난 뒤에는 그 사람의 게임에 참가할지 물어봐요. 어느 경우든 봇과의 게임은 저장되어 나중에 이어서 할 수 있어요."
+      },
+      "button": {
+        "fr": "Compris",
+        "en": "Got it",
+        "de": "Verstanden",
+        "es": "Entendido",
+        "it": "Ho capito",
+        "pt": "Entendi",
+        "nl": "Begrepen",
+        "pl": "Rozumiem",
+        "ro": "Am înțeles",
+        "hu": "Értem",
+        "tr": "Anladım",
+        "ar": "فهمت",
+        "ko": "확인"
+      }
     }
   ]
 }
