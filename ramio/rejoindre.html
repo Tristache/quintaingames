@@ -149,9 +149,11 @@
     if (!Object.prototype.hasOwnProperty.call(FINS_EVENEMENT, evenement)) evenement = "";
     var evenementFini = !!evenement && new Date() >= FINS_EVENEMENT[evenement];
 
-    var cas = ami ? "ami" : defi ? (temps ? "beat" : "puzzle") :
-      evenement && !code ? "evenement" :
-      type === "course" ? "course" : type === "differe" ? "differe" : "salon";
+    // Le lien d'un salon porte aussi le parrain depuis la build 88 : le
+    // code prime, la page reste celle du salon.
+    var salon = type === "course" ? "course" : type === "differe" ? "differe" : "salon";
+    var cas = code && !defi ? salon : ami ? "ami" : defi ? (temps ? "beat" : "puzzle") :
+      evenement ? "evenement" : salon;
     var campagne = cas === "evenement" ? "evenement-" + evenement : cas;
 
     var L = {
@@ -624,6 +626,11 @@
     var utm = "utm_source=" + (src || "lien") + "&utm_medium=rejoindre&utm_campaign=" + campagne;
     if (ami) utm += "&ami=" + ami;
     if (defi) utm += "&defi=" + defi;
+    // Salon privé (build 88) : l'app le rejoint au premier lancement
+    // après l'installation ; src dit de quel lien vient le parrain.
+    if (code) utm += "&code=" + encodeURIComponent(code);
+    if (code && salon !== "salon") utm += "&type=" + encodeURIComponent(type);
+    if (src) utm += "&src=" + encodeURIComponent(src);
     el("play").href = "https://play.google.com/store/apps/details?id=com.ramio&referrer=" +
       encodeURIComponent(utm);
 
