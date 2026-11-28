@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8"><!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta charset="UTF-8">
+    <script>
+      // Accueil sans langue dans l'adresse : le visiteur part vers la page de
+      // sa langue (choix retenu ou ?lang=, sinon langues du navigateur, sinon
+      // anglais). Les robots restent ici : la page reste indexée en français.
+      (function () {
+        if (/bot|crawl|spider|slurp|lighthouse|facebookexternalhit|whatsapp/i.test(navigator.userAgent)) return;
+        var site = ["fr", "en", "es", "de", "it", "pt", "pl", "tr", "ro", "hu", "ar"];
+        var choix = new URLSearchParams(location.search).get("lang");
+        try { choix = choix || localStorage.getItem("ramio-langue"); } catch (e) {}
+        var voeux = choix ? [choix] : (navigator.languages || [navigator.language || ""]);
+        var cible = "en";
+        for (var i = 0; i < voeux.length; i++) {
+          var code = String(voeux[i]).slice(0, 2).toLowerCase();
+          if (site.indexOf(code) >= 0) { cible = code; break; }
+        }
+        if (cible === "fr") return;
+        try { sessionStorage.setItem("ramio-ref", document.referrer); } catch (e) {}
+        window.ramioRedirige = true;
+        location.replace(cible + ".html" + location.search + location.hash);
+      })();
+    </script><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Ramio — le rami voleur en ligne, en famille ou entre amis | Ramio</title>
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Ramio — le rami voleur en ligne, en famille ou entre amis" />
@@ -36,7 +57,7 @@
     <meta name="theme-color" content="#F3F1EA">
     <link rel="icon" type="image/png" href="assets/ramio-icone-192.png">
     <link rel="preload" href="assets/jost.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/ramio.css?v=4374e32c732acfc402d334e24f00892e8b40a36b">
+    <link rel="stylesheet" href="assets/ramio.css?v=1f3350ec288764620b53c961d2752a4a0275ece3">
   </head>
   <body>
     <div class="page">
@@ -212,6 +233,18 @@ manche gagnante, idéale pour une partie rapide.</p>
         <span><a href="politique-confidentialite.html">Confidentialité</a> · <a href="conditions-utilisation.html">Conditions</a> · <a href="suppression-compte.html">Supprimer son compte</a> · <a href="mentions-legales.html">Mentions légales</a></span>
       </footer>
     </div>
+    <script>
+      // Langue choisie à la main : l'accueil ne redirige plus ailleurs.
+      (function () {
+        function retiens(code) { try { localStorage.setItem("ramio-langue", code); } catch (e) {} }
+        document.querySelectorAll(".langues-liens a").forEach(function (a) {
+          a.addEventListener("click", function () { retiens(a.hreflang); });
+        });
+        document.getElementById("langue").addEventListener("change", function () {
+          retiens(this.value === "./" ? "fr" : this.value.replace(".html", ""));
+        });
+      })();
+    </script>
     <script src="assets/mesure.js" defer></script>
   </body>
 </html>
