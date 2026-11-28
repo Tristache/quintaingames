@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Manipulation Rummy: rules, jokers, number of cards | Ramio</title>
+    <meta name="description" content="Manipulation rummy rules: how many cards to deal, when to draw, how to open, how jokers work, how to score. Common rules and Ramio's side by side.">
+    <link rel="canonical" href="https://quintaingames.com/ramio/manipulation-rummy/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Ramio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://quintaingames.com/ramio/manipulation-rummy/">
+    <meta property="og:title" content="Manipulation Rummy: rules, jokers, number of cards">
+    <meta property="og:description" content="How many cards, whether you draw every turn, how the joker works, how to play with two: the common rules and Ramio's side by side, with examples and a puzzle to solve in your browser.">
+    <meta property="og:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg">
+    <link rel="icon" type="image/png" href="/ramio/assets/ramio-icone-192.png">
+
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/ramio/assets/css/style.css?v=bda9f406d37a867f44e4563c8848c483485713bc">
+    <style>
+      .cta {
+        display: inline-block;
+        margin: 6px 8px;
+        padding: 14px 28px;
+        border-radius: 10px;
+        background: #2f6f62;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .cta:hover { background: #27594f; text-decoration: none; }
+      .cta-grand { font-size: 1.15em; padding: 18px 34px; }
+      .discret { font-size: 0.9em; color: #666; }
+      .contents { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
+      .contents li { break-inside: avoid; }
+      /* Two rules side by side (stacked on narrow screens). */
+      .compare {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin: 1.2rem 0;
+      }
+      @media (min-width: 44em) {
+        .compare { grid-template-columns: 1fr 1fr; }
+      }
+      .compare > div {
+        border: 1px solid #b8c4cc;
+        border-radius: 0.5rem;
+        background: #fff;
+        color: #3d474c;
+        padding: 0.9rem 1rem;
+      }
+      .compare > .ramio { border: 2px solid #155799; background: #f3f6fa; }
+      .compare ul { margin: 0; padding-left: 1.2em; }
+      .compare p { margin: 0 0 0.6em; }
+      .compare p:last-child { margin-bottom: 0; }
+      .label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #1c2327;
+      }
+      /* Card examples: four colours, drawn suits, own background. */
+      .case {
+        border-left: 4px solid #155799;
+        border-radius: 0 0.5rem 0.5rem 0;
+        background: #f3f6fa;
+        color: #3d474c;
+        padding: 0.7rem 1rem;
+        margin: 1rem 0 1.4rem;
+      }
+      .case p { margin: 0.5em 0 0; }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.3rem 0.6rem;
+        margin: 0.4rem 0;
+      }
+      .row .label { flex: 0 0 7.6em; }
+      .cards { display: inline-flex; flex-wrap: wrap; gap: 3px; }
+      .card {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        min-width: 2.2em;
+        padding: 0.2em 0.3em;
+        border: 1px solid #8a959b;
+        border-radius: 5px;
+        background: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+      .card svg { width: 0.8em; height: 0.8em; fill: currentColor; }
+      .card.s { color: #111; }
+      .card.h { color: #c62828; }
+      .card.d { color: #1257b0; }
+      .card.c { color: #1b7a34; }
+      .card.j {
+        color: #111;
+        border-style: dashed;
+        font-size: 0.78rem;
+        letter-spacing: 0.03em;
+        padding: 0.42em 0.35em;
+      }
+      .card.m { background: #ffe680; border: 2px solid #111; }
+      .legend { font-size: 0.9em; }
+      .narrow th, .narrow td { padding: 0.45rem 0.6rem; }
+      @media screen and (max-width: 42em) {
+        .contents { columns: 1; }
+      }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://quintaingames.com/ramio/manipulation-rummy/#article",
+          "headline": "Manipulation Rummy: rules, jokers, number of cards",
+          "description": "Manipulation rummy rules: how many cards to deal, when to draw, how to open, how jokers work, how to score. Common rules and Ramio's side by side.",
+          "inLanguage": "en",
+          "datePublished": "2026-11-28",
+          "dateModified": "2026-11-28",
+          "image": "https://quintaingames.com/ramio/assets/ramio-partie-og.jpg",
+          "mainEntityOfPage": "https://quintaingames.com/ramio/manipulation-rummy/",
+          "author": {"@type": "Organization", "name": "Quintain Games", "url": "https://quintaingames.com/"},
+          "publisher": {"@type": "Organization", "name": "Quintain Games", "url": "https://quintaingames.com/"}
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Quintain Games", "item": "https://quintaingames.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Ramio", "item": "https://quintaingames.com/ramio/"},
+            {"@type": "ListItem", "position": 3, "name": "Manipulation Rummy rules", "item": "https://quintaingames.com/ramio/manipulation-rummy/"}
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to content</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Manipulation Rummy: the rules</h1>
+      <p class="project-tagline">How many cards, when you draw, how the joker works: the common rules and Ramio's, side by side.</p>
+      <a href="#puzzle" class="btn">Solve a puzzle now in your browser</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <img src="/ramio/assets/ramio-partie-og.jpg" alt="A game of Ramio in progress: runs and sets on the table, a joker among them, the stock on the right and the hand at the bottom." width="1200" height="630" style="display:block;width:100%;height:auto;border-radius:12px;margin:0 0 1.5em;">
+
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+          <symbol id="su-h" viewBox="0 0 24 24"><path d="M12 21.5C5 15.5 2 12 2 8.2a5 5 0 0 1 10-1.7 5 5 0 0 1 10 1.7c0 3.8-3 7.3-10 13.3z"/></symbol>
+          <symbol id="su-d" viewBox="0 0 24 24"><path d="M12 1.5 20 12l-8 10.5L4 12z"/></symbol>
+          <symbol id="su-s" viewBox="0 0 24 24"><path d="M12 1.5c7 6 10 9.5 10 13.3a5 5 0 0 1-9.1 2.8l1.6 4.9h-5l1.6-4.9A5 5 0 0 1 2 14.8c0-3.8 3-7.3 10-13.3z"/></symbol>
+          <symbol id="su-c" viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="4.7"/><circle cx="6.2" cy="14" r="4.7"/><circle cx="17.8" cy="14" r="4.7"/><path d="M12 10l2.6 12.5H9.4z"/></symbol>
+        </defs>
+      </svg>
+
+      <p><strong>Manipulation rummy</strong> is the family of rummy games
+      where you don't just lay down your own melds: on your turn you can
+      take apart and rebuild everything on the table, your opponents' melds
+      included, until your cards fit in. The first player to get rid of all
+      their cards wins.</p>
+
+      <p>There is no official rulebook. The game goes by many names
+      (Carousel, Vatikan, Shanghai, Machiavelli, Finagle...), and each
+      version deals a different number of cards and has its own way of
+      drawing, opening and using the joker. So at each point, this page
+      gives two answers side by side: the <strong>common rules</strong>, as
+      described by card game references such as
+      <a href="https://www.pagat.com/rummy/carousel.html">pagat.com</a>, and
+      <strong>how it is played in Ramio</strong>, the free app for Android
+      and iPhone where you can play manipulation rummy online, solo or with
+      friends. Ramio's rules are one variant among others, not "the" rules:
+      if you play with real cards, agree on them before you deal.</p>
+
+      <p>If you know Rummikub, you will feel at home: the idea is the same,
+      with <strong>cards</strong> instead of tiles.</p>
+
+      <ol class="contents">
+        <li><a href="#rules">The rules at a glance</a></li>
+        <li><a href="#cards">How many cards?</a></li>
+        <li><a href="#melds">Runs and sets</a></li>
+        <li><a href="#draw">Drawing and discarding</a></li>
+        <li><a href="#opening">Opening</a></li>
+        <li><a href="#table">Rearranging the table</a></li>
+        <li><a href="#joker">The joker</a></li>
+        <li><a href="#two-players">Two players</a></li>
+        <li><a href="#scoring">End of a round and scoring</a></li>
+        <li><a href="#differences">Classic rummy and tile rummy</a></li>
+        <li><a href="#puzzle">Play online</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+
+      <h2 id="rules">The rules at a glance: what changes from one table to another</h2>
+
+      <table class="narrow">
+        <thead>
+          <tr><th></th><th>Common rules</th><th>In Ramio</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Cards</th><td>two 52-card decks, often without jokers</td><td>two 52-card decks and 2 jokers (106 cards), or no jokers (104)</td></tr>
+          <tr><th scope="row">Cards per player</th><td>7, 10 or 13 depending on the version</td><td>13 for everyone, 2 to 4 players</td></tr>
+          <tr><th scope="row">Drawing</th><td>usually only when you don't meld</td><td>every turn, at the start</td></tr>
+          <tr><th scope="row">Discarding</th><td>no</td><td>no</td></tr>
+          <tr><th scope="row">Opening</th><td>usually none</td><td>a run of three without a joker</td></tr>
+          <tr><th scope="row">Jokers</th><td>often left out; otherwise rules vary</td><td>2 or none; never back to a hand</td></tr>
+          <tr><th scope="row">End</th><td>the first player to go out wins</td><td>the same, with penalties for the cards left in hand</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="cards">How many cards do you deal in manipulation rummy?</h2>
+
+      <p>You play with <strong>two standard 52-card decks</strong> shuffled
+      together: 104 cards, plus jokers if you use them. How many cards to
+      deal is the first point on which versions disagree.</p>
+
+      <table class="narrow">
+        <thead>
+          <tr><th>Version</th><th>Players</th><th>Cards each</th><th>Jokers</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Machiavelli</td><td>2 to 5</td><td>13</td><td>none</td></tr>
+          <tr><td>Vatikan</td><td>2 to 5</td><td>13</td><td>2</td></tr>
+          <tr><td>Carousel</td><td>2 to 5</td><td>10</td><td>1 with two players (one deck), 2 from three players</td></tr>
+          <tr><td>Shanghai</td><td>3 to 5</td><td>10</td><td>none</td></tr>
+          <tr><td>Manipulation (Finagle)</td><td>3 to 5</td><td>7</td><td>none</td></tr>
+          <tr><td><strong>Ramio</strong></td><td>2 to 4</td><td>13</td><td>2 or none</td></tr>
+        </tbody>
+      </table>
+
+      <p>Ramio deals <strong>13 cards to every player</strong>, whatever the
+      number of players. Only the stock changes:</p>
+
+      <table class="narrow">
+        <thead>
+          <tr><th>Players</th><th>Cards each</th><th>Stock with 2 jokers</th><th>Stock without jokers</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2</td><td>13</td><td>80</td><td>78</td></tr>
+          <tr><td>3</td><td>13</td><td>67</td><td>65</td></tr>
+          <tr><td>4</td><td>13</td><td>54</td><td>52</td></tr>
+        </tbody>
+      </table>
+
+      <p>In a private room, whoever creates the game can set the deal
+      anywhere <strong>from 7 to 15 cards each</strong>: enough to find the
+      7, 10 or 13 cards of your usual table. The remaining cards form the
+      stock, face down. No card is turned up and there is no discard pile.
+      The first player of the first round is drawn at random; after that,
+      the first turn moves on with each round.</p>
+
+      <h2 id="melds">Runs and sets: which melds are valid?</h2>
+
+      <ul>
+        <li><strong>Run</strong> (or sequence): at least three consecutive
+        cards of the same suit, for example 7, 8 and 9 of hearts.</li>
+        <li><strong>Set</strong> (or group): three or four cards of the same
+        rank, all of different suits. With two decks you can hold two 9s of
+        spades: they can't go in the same set.</li>
+      </ul>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Run</span>
+          <span class="cards" role="img" aria-label="7, 8 and 9 of hearts">
+            <span class="card h">7<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">8<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">9<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Set</span>
+          <span class="cards" role="img" aria-label="9 of spades, 9 of hearts and 9 of diamonds">
+            <span class="card s">9<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card h">9<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card d">9<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Four</span>
+          <span class="cards" role="img" aria-label="king of spades, king of hearts, king of diamonds and king of clubs">
+            <span class="card s">K<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card h">K<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card d">K<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card c">K<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+        </div>
+      </div>
+
+      <p>The ace depends on the version: high only in Finagle, low only in
+      Shanghai, at either end in Carousel. Ramio does the same as Carousel:
+      the ace goes before the 2 (A-2-3) or after the king (Q-K-A), but a run
+      never wraps around: K-A-2 is not allowed.</p>
+
+      <h2 id="draw">Do you draw every turn? Do you discard?</h2>
+
+      <p>This is the question players argue about most, and the versions
+      give different answers.</p>
+
+      <div class="compare">
+        <div>
+          <p class="label">Common rules</p>
+          <ul>
+            <li>In Machiavelli and Vatikan, on your turn you do <strong>one
+            thing or the other</strong>: either you lay down at least one
+            card, or you draw one card from the stock and pass.</li>
+            <li>In Shanghai and Finagle, you must play if you can; if you
+            can't, you draw cards one at a time until you can.</li>
+            <li>In Carousel, you draw one or two cards and may then meld, or
+            you draw three cards and your turn ends.</li>
+            <li>In all of them, there is <strong>no discard pile</strong>.</li>
+          </ul>
+        </div>
+        <div class="ramio">
+          <p class="label">How Ramio plays</p>
+          <ul>
+            <li>You <strong>always draw</strong> one card at the start of
+            your turn: in the app, the draw is automatic.</li>
+            <li>Then you <strong>may meld</strong>, if you want to and if you
+            can. Melding is optional: you can also pass.</li>
+            <li><strong>You never discard</strong>: your hand only shrinks
+            when you lay cards down.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>The difference matters. With a draw every turn, you receive a card
+      even when you meld: your hand empties more slowly, and the cards left
+      at the end of the round cost points, but you have more material to
+      rebuild the table with.</p>
+
+      <h2 id="opening">How do you open? Is there a minimum?</h2>
+
+      <div class="compare">
+        <div>
+          <p class="label">Common rules</p>
+          <p>Most versions have no opening requirement: you can lay down any
+          valid meld and work on the table from your first turn. Vatikan is
+          the main exception: your first meld must be a run of three cards in the
+          same suit. Some tables borrow a points threshold, often 30 or 40,
+          from other rummy games.</p>
+        </div>
+        <div class="ramio">
+          <p class="label">How Ramio plays</p>
+          <p>No minimum score, but one condition: your first meld must
+          contain a <strong>clean run of three</strong>, that is three
+          consecutive cards of the same suit, <strong>without a
+          joker</strong>, all from your hand. In that same turn you can
+          already extend it (even with a joker), lay down other melds and
+          rearrange the table.</p>
+        </div>
+      </div>
+
+      <div class="case">
+        <p class="label">Opening in Ramio, in four examples</p>
+        <div class="row">
+          <span class="label">Opens</span>
+          <span class="cards" role="img" aria-label="4, 5 and 6 of spades">
+            <span class="card s">4<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">5<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">6<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+          </span>
+          <span>a clean run of three</span>
+        </div>
+        <div class="row">
+          <span class="label">Opens</span>
+          <span class="cards" role="img" aria-label="4, 5 and 6 of spades, then a joker">
+            <span class="card s">4<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">5<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">6<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card j">JOKER</span>
+          </span>
+          <span>the clean run is there, the joker extends it</span>
+        </div>
+        <div class="row">
+          <span class="label">Doesn't open</span>
+          <span class="cards" role="img" aria-label="4 and 5 of spades, then a joker">
+            <span class="card s">4<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">5<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card j">JOKER</span>
+          </span>
+          <span>the joker doesn't count for the opening</span>
+        </div>
+        <div class="row">
+          <span class="label">Doesn't open</span>
+          <span class="cards" role="img" aria-label="9 of spades, 9 of hearts and 9 of diamonds">
+            <span class="card s">9<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card h">9<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card d">9<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+          <span>a set alone is not enough: you need a run</span>
+        </div>
+      </div>
+
+      <h2 id="table">How do you rearrange the table?</h2>
+
+      <p>This is the heart of the game. On your turn you can <strong>move,
+      split and recombine everyone's melds</strong> to fit your cards in
+      (in Ramio, once you have opened). Most versions set two conditions:
+      add at least one card from your hand, and leave only valid melds.
+      Ramio checks three:</p>
+
+      <ul>
+        <li>at the end of your turn, <strong>the whole table must be valid
+        again</strong>: every meld is a run, a set or a four; otherwise
+        everything goes back where it was;</li>
+        <li>your play must use <strong>at least one card from your
+        hand</strong>;</li>
+        <li>a card on the table <strong>never goes back to a hand</strong>.</li>
+      </ul>
+
+      <p class="legend">In the examples, cards on a yellow background with a
+      thick border are the ones that come from your hand.</p>
+
+      <h3>Split a run</h3>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Table</span>
+          <span class="cards" role="img" aria-label="run of clubs from 3 to 7">
+            <span class="card c">3<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">4<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">5<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">6<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">7<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Hand</span>
+          <span class="cards" role="img" aria-label="5 of clubs">
+            <span class="card c m">5<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">After</span>
+          <span class="cards" role="img" aria-label="3, 4 and 5 of clubs">
+            <span class="card c">3<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">4<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">5<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+          <span class="cards" role="img" aria-label="5 of clubs from the hand, 6 and 7 of clubs">
+            <span class="card c m">5<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">6<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card c">7<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+        </div>
+        <p>The second 5 of clubs (there are two decks) doesn't fit in the run
+        as it is. Cut in two, each half is still a run of three.</p>
+      </div>
+
+      <h3>Borrow a card from a four</h3>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Table</span>
+          <span class="cards" role="img" aria-label="four 8s: spades, hearts, diamonds and clubs">
+            <span class="card s">8<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card h">8<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card d">8<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card c">8<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Hand</span>
+          <span class="cards" role="img" aria-label="6 and 7 of hearts">
+            <span class="card h m">6<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h m">7<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">After</span>
+          <span class="cards" role="img" aria-label="6 and 7 of hearts from the hand, then the 8 of hearts">
+            <span class="card h m">6<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h m">7<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">8<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+          <span class="cards" role="img" aria-label="set of 8s: spades, diamonds and clubs">
+            <span class="card s">8<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card d">8<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card c">8<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+        </div>
+        <p>The four lends its 8 of hearts and remains a valid set; your two
+        cards, useless on their own, become a run. A set of three couldn't
+        do this: two cards are not a meld.</p>
+      </div>
+
+      <h3>Take the end of a run</h3>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Table</span>
+          <span class="cards" role="img" aria-label="9, 10, jack and queen of diamonds">
+            <span class="card d">9<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d">10<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d">J<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d">Q<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Hand</span>
+          <span class="cards" role="img" aria-label="queen of spades and queen of hearts">
+            <span class="card s m">Q<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card h m">Q<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">After</span>
+          <span class="cards" role="img" aria-label="9, 10 and jack of diamonds">
+            <span class="card d">9<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d">10<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d">J<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+          <span class="cards" role="img" aria-label="queen of spades and queen of hearts from the hand, then the queen of diamonds">
+            <span class="card s m">Q<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card h m">Q<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card d">Q<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+        </div>
+        <p>You were missing a third queen. The queen of diamonds at the end
+        of the run is free, because 9-10-J still holds without it.</p>
+      </div>
+
+      <h2 id="joker">How does the joker work in manipulation rummy?</h2>
+
+      <p>With or without jokers? Both are played, and this is where the
+      rules vary most.</p>
+
+      <div class="compare">
+        <div>
+          <p class="label">Common rules</p>
+          <ul>
+            <li><strong>How many</strong>: Machiavelli, Shanghai and Finagle
+            are played without jokers; Vatikan uses two, Carousel one or
+            two.</li>
+            <li><strong>Moving it</strong>: usually, a joker on the table
+            only comes free when someone puts the real card it stands for in
+            its place. In Vatikan it can't move from one meld to another
+            otherwise; in Carousel, the freed joker must go straight into a
+            new meld.</li>
+            <li><strong>Taking it back</strong>: some home rules let the
+            player who brings the real card keep the joker. Agree on it
+            before you start.</li>
+            <li><strong>Left in hand</strong>: its value depends on the
+            version, 25 points in Carousel for example.</li>
+          </ul>
+        </div>
+        <div class="ramio">
+          <p class="label">How Ramio plays</p>
+          <ul>
+            <li><strong>2 jokers or none</strong>: in a private room you
+            choose; public games are played with jokers.</li>
+            <li>The joker <strong>stands for any card</strong>, in a run as
+            in a set.</li>
+            <li>A meld can hold <strong>several jokers</strong>, as long as
+            at least one real card remains.</li>
+            <li>On the table it can be <strong>moved and reused</strong> as
+            often as you like, but it <strong>never goes back to a
+            hand</strong>.</li>
+            <li>It doesn't count for the opening.</li>
+            <li>Left in hand at the end of a round, it costs <strong>50
+            points</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Concrete cases, with Ramio's rule.</p>
+
+      <h3>When can you lay down a joker?</h3>
+
+      <p>As soon as you have opened, in any meld: the joker takes whatever
+      value is needed. A meld can even hold two, as long as one real card
+      remains.</p>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Valid</span>
+          <span class="cards" role="img" aria-label="7 and 8 of hearts from the hand, then a joker">
+            <span class="card h m">7<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h m">8<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card j m">JOKER</span>
+          </span>
+          <span>the joker is the 9 of hearts (or the 6)</span>
+        </div>
+        <div class="row">
+          <span class="label">Valid</span>
+          <span class="cards" role="img" aria-label="queen of spades and queen of diamonds from the hand, then a joker">
+            <span class="card s m">Q<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card d m">Q<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card j m">JOKER</span>
+          </span>
+          <span>a set of queens: the joker is one of the two missing</span>
+        </div>
+        <div class="row">
+          <span class="label">Valid</span>
+          <span class="cards" role="img" aria-label="7 of clubs from the hand, then two jokers">
+            <span class="card c m">7<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card j m">JOKER</span>
+            <span class="card j m">JOKER</span>
+          </span>
+          <span>two jokers and one real card</span>
+        </div>
+      </div>
+
+      <h3>Can you move a joker that is already on the table?</h3>
+
+      <p>Yes, and it is often the move that unlocks your turn. The usual way
+      is to free the joker by putting a real card in its place, then take
+      it where you need it.</p>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Table</span>
+          <span class="cards" role="img" aria-label="9 of spades, 9 of diamonds and a joker">
+            <span class="card s">9<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card d">9<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card j">JOKER</span>
+          </span>
+          <span class="cards" role="img" aria-label="6, 7 and 8 of hearts">
+            <span class="card h">6<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">7<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">8<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Hand</span>
+          <span class="cards" role="img" aria-label="9 of clubs and 10 of hearts">
+            <span class="card c m">9<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+            <span class="card h m">10<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">After</span>
+          <span class="cards" role="img" aria-label="9 of spades, 9 of diamonds and 9 of clubs from the hand">
+            <span class="card s">9<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card d">9<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card c m">9<svg aria-hidden="true"><use href="#su-c"/></svg></span>
+          </span>
+          <span class="cards" role="img" aria-label="6, 7 and 8 of hearts, the joker, then the 10 of hearts from the hand">
+            <span class="card h">6<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">7<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card h">8<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+            <span class="card j">JOKER</span>
+            <span class="card h m">10<svg aria-hidden="true"><use href="#su-h"/></svg></span>
+          </span>
+        </div>
+        <p>The 9 of clubs takes the joker's place in the set. The joker moves
+        to the run of hearts, where it is the 9, and opens the way for your
+        10: without moving it, the 10 of hearts had nowhere to go.</p>
+      </div>
+
+      <p>In Ramio, you don't even need the real card: a joker can leave any
+      meld that still holds without it.</p>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Table</span>
+          <span class="cards" role="img" aria-label="3, 4 and 5 of spades, then a joker">
+            <span class="card s">3<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">4<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">5<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card j">JOKER</span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Hand</span>
+          <span class="cards" role="img" aria-label="queen and king of diamonds">
+            <span class="card d m">Q<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d m">K<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">After</span>
+          <span class="cards" role="img" aria-label="3, 4 and 5 of spades">
+            <span class="card s">3<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">4<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+            <span class="card s">5<svg aria-hidden="true"><use href="#su-s"/></svg></span>
+          </span>
+          <span class="cards" role="img" aria-label="queen and king of diamonds from the hand, then the joker">
+            <span class="card d m">Q<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d m">K<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card j">JOKER</span>
+          </span>
+        </div>
+        <p>The run of spades stands without its joker. You take it and lay
+        it with your queen and king of diamonds, where it is the ace or the
+        jack. In Vatikan or Carousel, this move is not allowed.</p>
+      </div>
+
+      <h3>Can you take the joker back into your hand?</h3>
+
+      <p>This is the case that divides tables. On the table there is a run
+      with a joker, and you hold the very card the joker stands for.</p>
+
+      <div class="case">
+        <div class="row">
+          <span class="label">Table</span>
+          <span class="cards" role="img" aria-label="5 of diamonds, a joker, 7 of diamonds">
+            <span class="card d">5<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card j">JOKER</span>
+            <span class="card d">7<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">Hand</span>
+          <span class="cards" role="img" aria-label="6 of diamonds">
+            <span class="card d m">6<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="label">In Ramio</span>
+          <span class="cards" role="img" aria-label="5 of diamonds, 6 of diamonds from the hand, 7 of diamonds, then the joker">
+            <span class="card d">5<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d m">6<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card d">7<svg aria-hidden="true"><use href="#su-d"/></svg></span>
+            <span class="card j">JOKER</span>
+          </span>
+        </div>
+        <p><strong>Where taking it back is allowed</strong>, you put the 6 of
+        diamonds in its place and the joker is yours again.</p>
+        <p><strong>In Ramio</strong>, the 6 goes in its place but the joker
+        stays on the table: in the same turn you move it into a valid meld,
+        for example at the end of the same run (where it is the 8 of
+        diamonds) or into another meld that needs it. It never goes back to
+        your hand, even when you bring the card it stands for.</p>
+      </div>
+
+      <p>The same goes for a joker in a set. With the 9 of spades, the 9 of
+      hearts and a joker on the table, your 9 of diamonds turns the set into
+      a four, where the joker becomes the 9 of clubs. If someone brings the
+      real 9 of clubs later, the joker has to move to another meld: a set
+      never holds more than four cards.</p>
+
+      <h3>How much does a joker left in hand cost?</h3>
+
+      <p>In Ramio, <strong>50 penalty points</strong>, more than any other
+      card, in a custom game played to a points total (public games are a
+      single round, without points): keeping it back for the perfect play
+      is a risk. Other versions
+      count it for less (25 points in Carousel): one more point to settle
+      before you start.</p>
+
+      <p align="center">
+        <video src="/ramio/assets/ramio-reorganisation-en.mp4" poster="/ramio/assets/ramio-reorganisation-en.jpg" width="300" height="641" autoplay muted loop playsinline aria-label="The joker leaves a set of jacks to extend a run of hearts, then the jack of clubs from the hand repairs the set: the play is confirmed." style="border-radius:12px;max-width:100%;height:auto;"></video>
+      </p>
+      <p align="center" class="discret">One joker moved, one set repaired: the play goes through.</p>
+
+      <h2 id="two-players">How do you play manipulation rummy with two players?</h2>
+
+      <p>With two, the rules don't change: same melds, same shared table.
+      What changes is the pace of the game.</p>
+
+      <ul>
+        <li><strong>Cards</strong>: Machiavelli and Vatikan deal 13 each, as
+        Ramio does. Carousel for two uses a single deck with one joker and
+        deals 10 cards each.</li>
+        <li><strong>Stock</strong>: in Ramio, 26 cards are dealt and 80 stay
+        in the stock (78 without jokers): up to 40 draws each, against 13 or
+        14 with four players.</li>
+        <li><strong>Table</strong>: it fills up more slowly, since only two
+        hands feed it. Early on there is little to take apart; then every
+        meld your opponent lays down becomes material for you, and
+        everything you lay down helps them on their next turn.</li>
+        <li><strong>Drawing</strong>: with "draw only if you don't meld", a
+        player who is stuck piles up cards while the other lightens their
+        hand; with a draw every turn, as in Ramio, you both draw.</li>
+      </ul>
+
+      <p>To play with two in Ramio, a private room is all you need: create
+      it, send the six-character code and each of you plays on your own
+      phone. On your own, there is the computer.</p>
+
+      <h2 id="scoring">When does the game end, and how do you score?</h2>
+
+      <div class="compare">
+        <div>
+          <p class="label">Common rules</p>
+          <p>The round ends when a player lays down their last card: they
+          win it. Scoring varies widely. Machiavelli and Shanghai count one
+          penalty point per card left in hand; Finagle gives cards values
+          (aces 15, tens and court cards 10, others 5); Vatikan has no
+          scoring at all, the first player to go out wins.</p>
+        </div>
+        <div class="ramio">
+          <p class="label">How Ramio plays</p>
+          <p>Same ending: the round goes to whoever lays down their last
+          card. The others count the penalties in the table below. Then it
+          depends on the kind of game: points game or single round.</p>
+        </div>
+      </div>
+
+      <p>Ramio's <strong>penalties</strong> for cards left in hand, counted
+      only in a custom game played to a points total:</p>
+
+      <table>
+        <thead>
+          <tr><th>Cards</th><th>Penalty</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2 to 10</td><td>the card's value</td></tr>
+          <tr><td>Jack, queen, king</td><td>10</td></tr>
+          <tr><td>Ace</td><td>11</td></tr>
+          <tr><td>Joker</td><td>50</td></tr>
+        </tbody>
+      </table>
+
+      <p>In Ramio, a game takes one of two forms:</p>
+
+      <ul>
+        <li><strong>Points game</strong>, set up as a custom game: penalties
+        add up from round to round; the game ends as soon as a player reaches <strong>100
+        points</strong>, and the player with the fewest wins. In a private
+        room, the limit can be set from 50 to 300 points.</li>
+        <li><strong>Single round</strong>: one round only, the first player
+        to empty their hand wins. This is how public games are played.</li>
+        <li><strong>If the stock runs out</strong> before anyone finishes,
+        the round stops without a winner and each player counts the
+        penalties in their own hand: whoever laid down well is rewarded,
+        whoever held everything pays. In a single-round game, the round is
+        replayed.</li>
+      </ul>
+
+      <h2 id="differences">Manipulation rummy, classic rummy and tile rummy: the differences</h2>
+
+      <p><strong>Compared with classic rummy</strong>, where you draw, meld
+      and discard:</p>
+
+      <ul>
+        <li>no discard: you draw, you meld, that's all;</li>
+        <li>the table is <strong>shared and can be rebuilt</strong>: you play
+        with the others' cards as much as with your own;</li>
+        <li>melds don't belong to anyone: what matters is that the whole
+        table is valid at the end of your turn.</li>
+      </ul>
+
+      <p><strong>Compared with Rummikub</strong>, the best-known tile game
+      of the same family, Ramio has:</p>
+
+      <ul>
+        <li>cards instead of numbered tiles, with the usual suits and court
+        cards;</li>
+        <li>an opening with a clean run of three instead of 30 points;</li>
+        <li>a joker that can be reused freely while it stays on the
+        table;</li>
+        <li>in points games, a real penalty count (court cards 10, aces 11,
+        joker 50) that turns every card you keep into a risk.</li>
+      </ul>
+
+      <h2 id="puzzle">Can you play manipulation rummy online for free?</h2>
+
+      <p>Yes, and you can start from this page. No install and no account:
+      empty your hand by rearranging the table. One minute and a browser
+      tab: manipulation rummy at its purest.</p>
+
+      <p align="center" style="margin:1.5em 0;">
+        <a class="cta cta-grand" href="https://quintaingames.com/ramio/defi/?defi=jour&amp;couleurs=4&amp;lang=en&amp;src=page-manipulation">
+          Solve today's puzzle in your browser
+        </a>
+      </p>
+
+      <h3>Ramio on your phone</h3>
+
+      <p>For real games there is the app, <strong>free</strong> on Android
+      and iPhone: private rooms with a six-character code, public games for
+      2 to 4 players, solo against the computer at four levels (even
+      offline), 1,000 rearrangement puzzles, a daily challenge shared by
+      every player and speed duels on the same puzzle. In twelve
+      languages.</p>
+
+      <p align="center" style="margin:1.5em 0;">
+        <a class="cta" href="https://play.google.com/store/apps/details?id=com.ramio">
+          Android — get it on Google Play
+        </a>
+        <a class="cta" href="https://apps.apple.com/us/app/id6788317282">
+          iPhone — download on the App Store
+        </a>
+      </p>
+
+      <p align="center">
+        <img src="/ramio/assets/page-salon-en.webp" alt="A private room with friends, with its shareable code" width="170" height="302" loading="lazy" style="border-radius:12px;max-width:31%;height:auto;">
+        <img src="/ramio/assets/page-defi-en.webp" alt="The daily challenge: a table already laid out and six cards in hand to place" width="170" height="302" loading="lazy" style="border-radius:12px;max-width:31%;height:auto;">
+        <img src="/ramio/assets/page-kits-en.webp" alt="Themes: table felts, card backs and avatars to choose from" width="170" height="302" loading="lazy" style="border-radius:12px;max-width:31%;height:auto;">
+      </p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <h3>How many cards do you deal in manipulation rummy?</h3>
+      <p>It depends on the version: 13 each in Machiavelli and Vatikan, 10
+      in Carousel and Shanghai, 7 in Finagle. Ramio deals 13 to every
+      player, from 2 to 4, with two 52-card decks: 104 cards, or 106 with 2
+      jokers.</p>
+
+      <h3>Do you discard in manipulation rummy?</h3>
+      <p>No. There is no discard pile: your hand only shrinks when you lay
+      cards on the table. Ramio never discards either.</p>
+
+      <h3>Do you draw a card every turn?</h3>
+      <p>Not in most versions: in Machiavelli and Vatikan you either meld or
+      draw one card, and in Shanghai and Finagle you draw only when you
+      can't play. Ramio has you draw one card at the start of every
+      turn.</p>
+
+      <h3>Do you need a minimum to open?</h3>
+      <p>Most versions have no opening requirement. Vatikan asks for a run
+      of three in the same suit. Ramio asks for a clean run of three, with
+      no joker and all from your hand, but no minimum score.</p>
+
+      <h3>Can you take the joker back into your hand?</h3>
+      <p>It depends on the table. In Carousel the freed joker must go
+      straight into a new meld; some home rules let the player who brings
+      the real card keep it. In Ramio, a joker can be moved on the table as
+      often as you like during your turn, but it never goes back to a
+      hand.</p>
+
+      <h3>How much is a joker worth at the end of a round?</h3>
+      <p>In Ramio, a joker left in hand costs 50 penalty points in a custom
+      game played to a points total, the most expensive card ahead of the
+      ace (11) and court cards (10); public games are a single round,
+      without points. Other
+      versions count it for less, 25 points in Carousel for example.</p>
+
+      <h3>Can you play manipulation rummy with two players?</h3>
+      <p>Yes. Machiavelli, Vatikan and Carousel can all be played by two. In
+      Ramio the rules are the same as with three or four: 13 cards each,
+      and a stock of 80 cards (78 without jokers).</p>
+
+      <h3>Is manipulation rummy played with cards or tiles?</h3>
+      <p>With cards: two standard 52-card decks. Rummikub, the best-known
+      game of the family, uses numbered tiles instead, around the same idea
+      of a shared table you rebuild. Ramio is the card version.</p>
+
+      <h3>Is there a time limit per turn?</h3>
+      <p>At a real table, the players decide. In Ramio, public games give
+      120 seconds per turn; in a private room, whoever creates the game
+      chooses the time, or plays without a timer.</p>
+
+      <h3>Where can you play manipulation rummy online?</h3>
+      <p>Ramio is a free app for Android and iPhone: public games, private
+      rooms with friends, solo against the computer and 1,000 puzzles. You
+      can also <a href="https://quintaingames.com/ramio/defi/?defi=jour&amp;couleurs=4&amp;lang=en&amp;src=page-manipulation">solve
+      today's puzzle in your browser</a>.</p>
+
+      <h2 id="other-countries">The same game in other countries</h2>
+
+      <p>Manipulation rummy goes by other names elsewhere: in France it is
+      called <a href="https://quintaingames.com/ramio/regles-rami-chinois.html">rami voleur</a>,
+      in Germany <a href="https://quintaingames.com/ramio/raeuber-romme/">Räuber-Rommé</a>,
+      in Italy <a href="https://quintaingames.com/ramio/machiavelli/">Machiavelli</a>,
+      in Brazil and Portugal <a href="https://quintaingames.com/ramio/mexe-mexe/">mexe-mexe</a>,
+      in Hungary rablórömi and in Spain Maquiavelo; English Wikipedia
+      describes it as <a href="https://en.wikipedia.org/wiki/Robbers%27_rummy">Robbers' rummy</a>.
+      Everywhere the idea is the same: the table belongs to everyone and,
+      on your turn, you can rearrange the melds already laid down. The
+      linked pages explain the rules in each country's language.</p>
+
+      <p>The traditional versions quoted on this page (Carousel, Vatikan,
+      Shanghai, Machiavelli, Finagle) are described in detail on
+      <a href="https://www.pagat.com/rummy/carousel.html">pagat.com's
+      Manipulation Rummy page</a>, John McLeod's reference site for card
+      game rules.</p>
+
+      <h2>More about Ramio</h2>
+
+      <ul>
+        <li><a href="/ramio/">Ramio in English: everything about the game</a></li>
+        <li><a href="/ramio/privacy-policy.html">Privacy policy</a></li>
+        <li><a href="/ramio/delete-account.html">Delete your account</a></li>
+        <li>Contact: contact@quintaingames.com</li>
+      </ul>
+
+      <p style="font-size:0.85em;color:#666;margin-top:2em;"><a href="/ramio/mentions-legales.html">Legal notice</a></p>
+
+      <script>
+        // Mesure du site (migration 74) : même RPC que assets/mesure.js, mais
+        // la langue et le canal par défaut sont écrits ici (mesure.js déduit
+        // la langue du dernier segment du chemin, qui n'est pas un code de
+        // langue sur cette page d'atterrissage).
+        (function () {
+          'use strict';
+          var API = 'https://zkrkaimrybxbdrznxhxx.supabase.co/rest/v1/rpc/log_site_visit';
+          var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprcmthaW1yeWJ4YmRyem54aHh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDkzMTYsImV4cCI6MjA5NjY4NTMxNn0.28Ns814SQSFXaKRR0-ZrHoX1G8Cpnhf6sNCZ6kgtAio';
+          var PLAY = 'https://play.google.com/store/apps/details?id=com.ramio';
+          var APPSTORE = 'https://apps.apple.com/';
+          var LANG = 'en';
+          var src = 'page-manipulation';
+          try {
+            src = (new URLSearchParams(location.search).get('src') || '').slice(0, 40) || 'page-manipulation';
+          } catch (e) {}
+          var ref = '';
+          try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+
+          function log(kind) {
+            try {
+              fetch(API, {
+                method: 'POST',
+                keepalive: true,
+                headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ p_kind: kind, p_src: src, p_lang: LANG, p_ref: ref })
+              }).catch(function () {});
+            } catch (e) {}
+          }
+
+          var liens = document.querySelectorAll('a[href]');
+          for (var i = 0; i < liens.length; i++) {
+            var a = liens[i];
+            if (a.href.indexOf(PLAY) === 0) {
+              a.href = PLAY + '&referrer=' + encodeURIComponent(
+                'utm_source=' + src + '&utm_medium=site&utm_campaign=beta-' + LANG);
+              a.addEventListener('click', function () { log('play'); });
+            } else if (a.href.indexOf(APPSTORE) === 0) {
+              a.addEventListener('click', function () { log('appstore'); });
+            }
+          }
+          log('visit');
+        })();
+      </script>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://quintaingames.com/">Quintain Games</a></span>
+      </footer>
+    </main>
+  </body>
+</html>

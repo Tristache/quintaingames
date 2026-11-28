@@ -8,10 +8,6 @@
   <url><loc>https://quintaingames.com/mentions-legales</loc><lastmod>2026-09-16</lastmod></url>
   <url><loc>https://quintaingames.com/confidentialite</loc><lastmod>2026-09-16</lastmod></url>
   <url><loc>https://quintaingames.com/ramio/</loc></url>
-  <url>
-    <loc>https://quintaingames.com/ramio/presse/</loc>
-    <lastmod>2026-10-13</lastmod>
-  </url>
   <url><loc>https://quintaingames.com/ramio/regles-rami-chinois.html</loc><lastmod>2026-11-05</lastmod></url>
   <url><loc>https://quintaingames.com/ramio/rummikub-avec-des-cartes.html</loc><lastmod>2026-11-05</lastmod></url>
   <url><loc>https://quintaingames.com/ramio/fr.html</loc></url>
@@ -35,5 +31,9 @@
   <url>
     <loc>https://quintaingames.com/ramio/machiavelli/</loc>
     <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://quintaingames.com/ramio/manipulation-rummy/</loc>
+    <lastmod>2026-11-28</lastmod>
   </url>
 </urlset>
