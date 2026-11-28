@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <script>
-      // Accueil sans langue dans l'adresse : le visiteur part vers la page de
-      // sa langue (choix retenu ou ?lang=, sinon langues du navigateur, sinon
-      // anglais). Les robots restent ici : la page reste indexée en français.
+      // Accueil (en anglais, langue de base) : le visiteur part vers la page de
+      // sa langue (choix retenu ou ?lang=, sinon langues du navigateur), sinon
+      // il reste ici. Les robots restent ici : la page reste indexée en anglais.
       (function () {
         if (/bot|crawl|spider|slurp|lighthouse|facebookexternalhit|whatsapp/i.test(navigator.userAgent)) return;
         var site = ["fr", "en", "es", "de", "it", "pt", "pl", "tr", "ro", "hu", "ar"];
@@ -17,18 +17,18 @@
           var code = String(voeux[i]).slice(0, 2).toLowerCase();
           if (site.indexOf(code) >= 0) { cible = code; break; }
         }
-        if (cible === "fr") return;
+        if (cible === "en") return;
         try { sessionStorage.setItem("ramio-ref", document.referrer); } catch (e) {}
         window.ramioRedirige = true;
         location.replace(cible + ".html" + location.search + location.hash);
       })();
     </script><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Ramio — le rami voleur en ligne, en famille ou entre amis | Ramio</title>
+<title>Ramio — Manipulation Rummy online with friends | Ramio</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Ramio — le rami voleur en ligne, en famille ou entre amis" />
-<meta property="og:locale" content="fr" />
-<meta name="description" content="Ramio, le rami voleur en application : parties en ligne entre amis, salons privés, 1 000 casse-têtes. Gratuit." />
-<meta property="og:description" content="Ramio, le rami voleur en application : parties en ligne entre amis, salons privés, 1 000 casse-têtes. Gratuit." />
+<meta property="og:title" content="Ramio — Manipulation Rummy online with friends" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Ramio, manipulation rummy with friends — online games, private rooms, free." />
+<meta property="og:description" content="Ramio, manipulation rummy with friends — online games, private rooms, free." />
 <link rel="canonical" href="https://quintaingames.com/ramio/" />
 <meta property="og:url" content="https://quintaingames.com/ramio/" />
 <meta property="og:site_name" content="Ramio" />
@@ -36,13 +36,13 @@
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://quintaingames.com/ramio/assets/ramio-partie-og.jpg" />
-<meta property="twitter:title" content="Ramio — le rami voleur en ligne, en famille ou entre amis" />
+<meta property="twitter:title" content="Ramio — Manipulation Rummy online with friends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Ramio, le rami voleur en application : parties en ligne entre amis, salons privés, 1 000 casse-têtes. Gratuit.","headline":"Ramio — le rami voleur en ligne, en famille ou entre amis","image":"https://quintaingames.com/ramio/assets/ramio-partie-og.jpg","name":"Ramio","url":"https://quintaingames.com/ramio/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"Ramio, manipulation rummy with friends — online games, private rooms, free.","headline":"Ramio — Manipulation Rummy online with friends","image":"https://quintaingames.com/ramio/assets/ramio-partie-og.jpg","name":"Ramio","url":"https://quintaingames.com/ramio/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="alternate" hreflang="fr" href="https://quintaingames.com/ramio/">
-    <link rel="alternate" hreflang="en" href="https://quintaingames.com/ramio/en.html">
+    <link rel="alternate" hreflang="fr" href="https://quintaingames.com/ramio/fr.html">
+    <link rel="alternate" hreflang="en" href="https://quintaingames.com/ramio/">
     <link rel="alternate" hreflang="es" href="https://quintaingames.com/ramio/es.html">
     <link rel="alternate" hreflang="de" href="https://quintaingames.com/ramio/de.html">
     <link rel="alternate" hreflang="it" href="https://quintaingames.com/ramio/it.html">
@@ -52,12 +52,12 @@
     <link rel="alternate" hreflang="ro" href="https://quintaingames.com/ramio/ro.html">
     <link rel="alternate" hreflang="hu" href="https://quintaingames.com/ramio/hu.html">
     <link rel="alternate" hreflang="ar" href="https://quintaingames.com/ramio/ar.html">
-    <link rel="alternate" hreflang="x-default" href="https://quintaingames.com/ramio/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://quintaingames.com/ramio/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F3F1EA">
     <link rel="icon" type="image/png" href="assets/ramio-icone-192.png">
     <link rel="preload" href="assets/jost.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/ramio.css?v=1f3350ec288764620b53c961d2752a4a0275ece3">
+    <link rel="stylesheet" href="assets/ramio.css?v=562e539559b1eaae009647eb6d46cd5301f24f4c">
   </head>
   <body>
     <div class="page">
@@ -65,14 +65,14 @@
       <header class="entete">
         <a class="marque" href="https://quintaingames.com/">
           <img src="assets/ramio-icone-192.png" alt="" width="40" height="40">
-          <div><b>Ramio</b><span>par Quintain Games</span></div>
+          <div><b>Ramio</b><span>by Quintain Games</span></div>
         </a>
         <nav class="menu" aria-label="Sections">
-          <a href="#jeu">Le jeu</a>
-          <a href="#regles">Règles</a>
-          <select class="langue" id="langue" aria-label="Langue" onchange="location.href = this.value">
-            <option value="./" selected>Français</option>
-            <option value="en.html">English</option>
+          <a href="#jeu">The game</a>
+          <a href="#regles">Rules</a>
+          <select class="langue" id="langue" aria-label="Language" onchange="location.href = this.value">
+            <option value="fr.html">Français</option>
+            <option value="./" selected>English</option>
             <option value="es.html">Español</option>
             <option value="de.html">Deutsch</option>
             <option value="it.html">Italiano</option>
@@ -89,148 +89,143 @@
       <section class="haut">
         <div>
           <p class="surtitre">Ramio</p>
-          <h1>Le rami voleur, en ligne, en famille ou entre amis.</h1>
-          <p class="pitch">Dans Ramio, on ne pose pas seulement ses cartes : on démonte et on recompose celles des autres pour y glisser les siennes.</p>
+          <h1>Manipulation Rummy, online with family and friends.</h1>
+          <p class="pitch">In Ramio you don't just lay down your cards: you take apart and rebuild what the others have played to fit yours in.</p>
           <div class="actions">
-<a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img src="assets/badge-play-fr.png" alt="Disponible sur Google Play" width="163" height="48"></a>
-          <a class="badge" href="https://apps.apple.com/fr/app/id6788317282"><img src="assets/badge-appstore-fr.svg" alt="Télécharger dans l'App Store" height="48"></a>
+<a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img src="assets/badge-play-en.png" alt="Get it on Google Play" width="163" height="48"></a>
+          <a class="badge" href="https://apps.apple.com/us/app/id6788317282"><img src="assets/badge-appstore-en.svg" alt="Download on the App Store" height="48"></a>
           </div>
-          <p class="sortie">Gratuit, sur Android et iPhone.</p>
-          <p class="essai"><a href="https://quintaingames.com/ramio/defi/?defi=jour&amp;couleurs=4&amp;lang=fr&amp;src=page-ramio">Essayer dans le navigateur</a></p>
+          <p class="sortie">Free, on Android and iPhone.</p>
+          <p class="essai"><a href="https://quintaingames.com/ramio/defi/?defi=jour&amp;couleurs=4&amp;lang=en&amp;src=page-ramio">Try it in your browser</a></p>
         </div>
         <div>
-          <div class="telephone"><video src="assets/ramio-reorganisation-fr.mp4" poster="assets/ramio-reorganisation-fr.jpg" width="420" height="898" autoplay muted loop playsinline aria-label="Le joker quitte un brelan de valets pour prolonger une suite de cœur, puis le valet de trèfle de la main vient réparer le brelan : la pose est validée."></video></div>
-          <p class="legende">Un joker déplacé, un brelan réparé : la pose passe.</p>
+          <div class="telephone"><video src="assets/ramio-reorganisation-en.mp4" poster="assets/ramio-reorganisation-en.jpg" width="420" height="898" autoplay muted loop playsinline aria-label="The joker leaves a set of jacks to extend a run of hearts, then the jack of clubs from the hand repairs the set: the play is confirmed."></video></div>
+          <p class="legende">One joker moved, one set repaired: the play goes through.</p>
         </div>
       </section>
 
-      <section class="reperes" aria-label="Ramio en chiffres">
-        <div><b>1000</b>casse-têtes</div>
-        <div><b>2 à 4</b>joueurs en ligne</div>
-        <div><b>12</b>langues</div>
-        <div><b>0</b>réseau requis contre l'ordinateur</div>
+      <section class="reperes" aria-label="Ramio in numbers">
+        <div><b>1000</b>puzzles</div>
+        <div><b>2 to 4</b>players online</div>
+        <div><b>12</b>languages</div>
+        <div><b>0</b>network needed against the computer</div>
       </section>
 
       <section class="bloc" id="jeu">
-        <div class="titre"><h2>Le jeu</h2></div>
+        <div class="titre"><h2>The game</h2></div>
         <div class="atouts">
           <article class="atout">
-            <div class="vue"><img src="assets/page-salon-fr.webp" alt="Un salon privé entre amis, avec son code à partager" width="480" height="853" loading="lazy"></div>
+            <div class="vue"><img src="assets/page-salon-en.webp" alt="A private room with friends, with its shareable code" width="480" height="853" loading="lazy"></div>
             <div>
-              <h3>Jouez avec les vôtres, où qu'ils soient</h3>
-              <p>Un salon privé, un code à six caractères à envoyer, et la partie commence. Pas d'amis disponibles ? Les parties publiques accueillent de 2 à 4 joueurs.</p>
-              <ul><li>Avec ou sans jokers, partie aux points ou partie simple</li><li>Reconnexion automatique en cas de coupure</li></ul>
+              <h3>Play with your people, wherever they are</h3>
+              <p>A private room, a six-character code to send, and the game begins. No friends around? Public games seat 2 to 4 players.</p>
+              <ul><li>With or without jokers, points game or single round</li><li>Automatic reconnection if your connection drops</li></ul>
             </div>
           </article>
           <article class="atout">
-            <div class="vue"><img src="assets/page-defi-fr.webp" alt="Le défi du jour : une table déjà posée et six cartes en main à placer" width="480" height="853" loading="lazy"></div>
+            <div class="vue"><img src="assets/page-defi-en.webp" alt="The daily challenge: a table already laid out and six cards in hand to place" width="480" height="853" loading="lazy"></div>
             <div>
-              <h3>1 000 casse-têtes quand personne n'est là</h3>
-              <p>Une table déjà posée, quelques cartes en main : trouvez comment tout recomposer. Un défi du jour commun à tous les joueurs, et des duels de rapidité sur le même casse-tête.</p>
-              <ul><li>Solo contre l'ordinateur à quatre niveaux, même sans connexion</li><li>Classement du jour et classement Elo</li></ul>
+              <h3>1,000 puzzles for when nobody is around</h3>
+              <p>A table already laid out, a few cards in hand: find how to rebuild it all. A daily challenge shared by every player, and speed duels on the same puzzle.</p>
+              <ul><li>Solo against the computer at four levels, even offline</li><li>Daily leaderboard and Elo ranking</li></ul>
             </div>
           </article>
           <article class="atout">
-            <div class="vue"><img src="assets/page-kits-fr.webp" alt="Les ambiances : tapis, dos de cartes et avatars au choix" width="480" height="853" loading="lazy"></div>
+            <div class="vue"><img src="assets/page-kits-en.webp" alt="Themes: table felts, card backs and avatars to choose from" width="480" height="853" loading="lazy"></div>
             <div>
-              <h3>Une vingtaine d'ambiances, toutes répondent au toucher</h3>
-              <p>Tapis, dos de cartes et avatars : certains se débloquent en jouant, d'autres avec des jetons ou dans la boutique. De la forge à la nuit elfique, chaque kit change la table sans toucher aux règles.</p>
+              <h3>Around twenty themes, all of them respond to touch</h3>
+              <p>Table felts, card backs and avatars: some unlock as you play, others with tokens or in the shop. From the forge to the elven night, each theme changes the table without touching the rules.</p>
             </div>
           </article>
         </div>
         <article class="grande">
-          <div class="vue"><img src="assets/page-table-quatre.webp" alt="Une partie à quatre en paysage : trois adversaires à gauche, la table au centre, la main en bas ; les cartes que l'adversaire vient de poser sont surlignées." width="1280" height="720" loading="lazy"></div>
+          <div class="vue"><img src="assets/page-table-quatre.webp" alt="A four-player game in landscape: three opponents on the left, the table in the middle, the hand at the bottom; the cards an opponent has just played are highlighted." width="1280" height="720" loading="lazy"></div>
           <div>
-            <h3>Une table lisible, même à quatre</h3>
-            <p>Les adversaires et leur nombre de cartes sur le côté, la table entière au centre, votre main en bas. Ce qu'un adversaire vient de poser reste surligné : on voit d'un coup d'œil ce qui a bougé.</p>
-            <ul><li>Portrait ou paysage, sur téléphone comme sur tablette</li><li>Affichage des cartes en quatre couleurs, au choix</li><li>Amis, messagerie, statistiques et historique</li></ul>
+            <h3>A readable table, even with four players</h3>
+            <p>Opponents and their card counts on the side, the whole table in the middle, your hand at the bottom. Whatever an opponent has just played stays highlighted: you see at a glance what moved.</p>
+            <ul><li>Portrait or landscape, on phones and tablets</li><li>Optional four-colour deck</li><li>Friends, messaging, statistics and history</li></ul>
           </div>
         </article>
       </section>
 
       <section class="bloc">
         <div class="titre">
-          <p class="surtitre">Pour commencer</p>
-          <h2>Une partie entre amis en trois gestes</h2>
+          <p class="surtitre">Getting started</p>
+          <h2>A game with friends in three steps</h2>
         </div>
         <div class="etapes">
-          <div class="etape"><h3>Créez un salon</h3><p>Choisissez vos règles : jokers ou non, partie aux points ou partie simple.</p></div>
-          <div class="etape"><h3>Partagez le code</h3><p>Six caractères, par exemple <code>4GDWJ3</code>, à envoyer par message. Le lien ouvre directement le salon.</p></div>
-          <div class="etape"><h3>Jouez</h3><p>Chacun sur son téléphone, Android ou iPhone, dans sa langue.</p></div>
+          <div class="etape"><h3>Create a room</h3><p>Pick your rules: jokers or not, points game or single round.</p></div>
+          <div class="etape"><h3>Share the code</h3><p>Six characters, for example <code>4GDWJ3</code>, to send in a message. The link opens the room directly.</p></div>
+          <div class="etape"><h3>Play</h3><p>Everyone on their own phone, Android or iPhone, in their own language.</p></div>
         </div>
       </section>
 
       <section class="final">
         <div>
-          <h2>À vous de recomposer la table.</h2>
-          <p>Gratuit, en douze langues. Fait en France.</p>
+          <h2>Your turn to rebuild the table.</h2>
+          <p>Free, in twelve languages. Made in France.</p>
           <div class="actions">
-<a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img src="assets/badge-play-fr.png" alt="Disponible sur Google Play" width="163" height="48"></a>
-          <a class="badge" href="https://apps.apple.com/fr/app/id6788317282"><img src="assets/badge-appstore-fr.svg" alt="Télécharger dans l'App Store" height="48"></a>
+<a class="badge" href="https://play.google.com/store/apps/details?id=com.ramio"><img src="assets/badge-play-en.png" alt="Get it on Google Play" width="163" height="48"></a>
+          <a class="badge" href="https://apps.apple.com/us/app/id6788317282"><img src="assets/badge-appstore-en.svg" alt="Download on the App Store" height="48"></a>
           </div>
         </div>
       </section>
 
       <section class="bloc" id="regles">
         <div class="titre">
-          <p class="surtitre">Référence</p>
-          <h2>Les règles du rami voleur</h2>
-          <p>De 2 à 4 joueurs, deux jeux de 52 cartes, avec ou sans jokers. L'essentiel est ici ; le <a href="regles-rami-chinois.html">guide complet</a> détaille les points et les variantes.</p>
+          <p class="surtitre">Reference</p>
+          <h2>The rules of Manipulation Rummy</h2>
+          <p>For 2 to 4 players, with two 52-card decks, with or without jokers. The game goes by many names: Räuber-Rommé in Germany, Machiavelli in Italy, Mexe-Mexe in Brazil, rami voleur in France.</p>
         </div>
         <div class="regles">
-<h3 id="le-but-du-jeu">Le but du jeu</h3>
+<h3 id="the-goal">The goal</h3>
 
-<p>Être le premier à se débarrasser de toutes ses cartes en les posant sur
-la table, sous forme de combinaisons :</p>
+<p>Be the first to get rid of all your cards by laying them on the table
+as combinations:</p>
 
 <ul>
-  <li><strong>Suite</strong> : au moins trois cartes qui se suivent, de la même couleur
-(l’As peut se placer avant le 2 ou après le Roi, mais la suite ne
-« tourne » pas : Roi-As-2 est interdit).</li>
-  <li><strong>Brelan ou carré</strong> : trois ou quatre cartes de même valeur, de
-couleurs toutes différentes.</li>
+  <li><strong>Run</strong>: at least three consecutive cards of the same suit (the ace
+can sit before the 2 or after the king, but runs never wrap around:
+K-A-2 is not allowed).</li>
+  <li><strong>Set</strong>: three or four cards of the same rank, all suits different.</li>
 </ul>
 
-<h3 id="le-déroulement">Le déroulement</h3>
+<h3 id="how-a-turn-works">How a turn works</h3>
 
 <ol>
-  <li>Chaque joueur reçoit <strong>13 cartes</strong>.</li>
-  <li>À son tour, un joueur <strong>pioche une carte</strong>, puis peut poser des
-combinaisons sur la table. On ne se défausse jamais : la main ne
-diminue qu’en posant.</li>
-  <li><strong>Première pose</strong> : pour commencer à poser, il faut d’abord une
-<strong>tierce franche</strong> — trois cartes qui se suivent, de la même couleur,
-sans joker.</li>
-  <li>Une fois sa première pose faite, le joueur peut aussi <strong>réorganiser
-librement la table</strong> (déplacer, découper, recombiner les poses de tout
-le monde) pour caser ses cartes, tant que la table reste entièrement
-valide à la fin de son tour.</li>
-  <li>Le <strong>joker</strong> remplace n’importe quelle carte. Sur la table, il peut
-être réutilisé lors des réorganisations, tant qu’il reste sur la
-table. Les jokers sont optionnels : chaque partie se crée avec ou
-sans.</li>
+  <li>Each player is dealt <strong>13 cards</strong>.</li>
+  <li>On your turn you <strong>draw one card</strong>, then you may lay down
+combinations. There is no discarding, ever: your hand only shrinks
+by melding.</li>
+  <li><strong>Opening</strong>: your first meld must include a <strong>clean run of three</strong> —
+three consecutive cards of the same suit, without a joker.</li>
+  <li>Once you have opened, you may also <strong>freely rearrange the table</strong>
+(move, split and recombine everyone’s melds) to fit your cards in,
+as long as the whole table is valid again at the end of your turn.</li>
+  <li>The <strong>joker</strong> stands for any card. On the table it can be reused
+during rearrangements, as long as it stays on the table. Jokers are
+optional: every game is created with or without them.</li>
 </ol>
 
-<h3 id="la-fin-de-manche-et-les-points">La fin de manche et les points</h3>
+<h3 id="end-of-a-round-and-scoring">End of a round, and scoring</h3>
 
-<p>La manche s’arrête quand un joueur a vidé sa main. Les autres comptent
-leurs pénalités : les cartes 2 à 10 valent leur valeur, les figures 10,
-l’As 11 et le joker 20 ou 50 points (50 dans la version actuelle de
-l’application). Si la pioche s’épuise avant qu’un joueur ait fini,
-la manche s’arrête et chacun compte les points restants dans sa main.
-Les pénalités s’additionnent de manche en manche ; la partie se termine
-dès qu’un joueur atteint 100 points, et le joueur le moins pénalisé
-gagne. L’application propose aussi une <strong>partie simple</strong> : une seule
-manche gagnante, idéale pour une partie rapide.</p>
+<p>A round ends when a player empties their hand. The others count
+penalties: cards 2 to 10 at face value, court cards 10, aces 11 and
+jokers 20 or 50 points (50 in the current version of the app). If the
+stock runs out before anyone finishes, the round
+stops and every player counts the cards left in their own hand.
+Penalties add up from round to round; the game ends as soon as a player
+reaches 100 points, and the least penalized player wins. The app also
+offers a <strong>single-round game</strong>, ideal for a quick match.</p>
 
         </div>
       </section>
-      <nav class="langues-liens" aria-label="Langue">
-        <a href="./" hreflang="fr" lang="fr">Français</a> <a href="en.html" hreflang="en" lang="en">English</a> <a href="es.html" hreflang="es" lang="es">Español</a> <a href="de.html" hreflang="de" lang="de">Deutsch</a> <a href="it.html" hreflang="it" lang="it">Italiano</a> <a href="pt.html" hreflang="pt" lang="pt">Português</a> <a href="pl.html" hreflang="pl" lang="pl">Polski</a> <a href="tr.html" hreflang="tr" lang="tr">Türkçe</a> <a href="ro.html" hreflang="ro" lang="ro">Română</a> <a href="hu.html" hreflang="hu" lang="hu">Magyar</a> <a href="ar.html" hreflang="ar" lang="ar">العربية</a> 
+      <nav class="langues-liens" aria-label="Language">
+        <a href="fr.html" hreflang="fr" lang="fr">Français</a> <a href="./" hreflang="en" lang="en">English</a> <a href="es.html" hreflang="es" lang="es">Español</a> <a href="de.html" hreflang="de" lang="de">Deutsch</a> <a href="it.html" hreflang="it" lang="it">Italiano</a> <a href="pt.html" hreflang="pt" lang="pt">Português</a> <a href="pl.html" hreflang="pl" lang="pl">Polski</a> <a href="tr.html" hreflang="tr" lang="tr">Türkçe</a> <a href="ro.html" hreflang="ro" lang="ro">Română</a> <a href="hu.html" hreflang="hu" lang="hu">Magyar</a> <a href="ar.html" hreflang="ar" lang="ar">العربية</a> 
       </nav>
       <footer class="pied">
         <span>Quintain Games · France · contact@quintaingames.com</span>
-        <span><a href="politique-confidentialite.html">Confidentialité</a> · <a href="conditions-utilisation.html">Conditions</a> · <a href="suppression-compte.html">Supprimer son compte</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · <a href="delete-account.html">Delete your account</a> · <a href="mentions-legales.html">Legal notice</a></span>
       </footer>
     </div>
     <script>
@@ -241,7 +236,7 @@ manche gagnante, idéale pour une partie rapide.</p>
           a.addEventListener("click", function () { retiens(a.hreflang); });
         });
         document.getElementById("langue").addEventListener("change", function () {
-          retiens(this.value === "./" ? "fr" : this.value.replace(".html", ""));
+          retiens(this.value === "./" ? "en" : this.value.replace(".html", ""));
         });
       })();
     </script>
